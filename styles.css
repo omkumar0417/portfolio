@@ -285,24 +285,12 @@ form button:hover {
 
 /* For small mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
+    nav ul {
+        flex-direction: row; /* Ensure items are still in a row */
+        justify-content: center; /* Center align the items */
     }
 
-    .profile-photo {
-        width: 100px;
-        height: 100px;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-
-    .project {
-        padding: 1rem;
-    }
-
-    #theme-toggle {
-        font-size: 0.9rem;
+    nav ul li {
+        margin: 0 0.5rem; /* Adjust margin for smaller screens */
     }
 }
