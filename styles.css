@@ -29,12 +29,11 @@ header.dark-mode {
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Ensures items are aligned in a row */
-    justify-content: center; /* Centers the items horizontally */
 }
 
 nav ul li {
-    margin: 0 1rem; /* Spacing between navigation items */
+    display: inline;
+    margin: 0 1rem;
 }
 
 nav ul li a {
@@ -165,17 +164,16 @@ form input, form textarea {
 form input.dark-mode, form textarea.dark-mode {
     background-color: #333;
     color: white;
-    border-color: #444;
+    border: 1px solid #555;
 }
 
 form button {
-    padding: 1rem;
-    background-color: #4169E1;
-    color: white;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
+    background-color: #4169E1;
+    color: white;
     cursor: pointer;
-    font-size: 1rem;
     transition: background-color 0.3s;
 }
 
@@ -183,57 +181,128 @@ form button:hover {
     background-color: #27408B;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 #back-to-top {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #4169E1;
     color: white;
     border: none;
-    padding: 1rem;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    transition: background-color 0.3s;
 }
 
 #back-to-top:hover {
     background-color: #27408B;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.project-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #4169E1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-@keyframes slideIn {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+.project-link:hover {
+    background-color: #27408B;
+    transform: translateY(-5px);
 }
 
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens (max-width: 768px) */
 @media (max-width: 768px) {
     header {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
         text-align: center;
     }
 
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
+    .about-text {
+        margin-top: 1rem;
     }
 
-    nav ul li {
-        margin-bottom: 0;
+    .project {
+        padding: 1rem;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    form input, form textarea {
+        width: 100%;
+    }
+
+    #back-to-top {
+        bottom: 15px;
+        right: 15px;
     }
 }
 
+/* For small mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
+    h1 {
+        font-size: 1.5rem;
     }
 
-    nav ul li {
-        margin: 0 0.5rem;
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .project {
+        padding: 1rem;
+    }
+
+    #theme-toggle {
+        font-size: 0.9rem;
     }
 }
