@@ -1,297 +1,343 @@
+/* ====== Reset and Base ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-    scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #f1f1f1;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+.section {
+  padding: 4rem 2rem;
 }
 
-header {
-    background-color: #4169E1;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-    position: relative;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-header.dark-mode {
-    background-color: #27408B;
+/* ====== Navbar ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #58A6FF;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.nav-links li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.nav-links li a:hover {
+  color: #58A6FF;
 }
 
 #theme-toggle {
-    background-color: #1b1b7a;
-    color: white;
-    border: none;
-    padding: 0.1rem 0.3rem; 
-    font-size: 0.8rem;
-    cursor: pointer;
-    border-radius: 4px;
-    position: absolute;
-    top: 10px;
-    right: 8px;
-    transition: background-color 0.3s;
+  background-color: #1b1b7a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
 }
 
 #theme-toggle:hover {
-    background-color: #1C1C7A;
+  background-color: #1C1C7A;
 }
 
-section {
-    padding: 2rem;
-    margin: 2rem 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s;
-    animation: slideIn 1s ease-in-out;
+/* ====== Hero Section ====== */
+.hero-section {
+  background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png'),
+              linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
 }
 
-section.dark-mode {
-    background-color: #1e1e1e;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
-h1 {
-    color: #4169E1;
-    animation: fadeIn 1s ease-in-out;
+.hero-content h1 span {
+  color: #58A6FF;
 }
 
-h1.dark-mode {
-    color: #66BBFF;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    animation: fadeIn 1s ease-in-out;
+.btn-primary {
+  background: #58A6FF;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.btn-primary:hover {
+  background: #1F6FEB;
+}
+
+.btn-outline {
+  border: 2px solid #58A6FF;
+  color: #58A6FF;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-outline:hover {
+  background: #58A6FF;
+  color: #fff;
+}
+
+/* ====== About Section ====== */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #58A6FF;
 }
 
 .about-text {
-    flex: 1;
+  flex: 1;
 }
 
-.project {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* ====== Projects Section ====== */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s;
 }
 
-.project:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.project-card:hover {
+  transform: translateY(-8px);
 }
 
-.project.dark-mode {
-    border: 1px solid #444;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.project h2 {
-    margin-top: 0;
-    color: #4169E1;
+.card-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
 }
 
-.project h2.dark-mode {
-    color: #66BBFF;
+.tech-tags {
+  font-size: 0.9rem;
+  color: #8ab4f8;
 }
 
-.project p {
-    margin-bottom: 0;
-    color: #ffffff;
+/* ====== Contact Section ====== */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.project p.dark-mode {
-    color: #000000;
+form input,
+form textarea {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  border: 1px solid #333;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    animation: fadeIn 1s ease-in-out;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-form input.dark-mode, form textarea.dark-mode {
-    background-color: #333;
-    color: white;
-    border: 1px solid #555;
+form textarea {
+  resize: vertical;
 }
 
 form button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #4169E1;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #4169E1;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 form button:hover {
-    background-color: #27408B;
+  background-color: #27408B;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* ====== Footer ====== */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  color: #999;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.social-icons a {
+  margin: 0 10px;
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  transition: color 0.3s;
 }
 
+.social-icons a:hover {
+  color: #58A6FF;
+}
+
+/* ====== Back to Top Button ====== */
 #back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4169E1;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    display: none;
-    transition: background-color 0.3s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4169E1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s;
 }
 
 #back-to-top:hover {
-    background-color: #27408B;
+  background-color: #27408B;
 }
 
-.project-link {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #4169E1;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.3s;
+/* ====== Animations ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.project-link:hover {
-    background-color: #27408B;
-    transform: translateY(-5px);
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ====== Dark Mode Support ====== */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
 }
 
-/* Media Queries for Responsiveness */
+body.dark-mode .navbar {
+  background: rgba(0, 0, 0, 0.95);
+}
 
-/* For tablets and smaller screens (max-width: 768px) */
+body.dark-mode .section {
+  background: #1e1e1e;
+}
+
+body.dark-mode .btn-primary {
+  background: #1F6FEB;
+  color: #fff;
+}
+
+body.dark-mode .btn-outline {
+  color: #58A6FF;
+  border-color: #58A6FF;
+}
+
+body.dark-mode .btn-outline:hover {
+  background-color: #58A6FF;
+  color: #fff;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+  color: #aaa;
+}
+
+body.dark-mode .project-card {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* ====== Media Queries ====== */
 @media (max-width: 768px) {
-    header {
-        text-align: left;
-        padding: 1rem;
-    }
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
 
-    nav ul li {
-        margin-bottom: 0.5rem;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-text {
-        margin-top: 1rem;
-    }
-
-    .project {
-        padding: 1rem;
-    }
-
-    .profile-photo {
-        width: 120px;
-        height: 120px;
-    }
-
-    form input, form textarea {
-        width: 100%;
-    }
-
-    #back-to-top {
-        bottom: 15px;
-        right: 15px;
-    }
-}
-
-/* For small mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
-    nav ul {
-        flex-direction: row; /* Ensure items are still in a row */
-        justify-content: center; /* Center align the items */
-    }
-
-    nav ul li {
-        margin: 0 0.5rem; /* Adjust margin for smaller screens */
-    }
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
