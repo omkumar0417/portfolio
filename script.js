@@ -10,7 +10,8 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    emailjs.sendForm('service_cqggltu', 'template_2rol4ff', this)
+    // emailjs.sendForm('service_cqggltu', 'template_2rol4ff', this)
+    emailjs.sendForm('service_cqggltu', 'template_crrcrhc', this)
         .then(function() {
             alert('Message sent successfully!');
         }, function(error) {
