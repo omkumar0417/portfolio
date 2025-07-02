@@ -417,3 +417,28 @@ body.dark-mode .project-card {
 .mobile-nav {
   display: none;
 }
+.thank-you-msg {
+  display: none;
+  margin-top: 1rem;
+  color: #58A6FF;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeInOut 5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
