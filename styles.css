@@ -442,3 +442,22 @@ body.dark-mode .project-card {
     display: none;
   }
 }
+.skills-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.skill-icon i {
+  font-size: 2.5rem;
+  color: #58A6FF;
+  margin-bottom: 0.5rem;
+}
+
+.skill-icon p {
+  font-size: 1rem;
+  font-weight: 600;
+}

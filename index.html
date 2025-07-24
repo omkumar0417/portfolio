@@ -39,7 +39,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
   <!-- ✅ EmailJS (defer loading for performance) -->
-  <script defer src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- <script defer src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+   <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
   <script>
     window.addEventListener("DOMContentLoaded", function () {
       emailjs.init("OHA_QnV_Pku4_-jeL");
@@ -111,6 +114,20 @@
       </div>
     </div>
   </section>
+<section class="section" id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-icon-grid">
+      <div class="skill-icon"><i class="fab fa-html5"></i><p>HTML & CSS</p></div>
+      <div class="skill-icon"><i class="fab fa-js"></i><p>JavaScript</p></div>
+      <div class="skill-icon"><i class="fab fa-java"></i><p>Java</p></div>
+      <div class="skill-icon"><i class="fas fa-database"></i><p>SQL / Oracle</p></div>
+      <div class="skill-icon"><i class="fas fa-server"></i><p>Servlets</p></div>
+      <div class="skill-icon"><i class="fab fa-github"></i><p>GitHub</p></div>
+    </div>
+  </div>
+</section>
+
 
   <!-- ===== Projects Section ===== -->
   <section class="section" id="projects">
@@ -166,16 +183,49 @@
   <script>
   window.scrollTo(0, 0); // Ensure page starts at top
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    emailjs.sendForm('service_cqggltu', 'template_crrcrhc', this)
-      .then(() => {
-        alert("Message sent!");
-        this.reset();
-      })
-      .catch((error) => alert("Error: " + JSON.stringify(error)));
-    return false;
-  });
+  // document.getElementById("contact-form").addEventListener("submit", function (e) {
+  //   e.preventDefault();
+  //   emailjs.sendForm('service_cqggltu', 'template_crrcrhc', this)
+  //     .then(() => {
+  //       alert("Message sent!");
+  //       this.reset();
+  //     })
+  //     .catch((error) => alert("Error: " + JSON.stringify(error)));
+  //   return false;
+  // });
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const btn = form.querySelector('button');
+  const originalText = btn.textContent;
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  emailjs.sendForm('service_cqggltu', 'template_crrcrhc', form)
+    .then(() => {
+      btn.textContent = "Message Sent!";
+      btn.style.backgroundColor = "#28a745"; // Optional green effect
+      form.reset();
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        btn.style.backgroundColor = ""; // Reset to original
+      }, 3000);
+    })
+    .catch((error) => {
+      btn.textContent = "Failed. Try Again";
+      btn.style.backgroundColor = "#dc3545"; // Optional red effect
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        btn.style.backgroundColor = ""; // Reset to original
+      }, 3000);
+    });
+
+  return false;
+});
 
   const backToTop = document.getElementById("back-to-top");
   window.addEventListener("scroll", () => {
@@ -210,8 +260,14 @@
     msg.classList.remove("thank-you-msg"); // reset if clicked again quickly
     void msg.offsetWidth; // re-trigger animation
     msg.classList.add("thank-you-msg");
+    gtag('event', 'resume_download', {
+  event_category: 'Resume',
+  event_label: 'OmKumarResume.pdf'
+});
+
   }
 </script>
+
 
 
 </body>
