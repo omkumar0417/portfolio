@@ -479,3 +479,19 @@ body.dark-mode .project-card {
   font-size: 1rem;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  #about {
+     margin: 0.5rem;
+  padding: 0.5rem;
+  }
+  #about p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+    word-break: break-word;
+  }
+  #about h2 {
+    font-size: 1.3rem;
+  }
+}
