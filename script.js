@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const resumeDownload = document.getElementById('resume-download');
   const thankYouMessage = document.getElementById('thank-you-msg');
   const currentYear = document.getElementById('current-year');
+  const sectionLinks = Array.from(document.querySelectorAll('[data-section-link]'));
+  const revealElements = Array.from(document.querySelectorAll('.reveal'));
+  const scrollSections = Array.from(
+    document.querySelectorAll('main section[id]')
+  ).filter((section) => ['about', 'projects', 'skills', 'contact'].includes(section.id));
 
   const setTheme = (theme) => {
     const isDark = theme === 'dark';
@@ -35,6 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const setActiveLink = (hash) => {
+    sectionLinks.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === hash);
+    });
+  };
+
   if (navToggle && mobileNav) {
     navToggle.addEventListener('click', () => {
       const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
@@ -52,6 +63,33 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileNav.classList.remove('is-open');
       });
     });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleSections[0]) {
+        setActiveLink(`#${visibleSections[0].target.id}`);
+      }
+    }, { threshold: [0.25, 0.4, 0.6], rootMargin: '-28% 0px -52% 0px' });
+
+    scrollSections.forEach((section) => sectionObserver.observe(section));
+  } else {
+    revealElements.forEach((element) => element.classList.add('is-visible'));
   }
 
   const toggleBackToTop = () => {

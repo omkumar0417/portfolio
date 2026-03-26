@@ -37,6 +37,7 @@ body.dark-mode {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 
 body {
@@ -181,15 +182,42 @@ body.dark-mode .site-header {
 
 .nav-links a,
 .mobile-nav a {
+  position: relative;
   text-decoration: none;
   color: var(--muted);
   font-weight: 700;
+  padding-bottom: 0.35rem;
+}
+
+.nav-links a::after,
+.mobile-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after,
+.mobile-nav a:hover::after,
+.mobile-nav a:focus-visible::after,
+.nav-links a.is-active::after,
+.mobile-nav a.is-active::after {
+  transform: scaleX(1);
 }
 
 .nav-links a:hover,
 .nav-links a:focus-visible,
 .mobile-nav a:hover,
-.mobile-nav a:focus-visible {
+.mobile-nav a:focus-visible,
+.nav-links a.is-active,
+.mobile-nav a.is-active {
   color: var(--accent);
 }
 
@@ -279,11 +307,18 @@ body.dark-mode .mobile-nav {
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
+  min-width: 0;
 }
 
 .hero-copy {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
+}
+
+.hero-copy-animate {
+  animation: heroFadeUp 0.9s ease both;
+  opacity: 1;
+  transform: none;
 }
 
 .hero-copy h1 {
@@ -292,12 +327,16 @@ body.dark-mode .mobile-nav {
   line-height: 0.98;
   margin-bottom: 1.25rem;
   max-width: 11ch;
+  display: inline-block;
+  animation: textReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  overflow-wrap: anywhere;
 }
 
 .hero-text {
   color: var(--muted);
   font-size: 1.08rem;
   max-width: 62ch;
+  animation: heroFadeUp 0.85s ease 0.15s both;
 }
 
 .hero-actions {
@@ -305,6 +344,7 @@ body.dark-mode .mobile-nav {
   gap: 1rem;
   flex-wrap: wrap;
   margin: 2rem 0;
+  animation: heroFadeUp 0.85s ease 0.25s both;
 }
 
 .btn-primary,
@@ -320,18 +360,21 @@ form button {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 800;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary,
 form button {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: #fff;
+  box-shadow: 0 10px 22px rgba(216, 100, 59, 0.22);
 }
 
 .btn-primary:hover,
 form button:hover {
-  background: var(--accent-strong);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(216, 100, 59, 0.12), 0 14px 30px rgba(216, 100, 59, 0.32);
 }
 
 .btn-outline,
@@ -345,6 +388,21 @@ form button:hover {
   transform: translateY(-1px);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.btn-primary::before,
+form button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.25), transparent 55%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.btn-primary:hover::before,
+form button:hover::before {
+  transform: translateX(120%);
 }
 
 .hero-metrics {
@@ -391,6 +449,7 @@ form button:hover {
 .hero-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
+  animation: heroFadeUp 0.95s ease 0.18s both;
 }
 
 .profile-img {
@@ -457,6 +516,13 @@ form button:hover {
 .highlight-card {
   border-radius: var(--radius-md);
   padding: 1.4rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 100, 59, 0.24);
+  box-shadow: 0 20px 34px rgba(38, 32, 25, 0.14);
 }
 
 .highlight-card h3 {
@@ -471,6 +537,29 @@ form button:hover {
 .project-card {
   border-radius: var(--radius-lg);
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 34%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(216, 100, 59, 0.22);
+  box-shadow: 0 24px 52px rgba(38, 32, 25, 0.18), 0 0 0 1px rgba(216, 100, 59, 0.08);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .featured-project {
@@ -485,6 +574,25 @@ form button:hover {
   align-items: start;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.project-heading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.project-icon {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 12px 24px rgba(216, 100, 59, 0.2);
 }
 
 .project-kicker {
@@ -502,10 +610,12 @@ form button:hover {
   color: var(--muted);
   font-size: 0.95rem;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .project-summary {
   font-size: 1.03rem;
+  overflow-wrap: anywhere;
 }
 
 .project-detail-grid {
@@ -535,6 +645,13 @@ form button:hover {
   box-shadow: var(--shadow);
   padding: 1.35rem 1rem;
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-icon:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 100, 59, 0.22);
+  box-shadow: 0 22px 36px rgba(38, 32, 25, 0.15);
 }
 
 .skill-icon i {
@@ -551,6 +668,12 @@ form button:hover {
 .contact-form {
   border-radius: var(--radius-lg);
   padding: 1.8rem;
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-direct {
@@ -576,6 +699,8 @@ form button:hover {
   background: var(--surface-strong);
   color: var(--text);
   padding: 0.95rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  min-width: 0;
 }
 
 .contact-form input:focus,
@@ -594,6 +719,18 @@ form button:focus-visible,
 #back-to-top:focus-visible {
   outline: 3px solid rgba(216, 100, 59, 0.3);
   outline-offset: 3px;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(216, 100, 59, 0.12);
+  transform: translateY(-1px);
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 12px 24px rgba(216, 100, 59, 0.24);
+}
+
+.contact-form button:hover {
+  box-shadow: 0 0 0 1px rgba(216, 100, 59, 0.12), 0 16px 32px rgba(216, 100, 59, 0.34);
 }
 
 .site-footer {
@@ -656,6 +793,53 @@ form button:focus-visible,
   transform: translateY(-2px);
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.22s;
+}
+
+.active-section-link {
+  color: var(--accent) !important;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textReveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .about-grid,
@@ -709,6 +893,11 @@ form button:focus-visible,
     align-items: flex-start;
   }
 
+  .project-heading {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
   .project-links,
   .hero-actions,
   .hero-socials {
@@ -722,6 +911,16 @@ form button:focus-visible,
   #theme-toggle-mobile {
     width: 100%;
   }
+
+  .hero-copy h1,
+  .section-intro h2 {
+    max-width: none;
+  }
+
+  .contact-copy,
+  .contact-form {
+    text-align: left;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -729,10 +928,19 @@ form button:focus-visible,
     scroll-behavior: auto;
   }
 
+  html {
+    scroll-padding-top: 0;
+  }
+
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
