@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Om Kumar Portfolio | Full Stack Java Developer</title>
 
   <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-  <!-- ✅ SEO -->
-  <meta name="description" content="Om Kumar - Full Stack Java Developer skilled in Java, Servlets, JDBC, HTML, CSS, JavaScript. Explore projects and get in touch.">
+  <meta name="description" content="Om Kumar is a backend-focused full stack Java developer building clean, reliable web applications with Java, Servlets, JDBC, SQL, HTML, CSS, and JavaScript." />
   <link rel="canonical" href="https://omkumarportfolio.vercel.app/" />
 
-  <!-- ✅ Open Graph (for social sharing) -->
-  <meta property="og:title" content="Om Kumar | Java Full Stack Developer Portfolio">
-  <meta property="og:description" content="Portfolio of Om Kumar, aspiring full-stack Java developer from SRM University.">
-  <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg">
-  <meta property="og:url" content="https://omkumarportfolio.vercel.app/">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Om Kumar | Full Stack Java Developer Portfolio" />
+  <meta property="og:description" content="Explore Om Kumar's projects, skills, and contact details as a backend-focused Java full stack developer." />
+  <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta property="og:url" content="https://omkumarportfolio.vercel.app/" />
+  <meta property="og:type" content="website" />
 
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Om Kumar | Portfolio">
-  <meta name="twitter:description" content="Explore projects, skills, and contact info.">
-  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Om Kumar | Portfolio" />
+  <meta name="twitter:description" content="Backend-focused Java developer portfolio with projects, skills, and contact details." />
+  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
 
-  <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MH3T2BY2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -34,22 +34,8 @@
     gtag('config', 'G-76MH3T2BY2');
   </script>
 
-  <!-- ✅ Styles and Icons -->
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- ✅ EmailJS (defer loading for performance) -->
-  <!-- <script defer src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
-   <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-  <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      emailjs.init("OHA_QnV_Pku4_-jeL");
-    });
-  </script>
-
-  <!-- ✅ Structured Data (for Google Rich Results) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,273 +47,294 @@
       "https://github.com/omkumar0417"
     ],
     "jobTitle": "Full Stack Java Developer",
-    "worksFor": {
+    "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "SRM University"
-    }
+    },
+    "knowsAbout": [
+      "Java",
+      "Servlets",
+      "JDBC",
+      "Oracle SQL",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   }
   </script>
 </head>
-
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- ===== Navbar ===== -->
-  <header class="navbar">
-    <div class="logo">Om Kumar</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button id="theme-toggle">Switch Theme</button>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a href="#home" class="logo">Om Kumar</a>
+
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-desktop">
+        <ul class="nav-links">
+          <li><a href="#about" data-section-link>About</a></li>
+          <li><a href="#projects" data-section-link>Projects</a></li>
+          <li><a href="#skills" data-section-link>Skills</a></li>
+          <li><a href="#contact" data-section-link>Contact</a></li>
+        </ul>
+        <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#about" data-section-link>About</a>
+      <a href="#projects" data-section-link>Projects</a>
+      <a href="#skills" data-section-link>Skills</a>
+      <a href="#contact" data-section-link>Contact</a>
+      <button id="theme-toggle-mobile" type="button">Dark mode</button>
+    </div>
   </header>
 
-  <!-- ===== Hero Section ===== -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1>Hello, I'm <span>Om Kumar</span></h1>
-      <p>
-  Full-Stack Java Developer (Backend-Focused)<br>
-  Java • Servlets • JDBC • SQL • JavaScript
-</p>      <a href="#projects" class="btn-primary">See My Work</a>
-    
-</div>
-  </section>
+  <main id="main-content">
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal hero-copy-animate">
+          <p class="eyebrow">Backend-focused full stack developer</p>
+          <h1>Building reliable Java web apps that stay clear, fast, and maintainable.</h1>
+          <p class="hero-text">
+            I'm Om Kumar, a Computer Science student at SRM University with hands-on experience in Java, Servlets, JDBC, Oracle SQL, and JavaScript. I enjoy turning real requirements into complete products with thoughtful backend logic and clean frontend delivery.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="OmKumarResume.pdf" download class="btn-outline" id="resume-download">Download Resume</a>
+          </div>
+          <ul class="hero-metrics" aria-label="Highlights">
+            <li>
+              <strong>2+</strong>
+              <span>Production-style projects</span>
+            </li>
+            <li>
+              <strong>Java</strong>
+              <span>Core backend focus</span>
+            </li>
+            <li>
+              <strong>SQL</strong>
+              <span>Database-backed systems</span>
+            </li>
+          </ul>
+          <p id="thank-you-msg" class="thank-you-msg" aria-live="polite"></p>
+        </div>
 
-  <!-- ===== About Section ===== -->
-  <section class="section" id="about">
-    <div class="container about-section">
-      <img src="1732099542326.jpeg" alt="Om Kumar" class="profile-img" />
-      <div class="about-text">
-       <h2>About Me</h2>
-<p>
-  I'm Om Kumar, a passionate B.Tech Computer Science student at SRM University, with a deep interest in full-stack development. My technical foundation is rooted in Core Java, and I’ve built practical experience through backend technologies like Servlets, JDBC, and JSP, combined with frontend skills in HTML, CSS, and JavaScript.
-</p>
-<p>
-  I enjoy building complete, user-focused web applications — from designing responsive UIs to implementing backend logic and database interactions. I'm currently focused on mastering scalable architectures and applying Data Structures & Algorithms in real-world problem-solving.
-</p>
-<p>
-  I'm a quick learner, proactive in taking ownership of projects, and continuously seek out new challenges to grow as a developer. I aim to contribute meaningfully in tech-driven teams and build reliable, maintainable software that creates impact.
-</p>
-<a href="OmKumarResume.pdf" download class="btn-outline" onclick="showThankYou()">Download Resume</a>
-<p id="thank-you-msg" class="thank-you-msg">
-  Thanks for your interest! My resume has been downloaded — please check your Downloads folder.
-</p>
+        <div class="hero-card reveal reveal-delay-1">
+          <img src="1732099542326.jpeg" alt="Portrait of Om Kumar" class="profile-img" />
+          <div class="hero-card-body">
+            <h2>What I bring</h2>
+            <ul class="feature-list">
+              <li>Strong foundation in Java, JDBC, Servlets, and SQL</li>
+              <li>Comfortable shipping end-to-end student and utility products</li>
+              <li>Focused on clean logic, secure flows, and responsive interfaces</li>
+            </ul>
+            <div class="hero-socials">
+              <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="mailto:omkumar201206@gmail.com">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="about">
+      <div class="container section-intro">
+        <p class="eyebrow">About</p>
+        <h2>Turning classroom fundamentals into practical software.</h2>
+      </div>
 
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p>
+            My work is centered around backend-heavy web development with Java. I like projects where authentication, database design, and business logic matter just as much as the interface.
+          </p>
+          <p>
+            Through hands-on projects, I've worked with Servlets, JSP, JDBC, Oracle SQL, HTML, CSS, and JavaScript to build complete applications that support real user flows instead of isolated demos.
+          </p>
+          <p>
+            Right now I'm sharpening my problem-solving skills, learning better software design practices, and looking for opportunities where I can contribute to dependable products while growing as an engineer.
+          </p>
+        </div>
 
+        <div class="about-highlights">
+          <article class="highlight-card reveal">
+            <h3>Backend-first mindset</h3>
+            <p>I care about session handling, data flow, validation, and maintainable logic.</p>
+          </article>
+          <article class="highlight-card reveal reveal-delay-1">
+            <h3>End-to-end ownership</h3>
+            <p>I enjoy taking a feature from UI planning to database integration and testing.</p>
+          </article>
+          <article class="highlight-card reveal reveal-delay-2">
+            <h3>Learning velocity</h3>
+            <p>I actively build, iterate, and improve based on what each project teaches me.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container section-intro">
+        <p class="eyebrow">Projects</p>
+        <h2>Work that shows both backend depth and product thinking.</h2>
+      </div>
+
+      <div class="container projects-grid">
+        <article class="project-card featured-project reveal">
+          <div class="card-header">
+            <div>
+              <p class="project-kicker">Featured project</p>
+              <h3>Online Examination Portal</h3>
+            </div>
+            <span class="tech-tags">Java • Servlets • JSP • JDBC • Oracle SQL • HTML • CSS • JavaScript</span>
+          </div>
+
+          <p class="project-summary">
+            A full-stack online examination system with separate student and admin experiences, automatic evaluation, timed assessments, and result tracking backed by Oracle SQL.
+          </p>
+
+          <div class="project-detail-grid">
+            <div>
+              <h4>What it solves</h4>
+              <p>Digitizes exam management so admins can create and control assessments while students can take secure timed tests and instantly review results.</p>
+            </div>
+            <div>
+              <h4>What I built</h4>
+              <p>Authentication flows, session-based access control, timed exam submission, question retrieval through JDBC, result generation, and student history views.</p>
+            </div>
+          </div>
+
+          <ul class="project-points">
+            <li>Implemented role-based access for admin and student modules</li>
+            <li>Built secure login, registration, password updates, and session management</li>
+            <li>Connected dynamic question loading and result processing with Oracle SQL</li>
+            <li>Created timed exam behavior with automatic submission on timeout</li>
+            <li>Designed dashboards for exam management and score history tracking</li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://github.com/omkumar0417" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+            <a href="#contact" class="btn-secondary">Request Walkthrough</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="card-header">
+            <div>
+              <p class="project-kicker">Utility project</p>
+              <h3>SRM Grade Calculator</h3>
+            </div>
+            <span class="tech-tags">HTML • CSS • JavaScript</span>
+          </div>
+
+          <p class="project-summary">
+            A responsive grade calculator that helps SRM students quickly estimate results using internal assessment inputs and instant client-side validation.
+          </p>
+
+          <ul class="project-points">
+            <li>Implemented grade calculation rules using JavaScript</li>
+            <li>Added validation to reduce invalid or incomplete input</li>
+            <li>Designed a responsive layout for mobile and desktop use</li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://srmgradecalculator.vercel.app" class="btn-outline" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://github.com/omkumar0417" class="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container section-intro">
+        <p class="eyebrow">Skills</p>
+        <h2>Tools I use to build structured, database-backed web apps.</h2>
+      </div>
+
+      <div class="container skills-icon-grid">
+        <div class="skill-icon reveal"><i class="fab fa-java" aria-hidden="true"></i><p>Core Java</p></div>
+        <div class="skill-icon reveal reveal-delay-1"><i class="fas fa-server" aria-hidden="true"></i><p>Servlets</p></div>
+        <div class="skill-icon reveal reveal-delay-2"><i class="fas fa-layer-group" aria-hidden="true"></i><p>JSP</p></div>
+        <div class="skill-icon reveal"><i class="fas fa-plug" aria-hidden="true"></i><p>JDBC</p></div>
+        <div class="skill-icon reveal reveal-delay-1"><i class="fas fa-database" aria-hidden="true"></i><p>SQL / Oracle</p></div>
+        <div class="skill-icon reveal reveal-delay-2"><i class="fas fa-code" aria-hidden="true"></i><p>DSA in C</p></div>
+        <div class="skill-icon reveal"><i class="fab fa-js" aria-hidden="true"></i><p>JavaScript</p></div>
+        <div class="skill-icon reveal reveal-delay-1"><i class="fab fa-html5" aria-hidden="true"></i><p>HTML &amp; CSS</p></div>
+        <div class="skill-icon reveal reveal-delay-2"><i class="fab fa-github" aria-hidden="true"></i><p>Git &amp; GitHub</p></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container section-intro">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s connect about internships, projects, or collaboration.</h2>
+      </div>
+
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p>
+            If you'd like to discuss my projects, request a walkthrough, or talk about an opportunity, send a message here or reach out directly through LinkedIn or email.
+          </p>
+          <div class="contact-direct">
+            <a href="mailto:omkumar201206@gmail.com">omkumar201206@gmail.com</a>
+            <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">linkedin.com/in/omkumar0417</a>
+          </div>
+        </div>
+
+        <div class="contact-form reveal reveal-delay-1">
+          <form id="contact-form" novalidate>
+            <label for="from_name">Your Name</label>
+            <input id="from_name" type="text" name="from_name" placeholder="Enter your name" required />
+
+            <label for="email">Your Email</label>
+            <input id="email" type="email" name="email" placeholder="Enter your email" required />
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity" required></textarea>
+
+            <button type="submit" id="contact-submit">Send Message</button>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="current-year"></span> Om Kumar. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:omkumar201206@gmail.com" aria-label="Send an email to Om Kumar">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
-  </section>
-<section class="section" id="skills">
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="skills-icon-grid">
-      <div class="skill-icon"><i class="fab fa-java"></i><p>Core Java</p></div>
-          <div class="skill-icon"><i class="fas fa-server"></i><p>Servlets</p></div>
-  <div class="skill-icon"><i class="fas fa-project-diagram"></i><p>JSP</p></div>
-        <div class="skill-icon"><i class="fas fa-plug"></i><p>JDBC</p></div>
-        <div class="skill-icon"><i class="fas fa-database"></i><p>SQL / Oracle</p></div>
-          <div class="skill-icon"><i class="fas fa-code"></i><p>DSA (C)</p></div>
-        <div class="skill-icon"><i class="fab fa-js"></i><p>JavaScript</p></div>
-  <div class="skill-icon"><i class="fab fa-html5"></i><p>HTML & CSS</p></div>
-  <div class="skill-icon"><i class="fab fa-github"></i><p>Git & GitHub</p></div>
-</div>
-  </div>
-</section>
+  </footer>
 
+  <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
 
-<!-- ===== Projects Section ===== -->
-<section class="section" id="projects">
-  <div class="container">
-    <h2>Projects</h2>
-
-    <!-- ===== Project 1: Online Examination Portal ===== -->
-    <div class="project-card">
-      <div class="card-header">
-        <h3>Online Examination Portal</h3>
-        <span class="tech-tags">
-          Java • Servlets • JSP • JDBC • Oracle SQL • HTML • CSS • JavaScript
-        </span>
-      </div>
-
-      <p>
-        A full-stack web-based examination system that enables students to take
-        secure online exams with automatic evaluation and result tracking,
-        along with an admin panel for exam and question management.
-      </p>
-
-      <ul class="project-points">
-        <li>Implemented secure login, registration, password change, and session management</li>
-        <li>Developed role-based access for Admin and Student modules</li>
-        <li>Admin panel to manage subjects, questions, exams, and student records</li>
-        <li>Dynamic question loading from Oracle database using JDBC</li>
-        <li>Built a timed exam interface with automatic submission on timeout</li>
-        <li>Instant result generation showing score, correct and incorrect answers</li>
-        <li>Student dashboard displaying previous exam results with date and score</li>
-      </ul>
-
-      <div class="project-links">
-        <!-- <span class="btn-outline" style="cursor: default;">Local Project (Tomcat)</span> -->
-        <!-- <a href="https://github.com/omkumar0417" class="btn-outline" target="_blank">GitHub</a> -->
-      </div>
-    </div>
-
-    <!-- ===== Project 2: SRM Grade Calculator ===== -->
-    <div class="project-card">
-      <div class="card-header">
-        <h3>SRM Grade Calculator</h3>
-        <span class="tech-tags">HTML • CSS • JavaScript</span>
-      </div>
-
-      <p>
-        A responsive web-based grade calculator designed for SRM students to
-        instantly compute grades based on internal assessment criteria.
-      </p>
-
-      <ul class="project-points">
-        <li>Implemented dynamic grade calculation logic using JavaScript</li>
-        <li>Client-side input validation to prevent incorrect entries</li>
-        <li>Clean and responsive UI for both mobile and desktop users</li>
-      </ul>
-
-      <div class="project-links">
-        <a href="https://srmgradecalculator.vercel.app" class="btn-outline" target="_blank">Live Demo</a>
-        <!-- <a href="https://github.com/omkumar0417" class="btn-outline" target="_blank">GitHub</a> -->
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- ===== Contact Section ===== -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <div class="contact-form">
-        <form id="contact-form">
-          <input type="text" name="from_name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
- <footer>
-  <p>© 2024 Om Kumar. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="mailto:omkumar201206@gmail.com">
-      <i class="fas fa-envelope"></i>
-    </a>
-  </div>
-</footer>
-
-
-  <!-- ===== Back to Top ===== -->
-  <button id="back-to-top">↑</button>
-
-  <!-- ===== Script ===== -->
-  <script>
-  window.scrollTo(0, 0); // Ensure page starts at top
-
-  // document.getElementById("contact-form").addEventListener("submit", function (e) {
-  //   e.preventDefault();
-  //   emailjs.sendForm('service_cqggltu', 'template_crrcrhc', this)
-  //     .then(() => {
-  //       alert("Message sent!");
-  //       this.reset();
-  //     })
-  //     .catch((error) => alert("Error: " + JSON.stringify(error)));
-  //   return false;
-  // });
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const form = this;
-  const btn = form.querySelector('button');
-  const originalText = btn.textContent;
-
-  btn.disabled = true;
-  btn.textContent = "Sending...";
-
-  emailjs.sendForm('service_cqggltu', 'template_crrcrhc', form)
-    .then(() => {
-      btn.textContent = "Message Sent!";
-      btn.style.backgroundColor = "#28a745"; // Optional green effect
-      form.reset();
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = originalText;
-        btn.style.backgroundColor = ""; // Reset to original
-      }, 3000);
-    })
-    .catch((error) => {
-      btn.textContent = "Failed. Try Again";
-      btn.style.backgroundColor = "#dc3545"; // Optional red effect
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = originalText;
-        btn.style.backgroundColor = ""; // Reset to original
-      }, 3000);
-    });
-
-  return false;
-});
-
-  const backToTop = document.getElementById("back-to-top");
-  window.addEventListener("scroll", () => {
-    backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-  });
-  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
-  
-</script>
-<script>
-  // Disable right-click
-  document.addEventListener('contextmenu', event => event.preventDefault());
-
-  // Disable F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S
-  document.addEventListener('keydown', function (e) {
-    if (e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-        (e.ctrlKey && (e.key === "U" || e.key === "S"))) {
-      e.preventDefault();
-    }
-  });
-</script>
-
-<script defer src="/_vercel/insights/script.js"></script>
-<script>
-  function showThankYou() {
-    const msg = document.getElementById("thank-you-msg");
-    msg.style.display = "block";
-    msg.classList.remove("thank-you-msg"); // reset if clicked again quickly
-    void msg.offsetWidth; // re-trigger animation
-    msg.classList.add("thank-you-msg");
-    gtag('event', 'resume_download', {
-  event_category: 'Resume',
-  event_label: 'OmKumarResume.pdf'
-});
-
-  }
-</script>
-
-
-
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="script.js"></script>
 </body>
 </html>
