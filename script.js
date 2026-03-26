@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealElements = Array.from(document.querySelectorAll('.reveal'));
   const scrollSections = Array.from(
     document.querySelectorAll('main section[id]')
-  ).filter((section) => ['about', 'projects', 'skills', 'contact'].includes(section.id));
+  ).filter((section) => ['home', 'about', 'projects', 'skills', 'contact'].includes(section.id));
 
   const setTheme = (theme) => {
     const isDark = theme === 'dark';
@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const savedTheme = localStorage.getItem('portfolio-theme');
-  const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setTheme(savedTheme || (preferredDark ? 'dark' : 'light'));
+  setTheme(savedTheme || 'dark');
 
   themeButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -45,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.toggle('is-active', link.getAttribute('href') === hash);
     });
   };
+
+  setActiveLink(window.location.hash || '#home');
 
   if (navToggle && mobileNav) {
     navToggle.addEventListener('click', () => {
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollSections.forEach((section) => sectionObserver.observe(section));
   } else {
     revealElements.forEach((element) => element.classList.add('is-visible'));
+    setActiveLink(window.location.hash || '#home');
   }
 
   const toggleBackToTop = () => {

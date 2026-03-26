@@ -63,7 +63,7 @@
   }
   </script>
 </head>
-<body>
+<body class="dark-mode">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header">
@@ -85,6 +85,7 @@
 
       <div class="nav-desktop">
         <ul class="nav-links">
+          <li><a href="#home" data-section-link>Home</a></li>
           <li><a href="#about" data-section-link>About</a></li>
           <li><a href="#projects" data-section-link>Projects</a></li>
           <li><a href="#skills" data-section-link>Skills</a></li>
@@ -95,6 +96,7 @@
     </nav>
 
     <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#home" data-section-link>Home</a>
       <a href="#about" data-section-link>About</a>
       <a href="#projects" data-section-link>Projects</a>
       <a href="#skills" data-section-link>Skills</a>
@@ -108,6 +110,14 @@
       <div class="container hero-grid">
         <div class="hero-copy hero-copy-animate">
           <p class="eyebrow">Backend-focused full stack developer</p>
+          <div class="mobile-identity">
+            <img src="1732099542326.jpeg" alt="Portrait of Om Kumar" />
+            <div>
+              <strong>Om Kumar</strong>
+              <span>Java backend and full-stack developer</span>
+            </div>
+          </div>
+          <p class="availability-pill">Open to backend and full-stack internship opportunities</p>
           <h1>Building reliable Java web apps that stay clear, fast, and maintainable.</h1>
           <p class="hero-text">
             I'm Om Kumar, a Computer Science student at SRM University with hands-on experience in Java, Servlets, JDBC, Oracle SQL, and JavaScript. I enjoy turning real requirements into complete products with thoughtful backend logic and clean frontend delivery.
@@ -130,6 +140,20 @@
               <span>Database-backed systems</span>
             </li>
           </ul>
+          <div class="proof-strip">
+            <div class="proof-item">
+              <span>Focus</span>
+              <strong>Backend logic first</strong>
+            </div>
+            <div class="proof-item">
+              <span>Delivery</span>
+              <strong>Full-stack student apps</strong>
+            </div>
+            <div class="proof-item">
+              <span>Goal</span>
+              <strong>Internship-ready growth</strong>
+            </div>
+          </div>
           <p id="thank-you-msg" class="thank-you-msg" aria-live="polite"></p>
         </div>
 
@@ -211,6 +235,17 @@
             A full-stack online examination system with separate student and admin experiences, automatic evaluation, timed assessments, and result tracking backed by Oracle SQL.
           </p>
 
+          <div class="project-meta">
+            <div>
+              <span>My role</span>
+              <strong>Designed backend flows and database-driven exam logic</strong>
+            </div>
+            <div>
+              <span>Why it stands out</span>
+              <strong>Handles timed submission, access control, and result history</strong>
+            </div>
+          </div>
+
           <div class="project-detail-grid">
             <div>
               <h4>What it solves</h4>
@@ -252,6 +287,17 @@
             A responsive grade calculator that helps SRM students quickly estimate results using internal assessment inputs and instant client-side validation.
           </p>
 
+          <div class="project-meta">
+            <div>
+              <span>My role</span>
+              <strong>Built the validation and grade logic end to end</strong>
+            </div>
+            <div>
+              <span>Why it stands out</span>
+              <strong>Fast, mobile-friendly, and easy to use in class</strong>
+            </div>
+          </div>
+
           <ul class="project-points">
             <li>Implemented grade calculation rules using JavaScript</li>
             <li>Added validation to reduce invalid or incomplete input</li>
@@ -270,6 +316,21 @@
       <div class="container section-intro">
         <p class="eyebrow">Skills</p>
         <h2>Tools I use to build structured, database-backed web apps.</h2>
+      </div>
+
+      <div class="container skill-groups">
+        <article class="skill-group reveal">
+          <h3>Backend</h3>
+          <p>Core Java, Servlets, JSP, JDBC, SQL / Oracle</p>
+        </article>
+        <article class="skill-group reveal reveal-delay-1">
+          <h3>Frontend</h3>
+          <p>HTML, CSS, JavaScript, responsive interfaces</p>
+        </article>
+        <article class="skill-group reveal reveal-delay-2">
+          <h3>Workflow</h3>
+          <p>Git, GitHub, problem-solving, DSA in C</p>
+        </article>
       </div>
 
       <div class="container skills-icon-grid">
@@ -293,6 +354,7 @@
 
       <div class="container contact-grid">
         <div class="contact-copy reveal">
+          <p class="contact-tag">Available for backend and full-stack internships, project collaborations, and walkthroughs.</p>
           <p>
             If you'd like to discuss my projects, request a walkthrough, or talk about an opportunity, send a message here or reach out directly through LinkedIn or email.
           </p>
