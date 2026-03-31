@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Online Examination Portal Preview</title>
+  <desc id="desc">A preview banner illustrating the Online Examination Portal project by Om Kumar.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#162c48"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+  <rect x="65" y="65" width="1070" height="500" rx="24" fill="#101927" stroke="#27476a"/>
+  <rect x="100" y="110" width="250" height="410" rx="18" fill="#0a1220" stroke="#203550"/>
+  <text x="130" y="160" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">ADMIN PANEL</text>
+  <rect x="130" y="190" width="190" height="28" rx="8" fill="#18324d"/>
+  <rect x="130" y="240" width="160" height="18" rx="6" fill="#26496d"/>
+  <rect x="130" y="275" width="160" height="18" rx="6" fill="#26496d"/>
+  <rect x="130" y="310" width="160" height="18" rx="6" fill="#26496d"/>
+  <rect x="390" y="110" width="710" height="90" rx="16" fill="#0b1523" stroke="#24405c"/>
+  <text x="430" y="160" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">Online Examination Portal</text>
+  <text x="430" y="188" fill="#b7c9dd" font-family="Segoe UI, Arial, sans-serif" font-size="20">Java • Servlets • JSP • JDBC • Oracle SQL</text>
+  <rect x="390" y="230" width="330" height="135" rx="18" fill="#122235" stroke="#2a4b70"/>
+  <text x="420" y="270" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Timed exam flow</text>
+  <text x="420" y="308" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Question loading from DB</text>
+  <text x="420" y="338" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Auto-submit on timeout</text>
+  <rect x="750" y="230" width="350" height="135" rx="18" fill="#122235" stroke="#2a4b70"/>
+  <text x="780" y="270" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Result tracking</text>
+  <text x="780" y="308" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Score history</text>
+  <text x="780" y="338" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Role-based dashboards</text>
+  <rect x="390" y="395" width="710" height="100" rx="18" fill="#0b1523" stroke="#24405c"/>
+  <text x="420" y="438" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Built to streamline assessment management with secure access and dependable backend logic.</text>
+</svg>

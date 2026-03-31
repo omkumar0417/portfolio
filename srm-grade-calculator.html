@@ -6,6 +6,8 @@
   <title>SRM Grade Calculator Case Study | Om Kumar Portfolio</title>
 
   <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="manifest" href="manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
@@ -20,28 +22,61 @@
 
   <meta property="og:title" content="SRM Grade Calculator | Om Kumar Portfolio" />
   <meta property="og:description" content="Responsive JavaScript utility for quick internal assessment and grade estimation." />
-  <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta property="og:image" content="https://omkumarportfolio.vercel.app/grade-calculator-preview.svg" />
+  <meta property="og:image:alt" content="Preview banner for the SRM Grade Calculator project" />
+  <meta property="og:image:type" content="image/svg+xml" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://omkumarportfolio.vercel.app/srm-grade-calculator.html" />
   <meta property="og:type" content="article" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SRM Grade Calculator | Om Kumar Portfolio" />
   <meta name="twitter:description" content="Frontend case study showing validation, usability, and responsive UI work by Om Kumar." />
-  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/grade-calculator-preview.svg" />
+  <meta name="twitter:image:alt" content="Preview banner for the SRM Grade Calculator project" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "SRM Grade Calculator",
-    "author": {
-      "@type": "Person",
-      "name": "Om Kumar",
-      "url": "https://omkumarportfolio.vercel.app/"
-    },
-    "description": "A responsive HTML, CSS, and JavaScript utility for calculating grade outcomes with instant validation.",
-    "url": "https://omkumarportfolio.vercel.app/srm-grade-calculator.html",
-    "keywords": ["JavaScript", "HTML", "CSS", "Grade Calculator", "SRM"]
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "SRM Grade Calculator",
+        "author": {
+          "@type": "Person",
+          "name": "Om Kumar",
+          "url": "https://omkumarportfolio.vercel.app/"
+        },
+        "description": "A responsive HTML, CSS, and JavaScript utility for calculating grade outcomes with instant validation.",
+        "url": "https://omkumarportfolio.vercel.app/srm-grade-calculator.html",
+        "image": "https://omkumarportfolio.vercel.app/grade-calculator-preview.svg",
+        "keywords": ["JavaScript", "HTML", "CSS", "Grade Calculator", "SRM"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://omkumarportfolio.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://omkumarportfolio.vercel.app/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SRM Grade Calculator",
+            "item": "https://omkumarportfolio.vercel.app/srm-grade-calculator.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -88,6 +123,14 @@
   </header>
 
   <main id="main-content">
+    <div class="container breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li aria-current="page">SRM Grade Calculator</li>
+      </ol>
+    </div>
+
     <section class="hero-section" id="home">
       <div class="container hero-grid">
         <div class="hero-copy hero-copy-animate">
@@ -213,6 +256,55 @@
             <li>Mobile-friendly layout and spacing</li>
             <li>Clear field labeling and input flow</li>
             <li>Validation messaging to reduce confusion</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container section-intro">
+        <p class="eyebrow">Project proof</p>
+        <h2>Tech stack, screenshot, challenges solved, and outcomes.</h2>
+      </div>
+
+      <div class="container proof-grid">
+        <article class="project-card reveal">
+          <h3>Tech stack</h3>
+          <div class="stack-list" aria-label="Tech stack used in the SRM Grade Calculator">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive Design</span>
+            <span>Validation Logic</span>
+          </div>
+          <p class="project-summary">This utility focuses on fast browser-side calculation, clear output messaging, and mobile-friendly interactions for everyday student use.</p>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <h3>Project screenshot</h3>
+          <figure class="showcase-shot">
+            <img src="grade-calculator-preview.svg" alt="Preview of the SRM Grade Calculator interface and validation workflow" width="1200" height="630" loading="lazy" decoding="async" />
+            <figcaption>Visual walkthrough of the calculator input flow, validation checks, and instant results panel.</figcaption>
+          </figure>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <h3>Challenges solved</h3>
+          <ul class="project-points">
+            <li>Made the calculation logic easy to understand and repeat quickly</li>
+            <li>Added validation to reduce misleading results from incomplete input</li>
+            <li>Kept the interface comfortable on both phones and laptops</li>
+            <li>Delivered a practical tool that solves a real student use case</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <h3>Outcomes and features</h3>
+          <ul class="project-points">
+            <li>Users can estimate grades instantly without any backend setup</li>
+            <li>The design stays clean, readable, and easy to reuse</li>
+            <li>The project highlights frontend logic and usability thinking</li>
+            <li>The live demo is easy to share for recruiter and portfolio reviews</li>
           </ul>
         </article>
       </div>

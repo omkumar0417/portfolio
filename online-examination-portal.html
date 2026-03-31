@@ -6,6 +6,8 @@
   <title>Online Examination Portal Case Study | Om Kumar Portfolio</title>
 
   <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="manifest" href="manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
@@ -20,28 +22,61 @@
 
   <meta property="og:title" content="Online Examination Portal | Om Kumar Portfolio" />
   <meta property="og:description" content="Java and Oracle SQL project featuring role-based access, timed exams, auto evaluation, and result history." />
-  <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta property="og:image" content="https://omkumarportfolio.vercel.app/exam-portal-preview.svg" />
+  <meta property="og:image:alt" content="Preview banner for the Online Examination Portal project" />
+  <meta property="og:image:type" content="image/svg+xml" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://omkumarportfolio.vercel.app/online-examination-portal.html" />
   <meta property="og:type" content="article" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Online Examination Portal | Om Kumar Portfolio" />
   <meta name="twitter:description" content="Case study of a Java full-stack exam management project by Om Kumar." />
-  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/exam-portal-preview.svg" />
+  <meta name="twitter:image:alt" content="Preview banner for the Online Examination Portal project" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Online Examination Portal",
-    "author": {
-      "@type": "Person",
-      "name": "Om Kumar",
-      "url": "https://omkumarportfolio.vercel.app/"
-    },
-    "description": "A Java, Servlets, JSP, JDBC, and Oracle SQL based examination portal with timed tests, secure access control, and result management.",
-    "url": "https://omkumarportfolio.vercel.app/online-examination-portal.html",
-    "keywords": ["Java", "Servlets", "JSP", "JDBC", "Oracle SQL", "Online Examination Portal"]
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Online Examination Portal",
+        "author": {
+          "@type": "Person",
+          "name": "Om Kumar",
+          "url": "https://omkumarportfolio.vercel.app/"
+        },
+        "description": "A Java, Servlets, JSP, JDBC, and Oracle SQL based examination portal with timed tests, secure access control, and result management.",
+        "url": "https://omkumarportfolio.vercel.app/online-examination-portal.html",
+        "image": "https://omkumarportfolio.vercel.app/exam-portal-preview.svg",
+        "keywords": ["Java", "Servlets", "JSP", "JDBC", "Oracle SQL", "Online Examination Portal"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://omkumarportfolio.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://omkumarportfolio.vercel.app/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Online Examination Portal",
+            "item": "https://omkumarportfolio.vercel.app/online-examination-portal.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -88,6 +123,14 @@
   </header>
 
   <main id="main-content">
+    <div class="container breadcrumb-nav" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li aria-current="page">Online Examination Portal</li>
+      </ol>
+    </div>
+
     <section class="hero-section" id="home">
       <div class="container hero-grid">
         <div class="hero-copy hero-copy-animate">
@@ -215,6 +258,58 @@
             <li>Automatic submission when time expires</li>
             <li>Result generation and score tracking</li>
             <li>History view for previous attempts</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container section-intro">
+        <p class="eyebrow">Project proof</p>
+        <h2>Tech stack, screenshot, challenges solved, and outcomes.</h2>
+      </div>
+
+      <div class="container proof-grid">
+        <article class="project-card reveal">
+          <h3>Tech stack</h3>
+          <div class="stack-list" aria-label="Tech stack used in the Online Examination Portal">
+            <span>Java</span>
+            <span>Servlets</span>
+            <span>JSP</span>
+            <span>JDBC</span>
+            <span>Oracle SQL</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <p class="project-summary">This build focuses on secure authentication, session-driven flows, timed exam behavior, and SQL-backed data persistence.</p>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <h3>Project screenshot</h3>
+          <figure class="showcase-shot">
+            <img src="exam-portal-preview.svg" alt="Preview of the Online Examination Portal dashboard, timed exam flow, and results panels" width="1200" height="630" loading="lazy" decoding="async" />
+            <figcaption>Visual walkthrough of the admin dashboard, timed assessment flow, and result tracking experience.</figcaption>
+          </figure>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2">
+          <h3>Challenges solved</h3>
+          <ul class="project-points">
+            <li>Separated admin and student permissions cleanly to protect restricted actions</li>
+            <li>Handled timed submission without breaking the exam experience</li>
+            <li>Connected dynamic questions, answers, and scores to Oracle SQL tables</li>
+            <li>Reduced manual checking through automatic result calculation and history storage</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <h3>Outcomes and features</h3>
+          <ul class="project-points">
+            <li>Admins can create and manage assessments faster</li>
+            <li>Students get a secure, structured test workflow</li>
+            <li>Scores and attempt history remain available for later review</li>
+            <li>The project demonstrates production-style Java web architecture</li>
           </ul>
         </article>
       </div>

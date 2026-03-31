@@ -94,16 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveLink(window.location.hash || '#home');
   }
 
-  const toggleBackToTop = () => {
-    backToTop.classList.toggle('is-visible', window.scrollY > 260);
-  };
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      backToTop.classList.toggle('is-visible', window.scrollY > 260);
+    };
 
-  toggleBackToTop();
-  window.addEventListener('scroll', toggleBackToTop);
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop);
 
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   if (resumeDownload && thankYouMessage) {
     resumeDownload.addEventListener('click', () => {

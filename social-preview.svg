@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Om Kumar Portfolio Social Preview</title>
+  <desc id="desc">A branded preview image for Om Kumar's Java and full-stack developer portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#10253d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#4db6ac"/>
+      <stop offset="100%" stop-color="#7aa9ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="120" fill="#4db6ac" opacity="0.12"/>
+  <circle cx="160" cy="520" r="180" fill="#7aa9ff" opacity="0.12"/>
+  <rect x="70" y="70" width="1060" height="490" rx="24" fill="#111a2a" stroke="#203550"/>
+  <text x="110" y="160" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2">OM KUMAR</text>
+  <text x="110" y="245" fill="#f8fbff" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800">Java &amp; Full-Stack Developer</text>
+  <text x="110" y="305" fill="#c9d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="28">Backend-focused portfolio with Java, Servlets, JDBC, SQL, and JavaScript projects.</text>
+  <rect x="110" y="360" width="260" height="54" rx="27" fill="url(#accent)"/>
+  <text x="145" y="395" fill="#071018" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">omkumarportfolio.vercel.app</text>
+  <rect x="760" y="180" width="280" height="250" rx="18" fill="#0d1523" stroke="#294766"/>
+  <text x="790" y="225" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700">Featured strengths</text>
+  <text x="790" y="275" fill="#c9d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Java web apps</text>
+  <text x="790" y="315" fill="#c9d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="22">• SQL-backed systems</text>
+  <text x="790" y="355" fill="#c9d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Clean product UI</text>
+  <text x="790" y="395" fill="#c9d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="22">• Recruiter-ready case studies</text>
+</svg>
