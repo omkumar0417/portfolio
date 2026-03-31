@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealElements = Array.from(document.querySelectorAll('.reveal'));
   const scrollSections = Array.from(
     document.querySelectorAll('main section[id]')
-  ).filter((section) => ['home', 'about', 'projects', 'skills', 'contact'].includes(section.id));
+  ).filter((section) => ['home', 'about', 'projects', 'skills', 'faq', 'contact'].includes(section.id));
 
   const setTheme = (theme) => {
     const isDark = theme === 'dark';

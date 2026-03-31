@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Om Kumar | Java Developer from SRM University</title>
+  <title>Om Kumar Portfolio | Java &amp; Full-Stack Developer</title>
 
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="1732099542326.jpeg" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-  <meta name="description" content="Om Kumar is a Java developer from SRM University building clean, reliable web applications with Java, Servlets, JDBC, SQL, HTML, CSS, and JavaScript." />
+  <meta name="description" content="Portfolio of Om Kumar, a Java and full-stack developer from SRM University building reliable web apps with Java, Servlets, JDBC, SQL, HTML, CSS, and JavaScript." />
   <meta name="author" content="Om Kumar" />
-  <meta name="keywords" content="Om Kumar, Om Kumar SRM, Java developer, backend developer, full stack developer, portfolio, Java, Servlets, JDBC, SQL" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="keywords" content="Om Kumar portfolio, Om Kumar, Java developer portfolio, full stack developer portfolio, backend developer, Servlets, JDBC, Oracle SQL, SRM University" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#0b1120" />
   <link rel="canonical" href="https://omkumarportfolio.vercel.app/" />
 
-  <meta property="og:title" content="Om Kumar | Java Developer from SRM University" />
-  <meta property="og:description" content="Explore Om Kumar's projects, skills, and contact details as a Java developer from SRM University." />
+  <meta property="og:title" content="Om Kumar Portfolio | Java &amp; Full-Stack Developer" />
+  <meta property="og:description" content="Explore Om Kumar's Java, full-stack, and SQL projects, skills, resume, and contact details." />
   <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
   <meta property="og:image:alt" content="Portrait of Om Kumar, Java developer portfolio" />
+  <meta property="og:image:width" content="640" />
+  <meta property="og:image:height" content="640" />
   <meta property="og:url" content="https://omkumarportfolio.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Om Kumar Portfolio" />
   <meta property="og:locale" content="en_IN" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Om Kumar | Java Developer from SRM University" />
-  <meta name="twitter:description" content="Java developer portfolio with projects, skills, and contact details." />
+  <meta name="twitter:title" content="Om Kumar Portfolio | Java &amp; Full-Stack Developer" />
+  <meta name="twitter:description" content="Java developer portfolio with projects, resume, skills, and contact details." />
   <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
   <meta name="twitter:image:alt" content="Portrait of Om Kumar, Java developer portfolio" />
 
@@ -50,12 +53,13 @@
     "@graph": [
       {
         "@type": "Person",
+        "@id": "https://omkumarportfolio.vercel.app/#person",
         "name": "Om Kumar",
         "alternateName": [
           "Om Kumar SRM",
           "Om Kumar Java developer"
         ],
-        "description": "Java developer from SRM University.",
+        "description": "Java and full-stack developer from SRM University building database-backed web apps.",
         "url": "https://omkumarportfolio.vercel.app/",
         "image": "https://omkumarportfolio.vercel.app/1732099542326.jpeg",
         "sameAs": [
@@ -63,6 +67,7 @@
           "https://github.com/omkumar0417"
         ],
         "jobTitle": "Java Developer",
+        "email": "mailto:omkumar201206@gmail.com",
         "alumniOf": {
           "@type": "CollegeOrUniversity",
           "name": "SRM University"
@@ -70,6 +75,7 @@
         "knowsAbout": [
           "Java",
           "Servlets",
+          "JSP",
           "JDBC",
           "Oracle SQL",
           "HTML",
@@ -79,9 +85,53 @@
       },
       {
         "@type": "WebSite",
+        "@id": "https://omkumarportfolio.vercel.app/#website",
         "name": "Om Kumar Portfolio",
         "url": "https://omkumarportfolio.vercel.app/",
-        "description": "Portfolio website of Om Kumar, a Java developer from SRM University."
+        "description": "Portfolio website of Om Kumar, a Java and full-stack developer from SRM University."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://omkumarportfolio.vercel.app/#webpage",
+        "url": "https://omkumarportfolio.vercel.app/",
+        "name": "Om Kumar Portfolio | Java & Full-Stack Developer",
+        "isPartOf": {
+          "@id": "https://omkumarportfolio.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://omkumarportfolio.vercel.app/#person"
+        },
+        "description": "Portfolio of Om Kumar featuring Java, SQL, and full-stack web development projects."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://omkumarportfolio.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What roles is Om Kumar looking for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Om Kumar is open to Java developer, backend developer, and full-stack developer roles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technologies does Om Kumar work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Om Kumar works with Java, Servlets, JSP, JDBC, Oracle SQL, HTML, CSS, and JavaScript."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What kind of projects are featured in the portfolio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The portfolio highlights database-backed web applications such as an online examination portal and the SRM Grade Calculator."
+            }
+          }
+        ]
       }
     ]
   }
@@ -113,6 +163,7 @@
           <li><a href="#about" data-section-link>About</a></li>
           <li><a href="#projects" data-section-link>Projects</a></li>
           <li><a href="#skills" data-section-link>Skills</a></li>
+          <li><a href="#faq" data-section-link>FAQ</a></li>
           <li><a href="#contact" data-section-link>Contact</a></li>
         </ul>
         <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
@@ -124,6 +175,7 @@
       <a href="#about" data-section-link>About</a>
       <a href="#projects" data-section-link>Projects</a>
       <a href="#skills" data-section-link>Skills</a>
+      <a href="#faq" data-section-link>FAQ</a>
       <a href="#contact" data-section-link>Contact</a>
       <button id="theme-toggle-mobile" type="button">Dark mode</button>
     </div>
@@ -142,9 +194,9 @@
             </div>
           </div>
           <p class="availability-pill">Open to Java and full-stack roles</p>
-          <h1>Building reliable Java web apps that stay clear, fast, and maintainable.</h1>
+          <h1>Om Kumar — Java developer building reliable, fast web apps.</h1>
           <p class="hero-text">
-            I'm Om Kumar, a Java developer with a Computer Science background from SRM University. I have hands-on experience in Java, Servlets, JDBC, Oracle SQL, and JavaScript, and I enjoy turning real requirements into complete products with thoughtful backend logic and clean frontend delivery.
+            I'm Om Kumar, a Java and full-stack developer with a Computer Science background from SRM University. I build web applications with Java, Servlets, JDBC, Oracle SQL, HTML, CSS, and JavaScript, with a strong focus on backend logic, clean interfaces, and dependable delivery.
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">View Projects</a>
@@ -333,7 +385,7 @@
           </ul>
 
           <div class="project-links">
-            <a href="https://github.com/omkumar0417" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+            <a href="https://github.com/omkumar0417?tab=repositories" class="btn-outline" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
             <a href="#contact" class="btn-secondary">Request Walkthrough</a>
           </div>
         </article>
@@ -373,7 +425,7 @@
 
           <div class="project-links">
             <a href="https://srmgradecalculator.vercel.app" class="btn-outline" target="_blank" rel="noopener noreferrer">Live Demo</a>
-            <a href="https://github.com/omkumar0417" class="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
           </div>
         </article>
       </div>
@@ -410,6 +462,28 @@
         <div class="skill-icon reveal"><i class="fab fa-js" aria-hidden="true"></i><p>JavaScript</p></div>
         <div class="skill-icon reveal reveal-delay-1"><i class="fab fa-html5" aria-hidden="true"></i><p>HTML &amp; CSS</p></div>
         <div class="skill-icon reveal reveal-delay-2"><i class="fab fa-github" aria-hidden="true"></i><p>Git &amp; GitHub</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container section-intro">
+        <p class="eyebrow">FAQ</p>
+        <h2>Quick answers for recruiters and collaborators.</h2>
+      </div>
+
+      <div class="container faq-grid">
+        <article class="faq-card reveal">
+          <h3>What roles am I currently looking for?</h3>
+          <p>I am open to Java developer, backend developer, and full-stack developer roles where I can work on APIs, SQL, business logic, and product-focused web experiences.</p>
+        </article>
+        <article class="faq-card reveal reveal-delay-1">
+          <h3>Which technologies do I work with most?</h3>
+          <p>My main stack includes Java, Servlets, JSP, JDBC, Oracle SQL, HTML, CSS, JavaScript, Git, and GitHub for building database-backed web applications.</p>
+        </article>
+        <article class="faq-card reveal reveal-delay-2">
+          <h3>What projects should you look at first?</h3>
+          <p>Start with the Online Examination Portal for backend depth and the SRM Grade Calculator for responsive frontend logic and quick product usability.</p>
+        </article>
       </div>
     </section>
 

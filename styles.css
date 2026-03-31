@@ -854,6 +854,29 @@ form button:hover::before {
   margin-top: 1.6rem;
 }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.faq-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 1.35rem;
+}
+
+.faq-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 0.55rem;
+}
+
+.faq-card p {
+  color: var(--muted);
+}
+
 .skills-icon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -1090,7 +1113,8 @@ form button:focus-visible,
   .hero-grid,
   .about-grid,
   .contact-grid,
-  .project-detail-grid {
+  .project-detail-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
