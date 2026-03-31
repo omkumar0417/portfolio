@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Examination Portal Case Study | Om Kumar Portfolio</title>
+
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <meta name="description" content="Detailed case study of Om Kumar's Online Examination Portal built with Java, Servlets, JSP, JDBC, and Oracle SQL for secure timed assessments and result tracking." />
+  <meta name="keywords" content="Online Examination Portal case study, Java servlet project, JDBC Oracle SQL project, Om Kumar portfolio, exam portal project" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0b1120" />
+  <link rel="canonical" href="https://omkumarportfolio.vercel.app/online-examination-portal.html" />
+
+  <meta property="og:title" content="Online Examination Portal | Om Kumar Portfolio" />
+  <meta property="og:description" content="Java and Oracle SQL project featuring role-based access, timed exams, auto evaluation, and result history." />
+  <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta property="og:url" content="https://omkumarportfolio.vercel.app/online-examination-portal.html" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Online Examination Portal | Om Kumar Portfolio" />
+  <meta name="twitter:description" content="Case study of a Java full-stack exam management project by Om Kumar." />
+  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Online Examination Portal",
+    "author": {
+      "@type": "Person",
+      "name": "Om Kumar",
+      "url": "https://omkumarportfolio.vercel.app/"
+    },
+    "description": "A Java, Servlets, JSP, JDBC, and Oracle SQL based examination portal with timed tests, secure access control, and result management.",
+    "url": "https://omkumarportfolio.vercel.app/online-examination-portal.html",
+    "keywords": ["Java", "Servlets", "JSP", "JDBC", "Oracle SQL", "Online Examination Portal"]
+  }
+  </script>
+</head>
+<body class="dark-mode">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a href="index.html#home" class="logo">Om Kumar</a>
+
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-desktop">
+        <ul class="nav-links">
+          <li><a href="#home" data-section-link>Overview</a></li>
+          <li><a href="#about" data-section-link>Problem</a></li>
+          <li><a href="#projects" data-section-link>Features</a></li>
+          <li><a href="#contact" data-section-link>Contact</a></li>
+          <li><a href="index.html#projects">Back to Portfolio</a></li>
+        </ul>
+        <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#home" data-section-link>Overview</a>
+      <a href="#about" data-section-link>Problem</a>
+      <a href="#projects" data-section-link>Features</a>
+      <a href="#contact" data-section-link>Contact</a>
+      <a href="index.html#projects">Back to Portfolio</a>
+      <button id="theme-toggle-mobile" type="button">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy hero-copy-animate">
+          <p class="eyebrow">Case study</p>
+          <p class="availability-pill">Java • Servlets • JSP • JDBC • Oracle SQL</p>
+          <h1>Online Examination Portal</h1>
+          <p class="hero-text">
+            This project is a database-backed examination platform designed to help admins manage assessments and let students take timed tests with secure access, automatic evaluation, and result history.
+          </p>
+          <div class="hero-actions">
+            <a href="index.html#contact" class="btn-primary">Request Walkthrough</a>
+            <a href="https://github.com/omkumar0417?tab=repositories" class="btn-outline" target="_blank" rel="noopener noreferrer">View GitHub</a>
+          </div>
+          <ul class="hero-metrics" aria-label="Project highlights">
+            <li><strong>Admin</strong><span>Exam and question management</span></li>
+            <li><strong>Timed</strong><span>Automatic submission flow</span></li>
+            <li><strong>SQL</strong><span>Persistent results and history</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-card reveal reveal-delay-1">
+          <div class="hero-card-body">
+            <h2>Project snapshot</h2>
+            <ul class="feature-list">
+              <li>Separate admin and student experiences with role-based access</li>
+              <li>Login, registration, profile updates, and session handling</li>
+              <li>Dynamic question loading through JDBC and Oracle SQL</li>
+              <li>Timed assessment flow with instant result generation</li>
+            </ul>
+            <p class="hero-card-note">
+              The goal was to move exam handling from a manual process to a structured web workflow that feels reliable for both administrators and users.
+            </p>
+          </div>
+          <div class="hero-card-footer">
+            <div>
+              <span>Primary focus</span>
+              <strong>Backend logic and secure user flow</strong>
+            </div>
+            <div>
+              <span>Outcome</span>
+              <strong>Production-style Java web application</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container section-intro">
+        <p class="eyebrow">Problem and solution</p>
+        <h2>Built to make exam management faster, safer, and easier to track.</h2>
+      </div>
+
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p>
+            Many classroom or training assessments still rely on manual coordination, disconnected spreadsheets, or systems that do not enforce timing and user permissions well.
+          </p>
+          <p>
+            I designed this portal to streamline the workflow: admins can create and manage tests, while students can log in securely, take exams within a fixed duration, and review results without confusion.
+          </p>
+          <p>
+            The project helped me strengthen my understanding of Java web architecture, session-based access control, and SQL-backed application design.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <article class="highlight-card reveal">
+            <h3>Access control</h3>
+            <p>Different user roles are separated so admin tools and student views remain secure and purpose-specific.</p>
+          </article>
+          <article class="highlight-card reveal reveal-delay-1">
+            <h3>Timed assessments</h3>
+            <p>Exams follow a controlled timed flow with automatic submission to reduce misuse and improve consistency.</p>
+          </article>
+          <article class="highlight-card reveal reveal-delay-2">
+            <h3>Result tracking</h3>
+            <p>Scores and exam history are stored in Oracle SQL so users can review past performance cleanly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container section-intro">
+        <p class="eyebrow">Key features</p>
+        <h2>What this Java exam portal includes.</h2>
+      </div>
+
+      <div class="container projects-grid">
+        <article class="project-card featured-project reveal">
+          <div class="card-header">
+            <div class="project-heading">
+              <span class="project-icon" aria-hidden="true"><i class="fas fa-user-shield"></i></span>
+              <div>
+                <p class="project-kicker">Core modules</p>
+                <h3>Authentication and role-based flow</h3>
+              </div>
+            </div>
+            <span class="tech-tags">Security • Sessions • User journeys</span>
+          </div>
+          <p class="project-summary">Students and admins enter different paths after login, making the platform easier to manage and safer to operate.</p>
+          <ul class="project-points">
+            <li>Secure login and registration flow</li>
+            <li>Password update and session tracking</li>
+            <li>Protected pages based on user role</li>
+            <li>Cleaner admin and student navigation</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="card-header">
+            <div class="project-heading">
+              <span class="project-icon" aria-hidden="true"><i class="fas fa-stopwatch"></i></span>
+              <div>
+                <p class="project-kicker">Exam engine</p>
+                <h3>Timed test and evaluation workflow</h3>
+              </div>
+            </div>
+            <span class="tech-tags">JDBC • Oracle SQL • Automation</span>
+          </div>
+          <p class="project-summary">Questions are loaded from the database and results are processed automatically to reduce manual work.</p>
+          <ul class="project-points">
+            <li>Dynamic question retrieval from the database</li>
+            <li>Automatic submission when time expires</li>
+            <li>Result generation and score tracking</li>
+            <li>History view for previous attempts</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container section-intro">
+        <p class="eyebrow">Next step</p>
+        <h2>Want the full walkthrough or source discussion?</h2>
+      </div>
+
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="contact-tag">Open to Java, backend, and full-stack roles.</p>
+          <p>
+            If you want to discuss the project structure, database flow, or backend logic, feel free to reach out through LinkedIn or email.
+          </p>
+          <div class="contact-direct">
+            <a href="mailto:omkumar201206@gmail.com">omkumar201206@gmail.com</a>
+            <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">linkedin.com/in/omkumar0417</a>
+          </div>
+        </div>
+
+        <div class="contact-copy reveal reveal-delay-1">
+          <p class="contact-tag">Related project</p>
+          <p>
+            Also explore the front-end utility project built for SRM students to estimate grades quickly and clearly.
+          </p>
+          <div class="hero-actions">
+            <a href="srm-grade-calculator.html" class="btn-primary">View Grade Calculator Page</a>
+            <a href="index.html#projects" class="btn-outline">Return to Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="current-year"></span> Om Kumar. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:omkumar201206@gmail.com" aria-label="Send an email to Om Kumar">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script defer src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRM Grade Calculator Case Study | Om Kumar Portfolio</title>
+
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <meta name="description" content="Case study of the SRM Grade Calculator by Om Kumar, a responsive JavaScript web app for quick grade estimation with validation and mobile-friendly design." />
+  <meta name="keywords" content="SRM Grade Calculator, JavaScript grade calculator project, Om Kumar portfolio, frontend utility project" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0b1120" />
+  <link rel="canonical" href="https://omkumarportfolio.vercel.app/srm-grade-calculator.html" />
+
+  <meta property="og:title" content="SRM Grade Calculator | Om Kumar Portfolio" />
+  <meta property="og:description" content="Responsive JavaScript utility for quick internal assessment and grade estimation." />
+  <meta property="og:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+  <meta property="og:url" content="https://omkumarportfolio.vercel.app/srm-grade-calculator.html" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SRM Grade Calculator | Om Kumar Portfolio" />
+  <meta name="twitter:description" content="Frontend case study showing validation, usability, and responsive UI work by Om Kumar." />
+  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/1732099542326.jpeg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "SRM Grade Calculator",
+    "author": {
+      "@type": "Person",
+      "name": "Om Kumar",
+      "url": "https://omkumarportfolio.vercel.app/"
+    },
+    "description": "A responsive HTML, CSS, and JavaScript utility for calculating grade outcomes with instant validation.",
+    "url": "https://omkumarportfolio.vercel.app/srm-grade-calculator.html",
+    "keywords": ["JavaScript", "HTML", "CSS", "Grade Calculator", "SRM"]
+  }
+  </script>
+</head>
+<body class="dark-mode">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a href="index.html#home" class="logo">Om Kumar</a>
+
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-desktop">
+        <ul class="nav-links">
+          <li><a href="#home" data-section-link>Overview</a></li>
+          <li><a href="#about" data-section-link>Value</a></li>
+          <li><a href="#projects" data-section-link>Features</a></li>
+          <li><a href="#contact" data-section-link>Links</a></li>
+          <li><a href="index.html#projects">Back to Portfolio</a></li>
+        </ul>
+        <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#home" data-section-link>Overview</a>
+      <a href="#about" data-section-link>Value</a>
+      <a href="#projects" data-section-link>Features</a>
+      <a href="#contact" data-section-link>Links</a>
+      <a href="index.html#projects">Back to Portfolio</a>
+      <button id="theme-toggle-mobile" type="button">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy hero-copy-animate">
+          <p class="eyebrow">Project page</p>
+          <p class="availability-pill">HTML • CSS • JavaScript</p>
+          <h1>SRM Grade Calculator</h1>
+          <p class="hero-text">
+            The SRM Grade Calculator is a lightweight student utility that makes grade estimation quick and frustration-free with instant client-side validation, clean UI, and responsive layout behavior.
+          </p>
+          <div class="hero-actions">
+            <a href="https://srmgradecalculator.vercel.app" class="btn-primary" target="_blank" rel="noopener noreferrer">Open Live Demo</a>
+            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-outline" target="_blank" rel="noopener noreferrer">View Source Code</a>
+          </div>
+          <ul class="hero-metrics" aria-label="Project highlights">
+            <li><strong>Fast</strong><span>Instant client-side result logic</span></li>
+            <li><strong>Responsive</strong><span>Works smoothly across devices</span></li>
+            <li><strong>Practical</strong><span>Useful for real student workflows</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-card reveal reveal-delay-1">
+          <div class="hero-card-body">
+            <h2>Why it matters</h2>
+            <ul class="feature-list">
+              <li>Provides quick feedback without needing a complex setup</li>
+              <li>Reduces input mistakes using validation checks</li>
+              <li>Focuses on usability and speed for day-to-day use</li>
+              <li>Shows product thinking through simple, clear interaction design</li>
+            </ul>
+            <p class="hero-card-note">
+              This project demonstrates how a small frontend utility can still solve a real problem when the logic and interface are designed carefully.
+            </p>
+          </div>
+          <div class="hero-card-footer">
+            <div>
+              <span>Primary focus</span>
+              <strong>Frontend logic and UX clarity</strong>
+            </div>
+            <div>
+              <span>Outcome</span>
+              <strong>Fast, student-friendly web utility</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container section-intro">
+        <p class="eyebrow">Use case</p>
+        <h2>Designed to answer a simple question quickly: “What grade am I likely to get?”</h2>
+      </div>
+
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p>
+            Students often want a fast way to estimate outcomes based on internal marks and input combinations, but many tools feel clunky, unclear, or not mobile friendly.
+          </p>
+          <p>
+            I built this calculator to keep the experience immediate and easy to understand. The logic runs fully in the browser, so results appear quickly while the layout stays simple across screen sizes.
+          </p>
+          <p>
+            It is a smaller project than the exam portal, but it reflects careful thinking about validation, responsiveness, and user-first design.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <article class="highlight-card reveal">
+            <h3>Instant feedback</h3>
+            <p>Users can change inputs and immediately see the impact without extra page loads or complexity.</p>
+          </article>
+          <article class="highlight-card reveal reveal-delay-1">
+            <h3>Validation first</h3>
+            <p>Input checks help prevent incomplete or incorrect values from producing misleading results.</p>
+          </article>
+          <article class="highlight-card reveal reveal-delay-2">
+            <h3>Responsive design</h3>
+            <p>The layout remains easy to use on phones and laptops, which matters for everyday student use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container section-intro">
+        <p class="eyebrow">Feature breakdown</p>
+        <h2>What this grade calculator demonstrates.</h2>
+      </div>
+
+      <div class="container projects-grid">
+        <article class="project-card featured-project reveal">
+          <div class="card-header">
+            <div class="project-heading">
+              <span class="project-icon" aria-hidden="true"><i class="fas fa-bolt"></i></span>
+              <div>
+                <p class="project-kicker">Frontend logic</p>
+                <h3>Real-time calculation experience</h3>
+              </div>
+            </div>
+            <span class="tech-tags">JavaScript • Browser-side logic</span>
+          </div>
+          <p class="project-summary">The grade calculation runs instantly in the browser, helping users test different score combinations quickly.</p>
+          <ul class="project-points">
+            <li>Fast calculations without backend dependency</li>
+            <li>Clear output for quick decision-making</li>
+            <li>Simple interaction model for repeated use</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1">
+          <div class="card-header">
+            <div class="project-heading">
+              <span class="project-icon" aria-hidden="true"><i class="fas fa-mobile-screen-button"></i></span>
+              <div>
+                <p class="project-kicker">Usability</p>
+                <h3>Responsive and accessible layout</h3>
+              </div>
+            </div>
+            <span class="tech-tags">HTML • CSS • UX</span>
+          </div>
+          <p class="project-summary">The interface is built to stay readable and easy to tap on smaller screens, making it practical for students on the go.</p>
+          <ul class="project-points">
+            <li>Mobile-friendly layout and spacing</li>
+            <li>Clear field labeling and input flow</li>
+            <li>Validation messaging to reduce confusion</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container section-intro">
+        <p class="eyebrow">Explore more</p>
+        <h2>See the live app or jump back to the full portfolio.</h2>
+      </div>
+
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="contact-tag">Project links</p>
+          <div class="hero-actions">
+            <a href="https://srmgradecalculator.vercel.app" class="btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          </div>
+        </div>
+
+        <div class="contact-copy reveal reveal-delay-1">
+          <p class="contact-tag">Related backend project</p>
+          <p>
+            Looking for a deeper Java and SQL build? Visit the Online Examination Portal case study for backend-heavy work and database flow.
+          </p>
+          <div class="hero-actions">
+            <a href="online-examination-portal.html" class="btn-primary">View Exam Portal Page</a>
+            <a href="index.html#projects" class="btn-outline">Return to Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="current-year"></span> Om Kumar. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:omkumar201206@gmail.com" aria-label="Send an email to Om Kumar">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
