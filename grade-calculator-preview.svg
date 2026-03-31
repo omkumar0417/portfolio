@@ -1,27 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
   <title id="title">SRM Grade Calculator Preview</title>
-  <desc id="desc">A preview banner illustrating the SRM Grade Calculator project by Om Kumar.</desc>
+  <desc id="desc">A simple preview banner for the SRM Grade Calculator project.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#0b1120"/>
-      <stop offset="100%" stop-color="#1f3146"/>
+      <stop offset="0%" stop-color="#07111e"/>
+      <stop offset="100%" stop-color="#22384f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#4db6ac"/>
+      <stop offset="100%" stop-color="#7aa9ff"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
-  <rect x="70" y="70" width="1060" height="490" rx="24" fill="#111a2a" stroke="#27476a"/>
-  <text x="110" y="150" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">STUDENT TOOL</text>
-  <text x="110" y="220" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800">SRM Grade Calculator</text>
-  <text x="110" y="265" fill="#c9d5e6" font-family="Segoe UI, Arial, sans-serif" font-size="24">HTML • CSS • JavaScript • Responsive UI</text>
-  <rect x="110" y="320" width="420" height="170" rx="18" fill="#0b1523" stroke="#24405c"/>
-  <rect x="145" y="355" width="180" height="18" rx="6" fill="#355d88"/>
-  <rect x="145" y="392" width="240" height="18" rx="6" fill="#355d88"/>
-  <rect x="145" y="429" width="130" height="34" rx="10" fill="#4db6ac"/>
-  <text x="145" y="300" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Input + validation</text>
-  <rect x="590" y="180" width="430" height="240" rx="20" fill="#0d1523" stroke="#2a4b70"/>
-  <text x="625" y="225" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">What it shows</text>
-  <text x="625" y="270" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="20">• Instant browser-side results</text>
-  <text x="625" y="308" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="20">• Clear output and UX feedback</text>
-  <text x="625" y="346" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="20">• Mobile-friendly layout</text>
-  <rect x="590" y="445" width="220" height="48" rx="24" fill="#4db6ac"/>
-  <text x="632" y="476" fill="#071018" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Live demo ready</text>
+  <rect width="1200" height="630" rx="30" fill="url(#bg)"/>
+  <circle cx="1015" cy="120" r="82" fill="#7aa9ff" opacity="0.10"/>
+  <circle cx="960" cy="450" r="165" fill="#4db6ac" opacity="0.07"/>
+
+  <text x="100" y="138" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">PROJECT PAGE</text>
+  <text x="100" y="220" fill="#f8fbff" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="800">SRM Grade Calculator</text>
+  <text x="100" y="346" fill="#cfd9e8" font-family="Segoe UI, Arial, sans-serif" font-size="24">
+    <tspan x="100" dy="0">Responsive HTML, CSS, and JavaScript tool</tspan>
+    <tspan x="100" dy="34">for quick grade estimation.</tspan>
+  </text>
+  <text x="100" y="454" fill="#dce7f4" font-family="Segoe UI, Arial, sans-serif" font-size="22">Fast results • Validation • Mobile friendly</text>
+
+  <circle cx="930" cy="300" r="126" fill="url(#accent)" opacity="0.16"/>
+  <circle cx="930" cy="300" r="98" fill="none" stroke="#79aaff" stroke-width="2"/>
+  <text x="930" y="290" text-anchor="middle" fill="#f8fbff" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="800">A+</text>
+  <text x="930" y="330" text-anchor="middle" fill="#dce7f4" font-family="Segoe UI, Arial, sans-serif" font-size="18">quick estimate</text>
 </svg>

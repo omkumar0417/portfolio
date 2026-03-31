@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
   <title id="title">Online Examination Portal Preview</title>
-  <desc id="desc">A preview banner illustrating the Online Examination Portal project by Om Kumar.</desc>
+  <desc id="desc">A simple preview banner for the Online Examination Portal project.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#0b1120"/>
-      <stop offset="100%" stop-color="#162c48"/>
+      <stop offset="0%" stop-color="#07111e"/>
+      <stop offset="100%" stop-color="#163854"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#4db6ac"/>
+      <stop offset="100%" stop-color="#7aa9ff"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
-  <rect x="65" y="65" width="1070" height="500" rx="24" fill="#101927" stroke="#27476a"/>
-  <rect x="100" y="110" width="250" height="410" rx="18" fill="#0a1220" stroke="#203550"/>
-  <text x="130" y="160" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">ADMIN PANEL</text>
-  <rect x="130" y="190" width="190" height="28" rx="8" fill="#18324d"/>
-  <rect x="130" y="240" width="160" height="18" rx="6" fill="#26496d"/>
-  <rect x="130" y="275" width="160" height="18" rx="6" fill="#26496d"/>
-  <rect x="130" y="310" width="160" height="18" rx="6" fill="#26496d"/>
-  <rect x="390" y="110" width="710" height="90" rx="16" fill="#0b1523" stroke="#24405c"/>
-  <text x="430" y="160" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">Online Examination Portal</text>
-  <text x="430" y="188" fill="#b7c9dd" font-family="Segoe UI, Arial, sans-serif" font-size="20">Java • Servlets • JSP • JDBC • Oracle SQL</text>
-  <rect x="390" y="230" width="330" height="135" rx="18" fill="#122235" stroke="#2a4b70"/>
-  <text x="420" y="270" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Timed exam flow</text>
-  <text x="420" y="308" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Question loading from DB</text>
-  <text x="420" y="338" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Auto-submit on timeout</text>
-  <rect x="750" y="230" width="350" height="135" rx="18" fill="#122235" stroke="#2a4b70"/>
-  <text x="780" y="270" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Result tracking</text>
-  <text x="780" y="308" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Score history</text>
-  <text x="780" y="338" fill="#d7e2ef" font-family="Segoe UI, Arial, sans-serif" font-size="18">• Role-based dashboards</text>
-  <rect x="390" y="395" width="710" height="100" rx="18" fill="#0b1523" stroke="#24405c"/>
-  <text x="420" y="438" fill="#eef6ff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Built to streamline assessment management with secure access and dependable backend logic.</text>
+  <rect width="1200" height="630" rx="30" fill="url(#bg)"/>
+  <circle cx="1015" cy="130" r="86" fill="#4db6ac" opacity="0.10"/>
+  <circle cx="960" cy="445" r="165" fill="#7aa9ff" opacity="0.08"/>
+
+  <text x="100" y="138" fill="#4db6ac" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">CASE STUDY</text>
+  <text x="100" y="220" fill="#f8fbff" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="800">Online Examination</text>
+  <text x="100" y="276" fill="#f8fbff" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="800">Portal</text>
+  <text x="100" y="346" fill="#cfd9e8" font-family="Segoe UI, Arial, sans-serif" font-size="24">
+    <tspan x="100" dy="0">Secure exam flow with Java, Servlets, JSP,</tspan>
+    <tspan x="100" dy="34">JDBC, and Oracle SQL.</tspan>
+  </text>
+  <text x="100" y="454" fill="#dce7f4" font-family="Segoe UI, Arial, sans-serif" font-size="22">Timed exams • Role access • Result history</text>
+
+  <circle cx="930" cy="300" r="125" fill="url(#accent)" opacity="0.15"/>
+  <circle cx="930" cy="300" r="96" fill="none" stroke="#79aaff" stroke-width="2"/>
+  <text x="930" y="292" text-anchor="middle" fill="#f8fbff" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800">90m</text>
+  <text x="930" y="330" text-anchor="middle" fill="#dce7f4" font-family="Segoe UI, Arial, sans-serif" font-size="18">exam ready</text>
 </svg>
