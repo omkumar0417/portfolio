@@ -956,9 +956,11 @@ body:not(.dark-mode) .value { color: #9b5b00; }
 }
 
 /* Hero card footer (3 mini stats below terminal) */
-.hero-card-footer {  display: grid;
+.hero-card-footer {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .hero-card-footer > div {
@@ -2654,6 +2656,7 @@ body:not(.dark-mode) .contact-form textarea {
 }
 
 .ide-console-body {
+  height: 290px;
   background: #090d13;
   padding: 0.95rem 1.15rem;
   font-size: 0.74rem;
