@@ -2530,3 +2530,155 @@ body:not(.dark-mode) .contact-form textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* IDE RUN CONSOLE (TYPE B) CUSTOM STYLING */
+.ide-console-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background: #090c10;
+}
+
+.ide-console-head {
+  padding: 0.6rem 0.95rem;
+  background: #0d1117;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+
+.terminal-window-buttons {
+  display: flex;
+  gap: 6px;
+  margin-right: 1.25rem;
+}
+
+.win-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.win-close { background: #ff5f56; }
+.win-minimize { background: #ffbd2e; }
+.win-maximize { background: #27c93f; }
+
+.ide-console-title {
+  font-size: 0.76rem !important;
+  color: var(--text-secondary) !important;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.ide-header-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.ide-header-icons i {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.ide-header-icons i:hover {
+  color: var(--accent-soft);
+}
+
+.ide-console-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.95rem;
+  background: #161b22;
+  border-bottom: 1px solid var(--line);
+}
+
+.ide-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ide-control-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.76rem;
+  transition: background 0.2s ease;
+}
+
+.ide-control-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.run-btn i { color: #23c552; }
+.stop-btn i { color: #f84f31; }
+
+.ide-run-config {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin-left: 0.5rem;
+}
+
+.config-lbl {
+  color: var(--text-secondary);
+}
+
+.config-val {
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: #0d1117;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.config-val i {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+}
+
+.ide-console-body {
+  height: 260px;
+  background: #090d13;
+  padding: 0.95rem;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  overflow-y: auto;
+}
+
+.springboot-banner {
+  color: #23c552;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  line-height: 1.25;
+  margin: 0.5rem 0;
+  white-space: pre;
+  text-shadow: 0 0 8px rgba(35, 197, 82, 0.2);
+}
+
+/* Compilation logger syntax highlighting colors */
+.log-time { color: #7a8a9e; }
+.log-level { font-weight: bold; }
+.log-level.info { color: #35a2ff; }
+.log-pid { color: #8fa0b3; }
+.log-sep { color: #52637a; }
+.log-thread { color: #8fa0b3; }
+.log-class { color: #e8a846; }
+.log-msg { color: #b8c7d9; }
+

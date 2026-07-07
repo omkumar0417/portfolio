@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initReveal();
   initBackToTop();
-  initCopySummary();
   initContactForm();
   initFooterYear();
   initResumeMessage();
+  initTerminalCommand();
   initGithubShowcase();
   initCounters();
 
@@ -385,6 +385,22 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(() => {
         // Keep default HTML fallback content
       });
+  }
+
+  function initTerminalCommand() {
+    const typedRun = document.querySelector('.typed-run');
+    if (!typedRun) return;
+    const command = 'mvn spring-boot:run';
+    let index = 0;
+    
+    const typeChar = () => {
+      if (index < command.length) {
+        typedRun.textContent += command[index++];
+        setTimeout(typeChar, 80);
+      }
+    };
+    
+    setTimeout(typeChar, 500);
   }
 });
 
