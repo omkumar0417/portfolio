@@ -775,12 +775,13 @@ body:not(.dark-mode) .section-alt {
 
 /* Hero metrics */
 .hero-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
   margin-bottom: 2rem;
   padding: 0;
   list-style: none;
+  width: 100%;
 }
 
 .hero-metrics li {
@@ -799,7 +800,10 @@ body:not(.dark-mode) .section-alt {
 
 .hero-metrics span {
   color: var(--text-secondary);
-  font-size: 0.82rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* Proof strip */
@@ -952,37 +956,53 @@ body:not(.dark-mode) .value { color: #9b5b00; }
 }
 
 /* Hero card footer (3 mini stats below terminal) */
-.hero-card-footer {
-  display: grid;
+.hero-card-footer {  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
 }
 
 .hero-card-footer > div {
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.85rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: var(--bg-panel);
   backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-card-footer > div:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127, 140, 255, 0.28);
+  box-shadow: 0 4px 20px rgba(127, 140, 255, 0.08);
+}
+
+.hero-card-footer i {
+  font-size: 1.2rem;
+  color: var(--accent-soft);
+  flex-shrink: 0;
 }
 
 .hero-card-footer span {
   display: block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.1rem;
 }
 
 .hero-card-footer strong {
   display: block;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.25;
   color: var(--text-primary);
 }
+
 
 /* ============================================================
    ABOUT SECTION (REORGANIZED TO EQUAL HEIGHT CARDS GRID)
