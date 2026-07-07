@@ -89,8 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const phrases = [
       'Backend-focused developer for real-world web applications.',
-      'Java, Servlets, JDBC, Oracle SQL, HTML, CSS, and JavaScript.',
-      'Built for clean logic, secure flows, and recruiter-friendly delivery.'
+      'Java, Servlets, JDBC, Oracle SQL, HTML, CSS, and JavaScript.'
     ];
 
     let phraseIndex = 0;
