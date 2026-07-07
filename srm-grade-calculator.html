@@ -20,65 +20,184 @@
   <meta name="theme-color" content="#0b1120" />
   <link rel="canonical" href="https://omkumarportfolio.vercel.app/srm-grade-calculator.html" />
 
-  <meta property="og:title" content="SRM Grade Calculator | Om Kumar Portfolio" />
-  <meta property="og:description" content="Responsive JavaScript utility for quick internal assessment and grade estimation." />
-  <meta property="og:image" content="https://omkumarportfolio.vercel.app/grade-calculator-preview.svg" />
-  <meta property="og:image:alt" content="Preview banner for the SRM Grade Calculator project" />
-  <meta property="og:image:type" content="image/svg+xml" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://omkumarportfolio.vercel.app/srm-grade-calculator.html" />
-  <meta property="og:type" content="article" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SRM Grade Calculator | Om Kumar Portfolio" />
-  <meta name="twitter:description" content="Frontend case study showing validation, usability, and responsive UI work by Om Kumar." />
-  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/grade-calculator-preview.svg" />
-  <meta name="twitter:image:alt" content="Preview banner for the SRM Grade Calculator project" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CreativeWork",
-        "name": "SRM Grade Calculator",
-        "author": {
-          "@type": "Person",
-          "name": "Om Kumar",
-          "url": "https://omkumarportfolio.vercel.app/"
-        },
-        "description": "A responsive HTML, CSS, and JavaScript utility for calculating grade outcomes with instant validation.",
-        "url": "https://omkumarportfolio.vercel.app/srm-grade-calculator.html",
-        "image": "https://omkumarportfolio.vercel.app/grade-calculator-preview.svg",
-        "keywords": ["JavaScript", "HTML", "CSS", "Grade Calculator", "SRM"]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://omkumarportfolio.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Projects",
-            "item": "https://omkumarportfolio.vercel.app/#projects"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "SRM Grade Calculator",
-            "item": "https://omkumarportfolio.vercel.app/srm-grade-calculator.html"
-          }
-        ]
+  <style>
+    /* Premium mockups & preview styles */
+    .mockup-container {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .desktop-mockup {
+      background: #1e293b;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .desktop-header {
+      background: #0f172a;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    
+    .dot-btn {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+    
+    .mockup-address {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      padding: 0.2rem 1rem;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      flex-grow: 1;
+      max-width: 400px;
+      font-family: monospace;
+    }
+    
+    .desktop-body {
+      padding: 1.25rem;
+      min-height: 280px;
+      background: #090d16;
+    }
+    
+    .calc-preview-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+    }
+    
+    .calc-form-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .form-row-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    
+    .input-preview {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--text-primary);
+    }
+    
+    .result-panel-preview {
+      background: rgba(127, 140, 255, 0.06);
+      border: 1px solid rgba(127, 140, 255, 0.2);
+      border-radius: 6px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .gpa-val-preview {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent-soft);
+      font-family: var(--font-display);
+    }
+    
+    .mobile-mockup {
+      background: #1e293b;
+      border: 6px solid #334155;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 9 / 18;
+      box-shadow: var(--shadow-lg);
+      max-width: 230px;
+      margin: 0 auto;
+    }
+    
+    .mobile-header-bar {
+      height: 24px;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .mobile-camera {
+      width: 44px;
+      height: 6px;
+      border-radius: 99px;
+      background: #1e293b;
+    }
+    
+    .mobile-body {
+      padding: 1rem;
+      background: #090d16;
+      height: calc(100% - 24px);
+      font-size: 0.74rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .specs-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--bg-panel);
+    }
+    
+    .specs-card h3 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .specs-card h3 i {
+      color: var(--accent-soft);
+    }
+    
+    .specs-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .mockup-container {
+        grid-template-columns: 1fr;
       }
-    ]
-  }
-  </script>
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="dark-mode">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -102,237 +221,239 @@
 
       <div class="nav-desktop">
         <ul class="nav-links">
-          <li><a href="#home" data-section-link>Overview</a></li>
-          <li><a href="#about" data-section-link>Value</a></li>
-          <li><a href="#projects" data-section-link>Features</a></li>
-          <li><a href="#contact" data-section-link>Links</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#logic">Calculation Logic</a></li>
+          <li><a href="#validation">Validation</a></li>
+          <li><a href="#preview">Visual Previews</a></li>
           <li><a href="index.html#projects">Back to Portfolio</a></li>
         </ul>
-        <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
       </div>
     </nav>
-
-    <div class="mobile-nav" id="mobile-nav" hidden>
-      <a href="#home" data-section-link>Overview</a>
-      <a href="#about" data-section-link>Value</a>
-      <a href="#projects" data-section-link>Features</a>
-      <a href="#contact" data-section-link>Links</a>
-      <a href="index.html#projects">Back to Portfolio</a>
-      <button id="theme-toggle-mobile" type="button">Dark mode</button>
-    </div>
   </header>
 
   <main id="main-content">
-    <div class="container breadcrumb-nav" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li aria-current="page">SRM Grade Calculator</li>
+    <div class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top: 100px;">
+      <ol class="breadcrumb-list" style="display: flex; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); list-style: none; padding: 0; margin-bottom: 2rem;">
+        <li><a href="index.html#home" style="color: var(--accent);">Home</a> / </li>
+        <li><a href="index.html#projects" style="color: var(--accent);">Projects</a> / </li>
+        <li aria-current="page" style="color: var(--text-primary);">SRM Grade Calculator</li>
       </ol>
     </div>
 
-    <section class="hero-section" id="home">
+    <!-- HERO SNAPSHOT -->
+    <section class="hero-section" id="overview" style="padding-top: 0;">
       <div class="container hero-grid">
         <div class="hero-copy hero-copy-animate">
-          <p class="eyebrow">Project page</p>
-          <p class="availability-pill">HTML • CSS • JavaScript</p>
+          <p class="eyebrow">Project Case Study</p>
+          <p class="availability-pill">HTML5 • CSS3 • JavaScript (ES6)</p>
           <h1>SRM Grade Calculator</h1>
           <p class="hero-text">
-            The SRM Grade Calculator is a lightweight student utility that makes grade estimation quick and frustration-free with instant client-side validation, clean UI, and responsive layout behavior.
+            A fast, student-focused client-side utility built using vanilla JavaScript that helps college students predict semester letter grades and check GPAs in seconds.
           </p>
           <div class="hero-actions">
-            <a href="https://srmgradecalculator.vercel.app" class="btn-primary" target="_blank" rel="noopener noreferrer">Open Live Demo</a>
-            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-outline" target="_blank" rel="noopener noreferrer">View Source Code</a>
+            <a href="https://srmgradecalculator.vercel.app" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> Open Live Demo</a>
+            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source Code</a>
           </div>
           <ul class="hero-metrics" aria-label="Project highlights">
-            <li><strong>Fast</strong><span>Instant client-side result logic</span></li>
-            <li><strong>Responsive</strong><span>Works smoothly across devices</span></li>
-            <li><strong>Practical</strong><span>Useful for real student workflows</span></li>
+            <li><strong>Vanilla</strong><span>JavaScript Engine</span></li>
+            <li><strong>Instant</strong><span>GPA Prediction</span></li>
+            <li><strong>Responsive</strong><span>Mobile &amp; Desktop</span></li>
           </ul>
         </div>
 
-        <div class="hero-card reveal reveal-delay-1">
-          <div class="hero-card-body">
-            <h2>Why it matters</h2>
-            <ul class="feature-list">
-              <li>Provides quick feedback without needing a complex setup</li>
-              <li>Reduces input mistakes using validation checks</li>
-              <li>Focuses on usability and speed for day-to-day use</li>
-              <li>Shows product thinking through simple, clear interaction design</li>
+        <div class="hero-card reveal">
+          <div class="hero-card-body" style="padding: 1.75rem;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 0.85rem;">Project Parameters</h2>
+            <ul class="feature-list" style="display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+              <li><strong>Role:</strong> Front-End Developer (UI Design, Mathematical scripting)</li>
+              <li><strong>Frameworks:</strong> None (Vanilla Web API structure)</li>
+              <li><strong>Styling:</strong> CSS Custom Properties (CSS variables, responsive flex grids)</li>
+              <li><strong>Deployment:</strong> Vercel Platform</li>
+              <li><strong>Audience:</strong> 200+ active student views during grading periods</li>
             </ul>
-            <p class="hero-card-note">
-              This project demonstrates how a small frontend utility can still solve a real problem when the logic and interface are designed carefully.
-            </p>
-          </div>
-          <div class="hero-card-footer">
-            <div>
-              <span>Primary focus</span>
-              <strong>Frontend logic and UX clarity</strong>
-            </div>
-            <div>
-              <span>Outcome</span>
-              <strong>Fast, student-friendly web utility</strong>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container section-intro">
-        <p class="eyebrow">Use case</p>
-        <h2>Designed to answer a simple question quickly: “What grade am I likely to get?”</h2>
-      </div>
-
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p>
-            Students often want a fast way to estimate outcomes based on internal marks and input combinations, but many tools feel clunky, unclear, or not mobile friendly.
-          </p>
-          <p>
-            I built this calculator to keep the experience immediate and easy to understand. The logic runs fully in the browser, so results appear quickly while the layout stays simple across screen sizes.
-          </p>
-          <p>
-            It is a smaller project than the exam portal, but it reflects careful thinking about validation, responsiveness, and user-first design.
-          </p>
+    <!-- CORE VALUE -->
+    <section class="section section-alt">
+      <div class="container specs-grid">
+        <div class="specs-card reveal">
+          <h3><i class="fa-solid fa-circle-question"></i> The Problem</h3>
+          <p>SRM University grading rules combine multiple internal exams, class assessments, and end-semester scores. Students had to manually calculate formulas or use slow spreadsheets that are not formatted for mobile screens.</p>
         </div>
-
-        <div class="about-highlights">
-          <article class="highlight-card reveal">
-            <h3>Instant feedback</h3>
-            <p>Users can change inputs and immediately see the impact without extra page loads or complexity.</p>
-          </article>
-          <article class="highlight-card reveal reveal-delay-1">
-            <h3>Validation first</h3>
-            <p>Input checks help prevent incomplete or incorrect values from producing misleading results.</p>
-          </article>
-          <article class="highlight-card reveal reveal-delay-2">
-            <h3>Responsive design</h3>
-            <p>The layout remains easy to use on phones and laptops, which matters for everyday student use.</p>
-          </article>
+        <div class="specs-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-lightbulb"></i> The Solution</h3>
+          <p>Created a single-page responsive client app. By inputting current test scores, students immediately see expected letter grades (O, A+, A, B, etc.). Calculation runs fully in the browser thread, yielding sub-millisecond response times.</p>
+        </div>
+        <div class="specs-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Core Learnings</h3>
+          <p>Gained proficiency in client-side input validations, managing dynamic DOM elements, fluid responsive styles without heavy frameworks, and structured mathematical routing rules in JavaScript.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="projects">
+    <!-- DYNAMIC CALCULATION & VALIDATION LOGIC -->
+    <section class="section" id="logic">
       <div class="container section-intro">
-        <p class="eyebrow">Feature breakdown</p>
-        <h2>What this grade calculator demonstrates.</h2>
+        <p class="eyebrow">Internal Mechanics</p>
+        <h2>Calculation logic and input validation specifications.</h2>
       </div>
+      <div class="container specs-grid">
+        <!-- Logic -->
+        <div class="specs-card reveal" id="validation">
+          <h3><i class="fa-solid fa-calculator"></i> Calculation Logic</h3>
+          <p>
+            Grades are mapped based on total weightages:
+            <br />• <strong>Internals:</strong> 50% total weightage (combining multiple assessment tests).
+            <br />• <strong>University Exams:</strong> 50% weightage.
+            <br />The script calculates the target score needed in final exams to achieve specific letter grades:
+            <br />• <strong>O Grade:</strong> Total ≥ 90
+            <br />• <strong>A+ Grade:</strong> Total ≥ 80
+            <br />• <strong>A Grade:</strong> Total ≥ 70
+          </p>
+        </div>
+        <!-- Validation -->
+        <div class="specs-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-check-double"></i> Input Validation</h3>
+          <p>
+            To prevent calculation errors, the application enforces:
+            <br />• Number-only filtering on keypress.
+            <br />• Maximum boundary limits matching assessment weights (e.g. Internals capped at 50).
+            <br />• Visual validation hints (red highlight for out-of-range, green check on valid input fields).
+            <br />• Non-blocking warnings.
+          </p>
+        </div>
+        <!-- Technologies -->
+        <div class="specs-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-code"></i> Technologies Used</h3>
+          <p>
+            • <strong>HTML5:</strong> Semantic forms, accessible field labels, viewport configuration.
+            <br />• <strong>CSS3:</strong> Variables for instant dark/light adjustments, grid elements, hover transformations.
+            <br />• <strong>JavaScript (ES6):</strong> Event handlers, map reduce algorithms, dynamic DOM interpolation.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <div class="container projects-grid">
-        <article class="project-card featured-project reveal">
-          <div class="card-header">
-            <div class="project-heading">
-              <span class="project-icon" aria-hidden="true"><i class="fas fa-bolt"></i></span>
-              <div>
-                <p class="project-kicker">Frontend logic</p>
-                <h3>Real-time calculation experience</h3>
+    <!-- INTERACTIVE MOCKUPS -->
+    <section class="section section-alt" id="preview">
+      <div class="container section-intro">
+        <p class="eyebrow">Layout Showcase</p>
+        <h2>Desktop and Mobile simulated preview panels.</h2>
+      </div>
+      <div class="container mockup-container">
+        <!-- Desktop view simulation -->
+        <div class="desktop-mockup reveal">
+          <div class="desktop-header">
+            <span class="dot-btn dot-red"></span>
+            <span class="dot-btn dot-yellow"></span>
+            <span class="dot-btn dot-green"></span>
+            <div class="mockup-address">srmgradecalculator.vercel.app</div>
+          </div>
+          <div class="desktop-body">
+            <div class="calc-preview-grid">
+              <div class="calc-form-preview">
+                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem;">Grade Predictor Core</div>
+                <div class="form-row-preview">
+                  <input type="number" class="input-preview" value="42" placeholder="Internals (max 50)" />
+                  <input type="number" class="input-preview" value="85" placeholder="End Sem (max 100)" />
+                </div>
+                <div class="form-row-preview">
+                  <input type="text" class="input-preview" value="CS1001" placeholder="Course Code" />
+                  <input type="number" class="input-preview" value="4" placeholder="Course Credits" />
+                </div>
+              </div>
+              <div class="result-panel-preview">
+                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary);">Predicted Grade</span>
+                <div class="gpa-val-preview">O</div>
+                <span style="font-size: 0.76rem; color: var(--text-primary);">Total Marks: 84.5%</span>
               </div>
             </div>
-            <span class="tech-tags">JavaScript • Browser-side logic</span>
           </div>
-          <p class="project-summary">The grade calculation runs instantly in the browser, helping users test different score combinations quickly.</p>
-          <ul class="project-points">
-            <li>Fast calculations without backend dependency</li>
-            <li>Clear output for quick decision-making</li>
-            <li>Simple interaction model for repeated use</li>
-          </ul>
-        </article>
+        </div>
 
-        <article class="project-card reveal reveal-delay-1">
-          <div class="card-header">
-            <div class="project-heading">
-              <span class="project-icon" aria-hidden="true"><i class="fas fa-mobile-screen-button"></i></span>
-              <div>
-                <p class="project-kicker">Usability</p>
-                <h3>Responsive and accessible layout</h3>
+        <!-- Mobile view simulation -->
+        <div class="mobile-mockup reveal reveal-delay-1">
+          <div class="mobile-header-bar">
+            <div class="mobile-camera"></div>
+          </div>
+          <div class="mobile-body">
+            <div style="text-align: center; border-bottom: 1px solid var(--line); padding-bottom: 0.3rem;">
+              <strong>SRM Grade Calc</strong>
+            </div>
+            <div class="preview-card" style="padding: 0.5rem;">
+              <span style="font-size:0.65rem; display:block; color:var(--text-secondary);">Internal Marks</span>
+              <input type="number" class="input-preview" style="width:100%; font-size:0.72rem; margin-top:0.2rem;" value="42" />
+            </div>
+            <div class="preview-card" style="padding: 0.5rem;">
+              <span style="font-size:0.65rem; display:block; color:var(--text-secondary);">End-Sem Marks</span>
+              <input type="number" class="input-preview" style="width:100%; font-size:0.72rem; margin-top:0.2rem;" value="85" />
+            </div>
+            <div class="result-panel-preview" style="padding: 0.5rem; margin-top: auto;">
+              <span style="font-size: 0.62rem;">Grade Result</span>
+              <div style="font-size: 1.5rem; font-weight: 800; color:var(--accent-soft);">O Grade</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGES AND LEARNINGS -->
+    <section class="section">
+      <div class="container section-intro">
+        <p class="eyebrow">Challenges Solved</p>
+        <h2>Technical hurdles faced and resolved.</h2>
+      </div>
+      <div class="container timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3>Edge-Case Validation Checks</h3>
+                <span class="timeline-company">Technical Challenge</span>
               </div>
             </div>
-            <span class="tech-tags">HTML • CSS • UX</span>
+            <div class="timeline-body">
+              <p>Handling empty inputs or letters copy-pasted into input fields. I created a sanitization regex filter attached to input listeners that parses pasting and filters out non-numeric entries instantly, resolving NaN calculator outputs.</p>
+            </div>
           </div>
-          <p class="project-summary">The interface is built to stay readable and easy to tap on smaller screens, making it practical for students on the go.</p>
-          <ul class="project-points">
-            <li>Mobile-friendly layout and spacing</li>
-            <li>Clear field labeling and input flow</li>
-            <li>Validation messaging to reduce confusion</li>
-          </ul>
-        </article>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3>CSS Grid Alignment Without Frameworks</h3>
+                <span class="timeline-company">Design Challenge</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p>Ensuring the calculator form fields align cleanly and do not break on low-end screen widths. I utilized flexible CSS grid templates with minmax controls, allowing inputs to wrap cleanly without layout shifts.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="proof">
-      <div class="container section-intro">
-        <p class="eyebrow">Project proof</p>
-        <h2>Tech stack, screenshot, challenges solved, and outcomes.</h2>
-      </div>
-
-      <div class="container proof-grid">
-        <article class="project-card reveal">
-          <h3>Tech stack</h3>
-          <div class="stack-list" aria-label="Tech stack used in the SRM Grade Calculator">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Responsive Design</span>
-            <span>Validation Logic</span>
-          </div>
-          <p class="project-summary">This utility focuses on fast browser-side calculation, clear output messaging, and mobile-friendly interactions for everyday student use.</p>
-        </article>
-
-        <article class="project-card reveal reveal-delay-1">
-          <h3>Project screenshot</h3>
-          <figure class="showcase-shot">
-            <img src="grade-calculator-preview.svg" alt="Preview of the SRM Grade Calculator interface and validation workflow" width="1200" height="630" loading="lazy" decoding="async" />
-            <figcaption>Visual walkthrough of the calculator input flow, validation checks, and instant results panel.</figcaption>
-          </figure>
-        </article>
-
-        <article class="project-card reveal reveal-delay-2">
-          <h3>Challenges solved</h3>
-          <ul class="project-points">
-            <li>Made the calculation logic easy to understand and repeat quickly</li>
-            <li>Added validation to reduce misleading results from incomplete input</li>
-            <li>Kept the interface comfortable on both phones and laptops</li>
-            <li>Delivered a practical tool that solves a real student use case</li>
-          </ul>
-        </article>
-
-        <article class="project-card reveal">
-          <h3>Outcomes and features</h3>
-          <ul class="project-points">
-            <li>Users can estimate grades instantly without any backend setup</li>
-            <li>The design stays clean, readable, and easy to reuse</li>
-            <li>The project highlights frontend logic and usability thinking</li>
-            <li>The live demo is easy to share for recruiter and portfolio reviews</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="contact">
-      <div class="container section-intro">
-        <p class="eyebrow">Explore more</p>
-        <h2>See the live app or jump back to the full portfolio.</h2>
-      </div>
-
+    <!-- FOOTER NAV -->
+    <section class="section section-alt">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
-          <p class="contact-tag">Project links</p>
-          <div class="hero-actions">
-            <a href="https://srmgradecalculator.vercel.app" class="btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
-            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          <p class="contact-tag">Explore live utility</p>
+          <p>The grade calculator is deployed and running on Vercel for student access.</p>
+          <div class="hero-actions" style="margin-top: 1.5rem;">
+            <a href="https://srmgradecalculator.vercel.app" class="btn-primary" target="_blank" rel="noopener noreferrer">Go to Live App</a>
+            <a href="index.html#projects" class="btn-outline">Back to Portfolio</a>
           </div>
         </div>
-
         <div class="contact-copy reveal reveal-delay-1">
-          <p class="contact-tag">Related backend project</p>
-          <p>
-            Looking for a deeper Java and SQL build? Visit the Online Examination Portal case study for backend-heavy work and database flow.
-          </p>
-          <div class="hero-actions">
-            <a href="online-examination-portal.html" class="btn-primary">View Exam Portal Page</a>
-            <a href="index.html#projects" class="btn-outline">Return to Portfolio</a>
+          <p class="contact-tag">Check database project</p>
+          <p>Explore the Online Examination Portal case study, featuring backend Servlets, JDBC, and Oracle SQL.</p>
+          <div class="hero-actions" style="margin-top: 1.5rem;">
+            <a href="online-examination-portal.html" class="btn-primary">View Exam Portal</a>
           </div>
         </div>
       </div>
@@ -340,18 +461,11 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container footer-content" style="display:flex; justify-content: space-between; font-size: 0.88rem; color:var(--text-secondary); border-top: 1px solid var(--line); padding-top: 2rem; margin-top: 2rem;">
       <p>© <span id="current-year"></span> Om Kumar. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:omkumar201206@gmail.com" aria-label="Send an email to Om Kumar">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
+      <div class="social-icons" style="display:flex; gap:1rem;">
+        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>

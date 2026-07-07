@@ -20,65 +20,203 @@
   <meta name="theme-color" content="#0b1120" />
   <link rel="canonical" href="https://omkumarportfolio.vercel.app/online-examination-portal.html" />
 
-  <meta property="og:title" content="Online Examination Portal | Om Kumar Portfolio" />
-  <meta property="og:description" content="Java and Oracle SQL project featuring role-based access, timed exams, auto evaluation, and result history." />
-  <meta property="og:image" content="https://omkumarportfolio.vercel.app/exam-portal-preview.svg" />
-  <meta property="og:image:alt" content="Preview banner for the Online Examination Portal project" />
-  <meta property="og:image:type" content="image/svg+xml" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://omkumarportfolio.vercel.app/online-examination-portal.html" />
-  <meta property="og:type" content="article" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Online Examination Portal | Om Kumar Portfolio" />
-  <meta name="twitter:description" content="Case study of a Java full-stack exam management project by Om Kumar." />
-  <meta name="twitter:image" content="https://omkumarportfolio.vercel.app/exam-portal-preview.svg" />
-  <meta name="twitter:image:alt" content="Preview banner for the Online Examination Portal project" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CreativeWork",
-        "name": "Online Examination Portal",
-        "author": {
-          "@type": "Person",
-          "name": "Om Kumar",
-          "url": "https://omkumarportfolio.vercel.app/"
-        },
-        "description": "A Java, Servlets, JSP, JDBC, and Oracle SQL based examination portal with timed tests, secure access control, and result management.",
-        "url": "https://omkumarportfolio.vercel.app/online-examination-portal.html",
-        "image": "https://omkumarportfolio.vercel.app/exam-portal-preview.svg",
-        "keywords": ["Java", "Servlets", "JSP", "JDBC", "Oracle SQL", "Online Examination Portal"]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://omkumarportfolio.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Projects",
-            "item": "https://omkumarportfolio.vercel.app/#projects"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Online Examination Portal",
-            "item": "https://omkumarportfolio.vercel.app/online-examination-portal.html"
-          }
-        ]
+  <style>
+    /* Case study page specific premium mockups & diagram styles */
+    .mockup-container {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .desktop-mockup {
+      background: #1e293b;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .desktop-header {
+      background: #0f172a;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    
+    .dot-btn {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+    
+    .mockup-address {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      padding: 0.2rem 1rem;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      flex-grow: 1;
+      max-width: 400px;
+      font-family: monospace;
+    }
+    
+    .desktop-body {
+      padding: 1.25rem;
+      min-height: 260px;
+      background: #090d16;
+    }
+    
+    .dashboard-preview {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 1rem;
+      height: 100%;
+    }
+    
+    .sidebar-preview {
+      border-right: 1px solid var(--line);
+      padding-right: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .sidebar-preview strong {
+      color: var(--text-primary);
+    }
+    
+    .main-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    
+    .preview-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0.75rem;
+      font-size: 0.82rem;
+    }
+    
+    .preview-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .mobile-mockup {
+      background: #1e293b;
+      border: 6px solid #334155;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 9 / 18;
+      box-shadow: var(--shadow-lg);
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    
+    .mobile-header-bar {
+      height: 24px;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .mobile-camera {
+      width: 44px;
+      height: 6px;
+      border-radius: 99px;
+      background: #1e293b;
+    }
+    
+    .mobile-body {
+      padding: 1rem;
+      background: #090d16;
+      height: calc(100% - 24px);
+      font-size: 0.74rem;
+    }
+    
+    /* Diagrams SVG Styling */
+    .diagram-panel {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--bg-panel);
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .diagram-panel h3 {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    
+    .diagram-svg {
+      width: 100%;
+      max-width: 780px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .specs-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--bg-panel);
+    }
+    
+    .specs-card h3 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .specs-card h3 i {
+      color: var(--accent-soft);
+    }
+    
+    .specs-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .mockup-container {
+        grid-template-columns: 1fr;
       }
-    ]
-  }
-  </script>
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="dark-mode">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -102,245 +240,408 @@
 
       <div class="nav-desktop">
         <ul class="nav-links">
-          <li><a href="#home" data-section-link>Overview</a></li>
-          <li><a href="#about" data-section-link>Problem</a></li>
-          <li><a href="#projects" data-section-link>Features</a></li>
-          <li><a href="#contact" data-section-link>Contact</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#visuals">Visual Diagrams</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#database">Database</a></li>
           <li><a href="index.html#projects">Back to Portfolio</a></li>
         </ul>
-        <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
       </div>
     </nav>
-
-    <div class="mobile-nav" id="mobile-nav" hidden>
-      <a href="#home" data-section-link>Overview</a>
-      <a href="#about" data-section-link>Problem</a>
-      <a href="#projects" data-section-link>Features</a>
-      <a href="#contact" data-section-link>Contact</a>
-      <a href="index.html#projects">Back to Portfolio</a>
-      <button id="theme-toggle-mobile" type="button">Dark mode</button>
-    </div>
   </header>
 
   <main id="main-content">
-    <div class="container breadcrumb-nav" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li aria-current="page">Online Examination Portal</li>
+    <div class="container breadcrumb-nav" aria-label="Breadcrumb" style="padding-top: 100px;">
+      <ol class="breadcrumb-list" style="display: flex; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); list-style: none; padding: 0; margin-bottom: 2rem;">
+        <li><a href="index.html#home" style="color: var(--accent);">Home</a> / </li>
+        <li><a href="index.html#projects" style="color: var(--accent);">Projects</a> / </li>
+        <li aria-current="page" style="color: var(--text-primary);">Online Examination Portal</li>
       </ol>
     </div>
 
-    <section class="hero-section" id="home">
+    <!-- HERO / SNAPSHOT -->
+    <section class="hero-section" id="overview" style="padding-top: 0;">
       <div class="container hero-grid">
         <div class="hero-copy hero-copy-animate">
-          <p class="eyebrow">Case study</p>
+          <p class="eyebrow">Case Study</p>
           <p class="availability-pill">Java • Servlets • JSP • JDBC • Oracle SQL</p>
           <h1>Online Examination Portal</h1>
           <p class="hero-text">
-            This project is a database-backed examination platform designed to help admins manage assessments and let students take timed tests with secure access, automatic evaluation, and result history.
+            A secure, database-backed enterprise evaluation engine that provides role-based portal dashboards, real-time assessment logic, automated time compliance, and grading.
           </p>
           <div class="hero-actions">
-            <a href="index.html#contact" class="btn-primary">Request Walkthrough</a>
-            <a href="https://github.com/omkumar0417?tab=repositories" class="btn-outline" target="_blank" rel="noopener noreferrer">View GitHub</a>
+            <a href="https://github.com/omkumar0417?tab=repositories" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository Code</a>
+            <a href="index.html#contact" class="btn-outline">Request Demo Walkthrough</a>
           </div>
           <ul class="hero-metrics" aria-label="Project highlights">
-            <li><strong>Admin</strong><span>Exam and question management</span></li>
-            <li><strong>Timed</strong><span>Automatic submission flow</span></li>
-            <li><strong>SQL</strong><span>Persistent results and history</span></li>
+            <li><strong>Admin</strong><span>Management Dashboard</span></li>
+            <li><strong>JDBC</strong><span>Oracle SQL Persistence</span></li>
+            <li><strong>Auto</strong><span>Evaluation &amp; Timer</span></li>
           </ul>
         </div>
 
-        <div class="hero-card reveal reveal-delay-1">
-          <div class="hero-card-body">
-            <h2>Project snapshot</h2>
-            <ul class="feature-list">
-              <li>Separate admin and student experiences with role-based access</li>
-              <li>Login, registration, profile updates, and session handling</li>
-              <li>Dynamic question loading through JDBC and Oracle SQL</li>
-              <li>Timed assessment flow with instant result generation</li>
+        <div class="hero-card reveal">
+          <div class="hero-card-body" style="padding: 1.75rem;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 0.85rem;">Project Parameters</h2>
+            <ul class="feature-list" style="display: flex; flex-direction: column; gap: 0.65rem; padding-left: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+              <li><strong>Role:</strong> Sole Developer (Designed schema, servlet handlers, JSP pages)</li>
+              <li><strong>Database:</strong> Oracle SQL Express Edition (Tables, constraints, primary key sequences)</li>
+              <li><strong>Stack:</strong> Java Standard Edition, Jakarta Servlet API, JavaServer Pages (JSP), JDBC driver</li>
+              <li><strong>Deployment:</strong> Apache Tomcat Server 10.1</li>
+              <li><strong>Timeline:</strong> 4-week structured development cycle</li>
             </ul>
-            <p class="hero-card-note">
-              The goal was to move exam handling from a manual process to a structured web workflow that feels reliable for both administrators and users.
-            </p>
-          </div>
-          <div class="hero-card-footer">
-            <div>
-              <span>Primary focus</span>
-              <strong>Backend logic and secure user flow</strong>
-            </div>
-            <div>
-              <span>Outcome</span>
-              <strong>Production-style Java web application</strong>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container section-intro">
-        <p class="eyebrow">Problem and solution</p>
-        <h2>Built to make exam management faster, safer, and easier to track.</h2>
-      </div>
-
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p>
-            Many classroom or training assessments still rely on manual coordination, disconnected spreadsheets, or systems that do not enforce timing and user permissions well.
-          </p>
-          <p>
-            I designed this portal to streamline the workflow: admins can create and manage tests, while students can log in securely, take exams within a fixed duration, and review results without confusion.
-          </p>
-          <p>
-            The project helped me strengthen my understanding of Java web architecture, session-based access control, and SQL-backed application design.
-          </p>
+    <!-- CORE DETAILS -->
+    <section class="section section-alt">
+      <div class="container specs-grid">
+        <div class="specs-card reveal">
+          <h3><i class="fa-solid fa-circle-question"></i> The Problem</h3>
+          <p>Traditional manual classroom examinations require tedious grading schedules, generate excessive physical logs, and lack secure timing restraints. Standard web tools fail to enforce access restriction, leading to student administrative overrides or coordinate mismatches.</p>
         </div>
-
-        <div class="about-highlights">
-          <article class="highlight-card reveal">
-            <h3>Access control</h3>
-            <p>Different user roles are separated so admin tools and student views remain secure and purpose-specific.</p>
-          </article>
-          <article class="highlight-card reveal reveal-delay-1">
-            <h3>Timed assessments</h3>
-            <p>Exams follow a controlled timed flow with automatic submission to reduce misuse and improve consistency.</p>
-          </article>
-          <article class="highlight-card reveal reveal-delay-2">
-            <h3>Result tracking</h3>
-            <p>Scores and exam history are stored in Oracle SQL so users can review past performance cleanly.</p>
-          </article>
+        <div class="specs-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-lightbulb"></i> The Solution</h3>
+          <p>Created a secure web portal featuring role isolation. Student view is locked once a timed assessment launches. Admin tools manage questions dynamically. Oracle database constraints maintain data validity across score histories.</p>
+        </div>
+        <div class="specs-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-graduation-cap"></i> What I Learned</h3>
+          <p>Mastered transaction isolation in JDBC, connection configurations, HTTP session filter blocks, servlet controller mapping configurations, CSS-responsive dashboard design, and timed auto-evaluations.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="projects">
+    <!-- SCREENSHOT MOCKUPS -->
+    <section class="section" id="features">
       <div class="container section-intro">
-        <p class="eyebrow">Key features</p>
-        <h2>What this Java exam portal includes.</h2>
+        <p class="eyebrow">Usability Mockups</p>
+        <h2>Interactive desktop and mobile view layouts.</h2>
       </div>
-
-      <div class="container projects-grid">
-        <article class="project-card featured-project reveal">
-          <div class="card-header">
-            <div class="project-heading">
-              <span class="project-icon" aria-hidden="true"><i class="fas fa-user-shield"></i></span>
-              <div>
-                <p class="project-kicker">Core modules</p>
-                <h3>Authentication and role-based flow</h3>
+      <div class="container mockup-container">
+        <!-- Desktop -->
+        <div class="desktop-mockup reveal">
+          <div class="desktop-header">
+            <span class="dot-btn dot-red"></span>
+            <span class="dot-btn dot-yellow"></span>
+            <span class="dot-btn dot-green"></span>
+            <div class="mockup-address">localhost:8080/exam-portal/student-dashboard</div>
+          </div>
+          <div class="desktop-body">
+            <div class="dashboard-preview">
+              <div class="sidebar-preview">
+                <strong>Portal Menu</strong>
+                <span>Home</span>
+                <span>Active Exams</span>
+                <span>My Results</span>
+                <span>Settings</span>
+                <span style="margin-top: auto; color: #ef4444;">Log Out</span>
+              </div>
+              <div class="main-preview">
+                <div class="preview-header-bar">
+                  <span style="font-weight: 700; font-size: 0.9rem;">Welcome, Om Kumar (Student)</span>
+                  <span class="cert-status">Timer: 45:00</span>
+                </div>
+                <div class="preview-card">
+                  <strong style="display:block; margin-bottom: 0.25rem;">Question 3 of 20:</strong>
+                  <p style="margin: 0 0 0.5rem 0;">Which of the following classes is NOT thread-safe in Java?</p>
+                  <label style="display:block; margin-bottom: 0.15rem;"><input type="radio" name="opt" checked> StringBuilder (Correct Option)</label>
+                  <label style="display:block; margin-bottom: 0.15rem;"><input type="radio" name="opt"> StringBuffer</label>
+                  <label style="display:block;"><input type="radio" name="opt"> Vector</label>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                  <button class="btn-outline" style="padding: 0.3rem 0.75rem; font-size: 0.78rem;" disabled>Previous</button>
+                  <button class="btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.78rem;">Save &amp; Next</button>
+                </div>
               </div>
             </div>
-            <span class="tech-tags">Security • Sessions • User journeys</span>
           </div>
-          <p class="project-summary">Students and admins enter different paths after login, making the platform easier to manage and safer to operate.</p>
-          <ul class="project-points">
-            <li>Secure login and registration flow</li>
-            <li>Password update and session tracking</li>
-            <li>Protected pages based on user role</li>
-            <li>Cleaner admin and student navigation</li>
-          </ul>
-        </article>
+        </div>
 
+        <!-- Mobile -->
+        <div class="mobile-mockup reveal reveal-delay-1">
+          <div class="mobile-header-bar">
+            <div class="mobile-camera"></div>
+          </div>
+          <div class="mobile-body">
+            <div style="display:flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 0.3rem; margin-bottom: 0.5rem;">
+              <strong>Exam Admin</strong>
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="preview-card" style="padding: 0.5rem; font-size: 0.7rem; margin-bottom: 0.5rem;">
+              <strong>Question Registry:</strong>
+              <div style="color:var(--text-secondary); margin-top: 0.2rem;">Total DB Rows: 84 questions</div>
+            </div>
+            <button class="btn-primary" style="width: 100%; padding: 0.4rem; font-size: 0.72rem; margin-bottom: 0.3rem;">+ Add New Question</button>
+            <button class="btn-outline" style="width: 100%; padding: 0.4rem; font-size: 0.72rem;">View Score History</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FEATURES LIST -->
+    <section class="section section-alt">
+      <div class="container section-intro">
+        <p class="eyebrow">Functional Modules</p>
+        <h2>Everything built into the Examination Engine.</h2>
+      </div>
+      <div class="container grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <article class="project-card reveal">
+          <h3>Role-Based Authentication</h3>
+          <p class="project-summary">Admins and students enter secure paths via servlet Filters that parse HTTP request cookies, checking specific credentials against tables.</p>
+        </article>
         <article class="project-card reveal reveal-delay-1">
-          <div class="card-header">
-            <div class="project-heading">
-              <span class="project-icon" aria-hidden="true"><i class="fas fa-stopwatch"></i></span>
-              <div>
-                <p class="project-kicker">Exam engine</p>
-                <h3>Timed test and evaluation workflow</h3>
+          <h3>Admin Dashboard</h3>
+          <p class="project-summary">Allows administrators to perform CRUD operations on questions, categorize test profiles, and check total test score statistics.</p>
+        </article>
+        <article class="project-card reveal">
+          <h3>Student Assessment Terminal</h3>
+          <p class="project-summary">Students can enroll, read exam parameters, select options, and update profile credentials cleanly on custom panels.</p>
+        </article>
+        <article class="project-card reveal reveal-delay-1">
+          <h3>Timed Automatic Submission</h3>
+          <p class="project-summary">Browser timers sync with Tomcat session timeouts. If time runs out, a JavaScript callback executes a servlet submit action, recording the answers automatically.</p>
+        </article>
+        <article class="project-card reveal">
+          <h3>JDBC &amp; Oracle SQL Connection</h3>
+          <p class="project-summary">Uses Oracle JDBC driver to compile SQL queries, retrieve result sets, process prepared updates, and execute atomic transactions securely.</p>
+        </article>
+        <article class="project-card reveal reveal-delay-1">
+          <h3>Automatic Evaluation</h3>
+          <p class="project-summary">A backend grading engine cross-references selected student choice indices with database answer indices, calculating margins instantly upon submission.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DIAGRAMS -->
+    <section class="section" id="visuals">
+      <div class="container section-intro">
+        <p class="eyebrow">Visual Architecture</p>
+        <h2>Technical blueprints of the application stack.</h2>
+      </div>
+
+      <!-- System Architecture -->
+      <div class="container diagram-panel reveal" id="architecture">
+        <h3>System Architecture Diagram</h3>
+        <p style="color:var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Detailed flow showing Client Web Request, Servlet Routing Controllers, JSP View Templating, JDBC database operations, and Oracle SQL storage.
+        </p>
+        <svg class="diagram-svg" viewBox="0 0 800 300">
+          <!-- Client -->
+          <rect x="20" y="80" width="120" height="140" rx="10" fill="#1e293b" stroke="#7f8cff" stroke-width="2" />
+          <text x="80" y="140" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Client / UI</text>
+          <text x="80" y="165" text-anchor="middle" fill="#aab9c9" font-size="11">HTML/CSS/JS</text>
+          <text x="80" y="180" text-anchor="middle" fill="#aab9c9" font-size="11">Browser Session</text>
+
+          <!-- HTTP Request/Response Arrows -->
+          <line x1="140" y1="130" x2="220" y2="130" stroke="#32d3c8" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="180" y="120" text-anchor="middle" fill="#32d3c8" font-size="10">HTTPS Request</text>
+          <line x1="220" y1="170" x2="140" y2="170" stroke="#7f8cff" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="180" y="190" text-anchor="middle" fill="#7f8cff" font-size="10">JSP View Render</text>
+
+          <!-- Web Container / Tomcat -->
+          <rect x="220" y="40" width="340" height="220" rx="10" fill="#0f172a" stroke="#a2a8ff" stroke-width="2" />
+          <text x="390" y="65" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Tomcat Web Container</text>
+          
+          <!-- Controller Servlet -->
+          <rect x="240" y="100" width="120" height="120" rx="8" fill="#1e293b" stroke="#7f8cff" stroke-width="2" />
+          <text x="300" y="140" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Java Servlets</text>
+          <text x="300" y="160" text-anchor="middle" fill="#aab9c9" font-size="10">Controller Routing</text>
+          <text x="300" y="175" text-anchor="middle" fill="#aab9c9" font-size="10">Session Filters</text>
+
+          <!-- Internal Flow servlet -> JSP -->
+          <path d="M 360,130 C 390,110 390,110 420,130" fill="none" stroke="#32d3c8" stroke-width="1.5" marker-end="url(#arrow)" />
+          <text x="390" y="115" text-anchor="middle" fill="#32d3c8" font-size="9">Redirect</text>
+          <path d="M 420,170 C 390,190 390,190 360,170" fill="none" stroke="#7f8cff" stroke-width="1.5" marker-end="url(#arrow)" />
+          <text x="390" y="198" text-anchor="middle" fill="#7f8cff" font-size="9">Get Data</text>
+
+          <!-- JSP Views -->
+          <rect x="420" y="100" width="120" height="120" rx="8" fill="#1e293b" stroke="#7f8cff" stroke-width="2" />
+          <text x="480" y="140" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">JSP Templates</text>
+          <text x="480" y="160" text-anchor="middle" fill="#aab9c9" font-size="10">View Compiler</text>
+          <text x="480" y="175" text-anchor="middle" fill="#aab9c9" font-size="10">JSTL Tags</text>
+
+          <!-- JDBC / Connection -->
+          <line x1="300" y1="220" x2="300" y2="280" stroke="#32d3c8" stroke-width="2" />
+          <line x1="300" y1="280" x2="620" y2="280" stroke="#32d3c8" stroke-width="2" />
+          <line x1="620" y1="280" x2="620" y2="220" stroke="#32d3c8" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="460" y="275" text-anchor="middle" fill="#32d3c8" font-size="10">JDBC API Connection Pool</text>
+
+          <!-- Oracle SQL Database -->
+          <rect x="580" y="80" width="160" height="140" rx="10" fill="#1e293b" stroke="#32d3c8" stroke-width="2" />
+          <text x="660" y="140" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Oracle Database</text>
+          <text x="660" y="165" text-anchor="middle" fill="#aab9c9" font-size="11">Relational SQL</text>
+          <text x="660" y="180" text-anchor="middle" fill="#aab9c9" font-size="11">Data Integrity</text>
+
+          <!-- Defs for arrows -->
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#32d3c8" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- Database Schema ER -->
+      <div class="container diagram-panel reveal reveal-delay-1" id="database">
+        <h3>Relational Database Schema (Oracle SQL)</h3>
+        <p style="color:var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Database schema layout illustrating PK/FK relationships and field structures designed to store user data, exam profiles, questions, and grades.
+        </p>
+        <svg class="diagram-svg" viewBox="0 0 800 320">
+          <!-- USERS Table -->
+          <rect x="20" y="20" width="200" height="120" rx="6" fill="#111827" stroke="#7f8cff" stroke-width="1.5" />
+          <rect x="20" y="20" width="200" height="30" rx="6" fill="#1f2937" />
+          <text x="30" y="40" fill="#fff" font-weight="700" font-size="12">USERS</text>
+          <text x="30" y="70" fill="#7f8cff" font-family="monospace" font-size="10">user_id (PK) - NUMBER</text>
+          <text x="30" y="85" fill="#aab9c9" font-family="monospace" font-size="10">email - VARCHAR2(80)</text>
+          <text x="30" y="100" fill="#aab9c9" font-family="monospace" font-size="10">password - VARCHAR2(50)</text>
+          <text x="30" y="115" fill="#aab9c9" font-family="monospace" font-size="10">role - VARCHAR2(20)</text>
+
+          <!-- EXAMS Table -->
+          <rect x="290" y="20" width="220" height="120" rx="6" fill="#111827" stroke="#7f8cff" stroke-width="1.5" />
+          <rect x="290" y="20" width="220" height="30" rx="6" fill="#1f2937" />
+          <text x="300" y="40" fill="#fff" font-weight="700" font-size="12">EXAMS</text>
+          <text x="300" y="70" fill="#7f8cff" font-family="monospace" font-size="10">exam_id (PK) - NUMBER</text>
+          <text x="300" y="85" fill="#aab9c9" font-family="monospace" font-size="10">title - VARCHAR2(100)</text>
+          <text x="300" y="100" fill="#aab9c9" font-family="monospace" font-size="10">duration_mins - NUMBER</text>
+          <text x="300" y="115" fill="#aab9c9" font-family="monospace" font-size="10">total_questions - NUMBER</text>
+
+          <!-- RESULTS Table -->
+          <rect x="560" y="100" width="220" height="135" rx="6" fill="#111827" stroke="#32d3c8" stroke-width="1.5" />
+          <rect x="560" y="100" width="220" height="30" rx="6" fill="#1f2937" />
+          <text x="570" y="120" fill="#fff" font-weight="700" font-size="12">RESULTS</text>
+          <text x="570" y="150" fill="#32d3c8" font-family="monospace" font-size="10">result_id (PK) - NUMBER</text>
+          <text x="570" y="165" fill="#f59e0b" font-family="monospace" font-size="10">user_id (FK) - NUMBER</text>
+          <text x="570" y="180" fill="#f59e0b" font-family="monospace" font-size="10">exam_id (FK) - NUMBER</text>
+          <text x="570" y="195" fill="#aab9c9" font-family="monospace" font-size="10">score - NUMBER(5,2)</text>
+          <text x="570" y="210" fill="#aab9c9" font-family="monospace" font-size="10">completed_at - TIMESTAMP</text>
+
+          <!-- QUESTIONS Table -->
+          <rect x="150" y="180" width="240" height="135" rx="6" fill="#111827" stroke="#7f8cff" stroke-width="1.5" />
+          <rect x="150" y="180" width="240" height="30" rx="6" fill="#1f2937" />
+          <text x="160" y="200" fill="#fff" font-weight="700" font-size="12">QUESTIONS</text>
+          <text x="160" y="230" fill="#7f8cff" font-family="monospace" font-size="10">question_id (PK) - NUMBER</text>
+          <text x="160" y="245" fill="#f59e0b" font-family="monospace" font-size="10">exam_id (FK) - NUMBER</text>
+          <text x="160" y="260" fill="#aab9c9" font-family="monospace" font-size="10">question_text - VARCHAR2(500)</text>
+          <text x="160" y="275" fill="#aab9c9" font-family="monospace" font-size="10">options - VARCHAR2(100) Array</text>
+          <text x="160" y="290" fill="#aab9c9" font-family="monospace" font-size="10">correct_opt_idx - NUMBER</text>
+
+          <!-- Connections -->
+          <!-- USERS to RESULTS -->
+          <path d="M 220,70 L 540,70 L 540,165 L 560,165" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3" />
+          
+          <!-- EXAMS to RESULTS -->
+          <path d="M 510,70 L 550,70 L 550,180 L 560,180" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3" />
+          
+          <!-- EXAMS to QUESTIONS -->
+          <path d="M 290,100 L 270,100 L 270,245 L 390,245" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3" />
+        </svg>
+      </div>
+
+      <!-- Timed Exam session flowchart -->
+      <div class="container diagram-panel reveal" id="workflow">
+        <h3>Exam Timer &amp; Submission Workflow</h3>
+        <p style="color:var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Functional workflow showing session startup, active questions loops, automatic submission routines, and database evaluation triggers.
+        </p>
+        <svg class="diagram-svg" viewBox="0 0 800 240">
+          <!-- Start -->
+          <rect x="20" y="80" width="100" height="60" rx="20" fill="#1e293b" stroke="#7f8cff" stroke-width="1.5" />
+          <text x="70" y="115" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">Launch Exam</text>
+
+          <line x1="120" y1="110" x2="160" y2="110" stroke="#aab9c9" stroke-width="1.5" />
+
+          <!-- Session init -->
+          <rect x="160" y="80" width="130" height="60" rx="4" fill="#111827" stroke="#aab9c9" stroke-width="1.5" />
+          <text x="225" y="110" text-anchor="middle" fill="#fff" font-size="10">Init Servlet Session</text>
+          <text x="225" y="125" text-anchor="middle" fill="#aab9c9" font-size="9">Get Questions</text>
+
+          <line x1="290" y1="110" x2="330" y2="110" stroke="#aab9c9" stroke-width="1.5" />
+
+          <!-- Timer loop -->
+          <rect x="330" y="60" width="140" height="100" rx="4" fill="#111827" stroke="#f59e0b" stroke-width="1.5" />
+          <text x="400" y="90" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Active Test Console</text>
+          <text x="400" y="110" text-anchor="middle" fill="#aab9c9" font-size="9">JS Timer ticking</text>
+          <text x="400" y="130" text-anchor="middle" fill="#f59e0b" font-size="9">Time Left > 0?</text>
+
+          <!-- Arrow to auto submit on timeout -->
+          <path d="M 400,60 L 400,20 L 580,20 L 580,80" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="2,2" />
+          <text x="490" y="15" text-anchor="middle" fill="#ef4444" font-size="9">Time Out (Autosubmit Callback)</text>
+
+          <line x1="470" y1="110" x2="520" y2="110" stroke="#32d3c8" stroke-width="1.5" />
+
+          <!-- Submit manually -->
+          <rect x="520" y="80" width="120" height="60" rx="4" fill="#111827" stroke="#32d3c8" stroke-width="1.5" />
+          <text x="580" y="110" text-anchor="middle" fill="#fff" font-size="10">Servlet Evaluation</text>
+          <text x="580" y="125" text-anchor="middle" fill="#32d3c8" font-size="9">Calculate Score</text>
+
+          <line x1="640" y1="110" x2="680" y2="110" stroke="#aab9c9" stroke-width="1.5" />
+
+          <!-- Save in DB & show results -->
+          <rect x="680" y="80" width="100" height="60" rx="20" fill="#1e293b" stroke="#7f8cff" stroke-width="1.5" />
+          <text x="730" y="110" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">Display Result</text>
+          <text x="730" y="125" text-anchor="middle" fill="#aab9c9" font-size="9">Persist SQL</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CHALLENGES AND LEARNINGS -->
+    <section class="section section-alt">
+      <div class="container section-intro">
+        <p class="eyebrow">Engineering Challenges</p>
+        <h2>Problems solved during implementation.</h2>
+      </div>
+      <div class="container timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3>Session State Integrity</h3>
+                <span class="timeline-company">Technical Challenge</span>
               </div>
             </div>
-            <span class="tech-tags">JDBC • Oracle SQL • Automation</span>
+            <div class="timeline-body">
+              <p>Maintaining active student states under unexpected browser reloads. Standard sessions would reset the current exam pointer. I solved this by tracking session indices directly in dynamic Tomcat database tables using the session ID as a lookup key, allowing instant recovery on page reload.</p>
+            </div>
           </div>
-          <p class="project-summary">Questions are loaded from the database and results are processed automatically to reduce manual work.</p>
-          <ul class="project-points">
-            <li>Dynamic question retrieval from the database</li>
-            <li>Automatic submission when time expires</li>
-            <li>Result generation and score tracking</li>
-            <li>History view for previous attempts</li>
-          </ul>
-        </article>
+        </div>
+        <div class="timeline-item reveal reveal-delay-1">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3>Autosubmit Security</h3>
+                <span class="timeline-company">Security Challenge</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p>Preventing students from disabling the JavaScript timer to gain extra time. I implemented a secondary verification layer on the server servlet which cross-references the session creation timestamp with the submission timestamp, automatically invalidating submissions exceeding the threshold limit by more than 10 seconds.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="proof">
-      <div class="container section-intro">
-        <p class="eyebrow">Project proof</p>
-        <h2>Tech stack, screenshot, challenges solved, and outcomes.</h2>
-      </div>
-
-      <div class="container proof-grid">
-        <article class="project-card reveal">
-          <h3>Tech stack</h3>
-          <div class="stack-list" aria-label="Tech stack used in the Online Examination Portal">
-            <span>Java</span>
-            <span>Servlets</span>
-            <span>JSP</span>
-            <span>JDBC</span>
-            <span>Oracle SQL</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-          <p class="project-summary">This build focuses on secure authentication, session-driven flows, timed exam behavior, and SQL-backed data persistence.</p>
-        </article>
-
-        <article class="project-card reveal reveal-delay-1">
-          <h3>Project screenshot</h3>
-          <figure class="showcase-shot">
-            <img src="exam-portal-preview.svg" alt="Preview of the Online Examination Portal dashboard, timed exam flow, and results panels" width="1200" height="630" loading="lazy" decoding="async" />
-            <figcaption>Visual walkthrough of the admin dashboard, timed assessment flow, and result tracking experience.</figcaption>
-          </figure>
-        </article>
-
-        <article class="project-card reveal reveal-delay-2">
-          <h3>Challenges solved</h3>
-          <ul class="project-points">
-            <li>Separated admin and student permissions cleanly to protect restricted actions</li>
-            <li>Handled timed submission without breaking the exam experience</li>
-            <li>Connected dynamic questions, answers, and scores to Oracle SQL tables</li>
-            <li>Reduced manual checking through automatic result calculation and history storage</li>
-          </ul>
-        </article>
-
-        <article class="project-card reveal">
-          <h3>Outcomes and features</h3>
-          <ul class="project-points">
-            <li>Admins can create and manage assessments faster</li>
-            <li>Students get a secure, structured test workflow</li>
-            <li>Scores and attempt history remain available for later review</li>
-            <li>The project demonstrates production-style Java web architecture</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="contact">
-      <div class="container section-intro">
-        <p class="eyebrow">Next step</p>
-        <h2>Want the full walkthrough or source discussion?</h2>
-      </div>
-
+    <!-- NEXT STEPS / FOOTER -->
+    <section class="section">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
-          <p class="contact-tag">Open to Java, backend, and full-stack roles.</p>
-          <p>
-            If you want to discuss the project structure, database flow, or backend logic, feel free to reach out through LinkedIn or email.
-          </p>
-          <div class="contact-direct">
-            <a href="mailto:omkumar201206@gmail.com">omkumar201206@gmail.com</a>
-            <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">linkedin.com/in/omkumar0417</a>
+          <p class="contact-tag">Looking for code discussions?</p>
+          <p>If you would like a live screenshare of the Tomcat database connection or want to discuss servlet filter logic, feel free to contact me.</p>
+          <div class="hero-actions" style="margin-top: 1.5rem;">
+            <a href="mailto:omkumar0417@gmail.com" class="btn-primary">Email Me</a>
+            <a href="index.html#projects" class="btn-outline">Return to Projects</a>
           </div>
         </div>
-
         <div class="contact-copy reveal reveal-delay-1">
-          <p class="contact-tag">Related project</p>
-          <p>
-            Also explore the front-end utility project built for SRM students to estimate grades quickly and clearly.
-          </p>
-          <div class="hero-actions">
-            <a href="srm-grade-calculator.html" class="btn-primary">View Grade Calculator Page</a>
-            <a href="index.html#projects" class="btn-outline">Return to Portfolio</a>
+          <p class="contact-tag">Explore other projects</p>
+          <p>Check out the frontend grade calculator utility built to calculate grade averages instantly.</p>
+          <div class="hero-actions" style="margin-top: 1.5rem;">
+            <a href="srm-grade-calculator.html" class="btn-primary">View Grade Calculator</a>
           </div>
         </div>
       </div>
@@ -348,18 +649,11 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container footer-content" style="display:flex; justify-content: space-between; font-size: 0.88rem; color:var(--text-secondary); border-top: 1px solid var(--line); padding-top: 2rem; margin-top: 2rem;">
       <p>© <span id="current-year"></span> Om Kumar. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:omkumar201206@gmail.com" aria-label="Send an email to Om Kumar">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
+      <div class="social-icons" style="display:flex; gap:1rem;">
+        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>

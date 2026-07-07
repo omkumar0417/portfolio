@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="1732099542326.jpeg" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
   <meta name="description" content="Portfolio of Om Kumar, a Java and full-stack developer from SRM University building reliable web apps with Java, Servlets, JDBC, SQL, HTML, CSS, and JavaScript." />
@@ -70,7 +71,7 @@
           "https://github.com/omkumar0417"
         ],
         "jobTitle": "Java Developer",
-        "email": "mailto:omkumar201206@gmail.com",
+        "email": "mailto:omkumar0417@gmail.com",
         "alumniOf": {
           "@type": "CollegeOrUniversity",
           "name": "SRM University"
@@ -112,26 +113,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What roles is Om Kumar looking for?",
+            "name": "What is Om Kumar's current role and recruitment status?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Om Kumar is open to Java developer, backend developer, and full-stack developer roles."
+              "text": "Om Kumar is a Computer Science and Engineering student at SRM University who is open to work and actively seeking Backend Software Engineering internships and entry-level positions."
             }
           },
           {
             "@type": "Question",
-            "name": "What technologies does Om Kumar work with?",
+            "name": "What is Om Kumar's primary technical stack and backend focus?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Om Kumar works with Java, Servlets, JSP, JDBC, Oracle SQL, HTML, CSS, and JavaScript."
+              "text": "Om Kumar's main stack consists of Java, Spring Boot, Servlets, JSP, JDBC, Oracle SQL, and MySQL, with a primary focus on secure database transactions, REST APIs, session management, and backend scalability."
             }
           },
           {
             "@type": "Question",
-            "name": "What kind of projects are featured in the portfolio?",
+            "name": "Where is Om Kumar located and is he willing to relocate?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The portfolio highlights database-backed web applications such as an online examination portal and the SRM Grade Calculator."
+              "text": "Om Kumar is located in Ghaziabad, Uttar Pradesh, India. He is fully open to relocation, hybrid arrangements, or remote developer positions globally."
             }
           }
         ]
@@ -142,10 +143,34 @@
 </head>
 <body class="dark-mode">
   <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-wrap">
+      <div class="loader" aria-hidden="true">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <defs>
+            <mask id="clipping">
+              <polygon points="0,0 100,0 100,100 0,100" fill="black"></polygon>
+              <polygon points="25,25 75,25 50,75" fill="white"></polygon>
+              <polygon points="50,25 75,75 25,75" fill="white"></polygon>
+              <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+              <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+              <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+              <polygon points="35,35 65,35 50,65" fill="white"></polygon>
+            </mask>
+          </defs>
+        </svg>
+        <div class="box"></div>
+      </div>
+    </div>
+  </div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <header class="site-header">
     <nav class="navbar container" aria-label="Primary navigation">
-      <a href="#home" class="logo">Om Kumar</a>
+      <a href="#home" class="logo" aria-label="Om Kumar home">
+        <span class="brand-mark">OK</span>
+        <span class="brand-text">Om Kumar</span>
+      </a>
 
       <button
         class="nav-toggle"
@@ -164,176 +189,238 @@
         <ul class="nav-links">
           <li><a href="#home" data-section-link>Home</a></li>
           <li><a href="#about" data-section-link>About</a></li>
+          <li><a href="#experience" data-section-link>Experience</a></li>
           <li><a href="#projects" data-section-link>Projects</a></li>
           <li><a href="#skills" data-section-link>Skills</a></li>
-          <li><a href="#faq" data-section-link>FAQ</a></li>
+          <li><a href="#faq" data-section-link>Quick Facts</a></li>
           <li><a href="#contact" data-section-link>Contact</a></li>
         </ul>
-        <button id="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
+        <button id="theme-toggle" class="theme-toggle-icon" type="button" aria-label="Toggle color theme" aria-pressed="true">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
       </div>
     </nav>
 
     <div class="mobile-nav" id="mobile-nav" hidden>
       <a href="#home" data-section-link>Home</a>
       <a href="#about" data-section-link>About</a>
+      <a href="#experience" data-section-link>Experience</a>
       <a href="#projects" data-section-link>Projects</a>
       <a href="#skills" data-section-link>Skills</a>
-      <a href="#faq" data-section-link>FAQ</a>
+      <a href="#faq" data-section-link>Quick Facts</a>
       <a href="#contact" data-section-link>Contact</a>
       <button id="theme-toggle-mobile" type="button">Dark mode</button>
     </div>
   </header>
 
   <main id="main-content">
+    <!-- HERO SECTION -->
     <section class="hero-section" id="home">
       <div class="container hero-grid">
         <div class="hero-copy hero-copy-animate">
-          <p class="eyebrow">Backend-focused full stack developer</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Java Backend Engineer</p>
           <div class="mobile-identity">
             <img src="1732099542326.jpeg" alt="Portrait of Om Kumar" width="640" height="640" decoding="async" />
             <div>
               <strong>Om Kumar</strong>
-              <span>Java and full-stack developer</span>
+              <span>Java Backend Engineer</span>
             </div>
           </div>
-          <p class="availability-pill">Open to Java and full-stack roles</p>
-          <h1>Om Kumar — Java developer building reliable, fast web apps.</h1>
+          <p class="availability-pill">Open to Java &amp; backend roles</p>
+          <h1>Java Backend Developer building scalable web applications with Java, Spring Boot and SQL.</h1>
+          <p class="typed-line"><span class="typed-text" aria-live="polite"></span></p>
           <p class="hero-text">
-            I'm Om Kumar, a Java and full-stack developer with a Computer Science background from SRM University. I build web applications with Java, Servlets, JDBC, Oracle SQL, HTML, CSS, and JavaScript, with a strong focus on backend logic, clean interfaces, and dependable delivery.
+            Computer Science student with internship experience building backend-focused web applications using Java, Servlets, JDBC, Oracle SQL, and modern web technologies. Currently learning Spring Boot while solving DSA in Java.
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="OmKumarResume.pdf" download class="btn-outline" id="resume-download">Download Resume</a>
+            <a href="OmKumarResume.pdf" download class="btn-outline" id="resume-download"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+            <a href="https://github.com/omkumar0417" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/omkumar0417" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
           </div>
-          <ul class="hero-metrics" aria-label="Highlights">
+          <ul class="hero-metrics" aria-label="Highlights" style="grid-template-columns: repeat(5, 1fr);">
             <li>
-              <strong>2+</strong>
-              <span>Production-style projects</span>
+              <strong data-count="9.09" data-decimals="2">0.00</strong>
+              <span>CGPA</span>
             </li>
             <li>
-              <strong>Java</strong>
-              <span>Core backend focus</span>
+              <strong data-count="1">0</strong>
+              <span>Internship</span>
             </li>
             <li>
-              <strong>SQL</strong>
-              <span>Database-backed systems</span>
+              <strong data-count="2">0</strong>
+              <span>Projects</span>
+            </li>
+            <li>
+              <strong data-count="100">0</strong>
+              <span>LeetCode</span>
+            </li>
+            <li>
+              <strong data-count="2028">0</strong>
+              <span>Graduation</span>
             </li>
           </ul>
           <div class="proof-strip">
             <div class="proof-item">
               <span>Focus</span>
-              <strong>Backend logic first</strong>
+              <strong>Backend Systems first</strong>
             </div>
             <div class="proof-item">
               <span>Delivery</span>
-              <strong>Full-stack web apps</strong>
+              <strong>Robust REST APIs</strong>
             </div>
             <div class="proof-item">
               <span>Goal</span>
-              <strong>Ready for real-world teams</strong>
+              <strong>Ready for enterprise teams</strong>
             </div>
           </div>
           <p id="thank-you-msg" class="thank-you-msg" aria-live="polite"></p>
         </div>
 
         <div class="hero-card reveal reveal-delay-1">
-          <div class="hero-card-media">
-            <div class="profile-snapshot">
-              <div class="profile-snapshot-image">
-                <img src="1732099542326.jpeg" alt="Portrait of Om Kumar" class="profile-img" width="640" height="640" fetchpriority="high" decoding="async" />
+          <article class="terminal-card">
+            <div class="terminal-head">
+              <div class="terminal-title">
+                <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+                <span>developer.json</span>
               </div>
-              <div class="profile-snapshot-copy">
-                <span class="profile-label">Profile snapshot</span>
-                <strong>Om Kumar</strong>
-                <p>Backend-focused Java developer with a clean product mindset.</p>
-                <div class="profile-tags" aria-label="Profile highlights">
-                  <span>Java</span>
-                  <span>SQL</span>
-                  <span>APIs</span>
-                </div>
-              </div>
+              <button class="copy-terminal" id="copy-summary" type="button" aria-label="Copy profile summary">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
             </div>
-          </div>
-          <div class="hero-card-body">
-            <h2>What I bring</h2>
-            <ul class="feature-list">
-              <li>Strong foundation in Java, JDBC, Servlets, and SQL</li>
-              <li>Comfortable shipping end-to-end web products and utilities</li>
-              <li>Focused on clean logic, secure flows, and responsive interfaces</li>
-            </ul>
-            <p class="hero-card-note">
-              I like taking a feature from backend flow to polished delivery without losing clarity.
-            </p>
-            <div class="focus-rail" aria-label="Current focus">
-              <div>
-                <span>Now building</span>
-                <strong>Backend systems with cleaner UX details</strong>
-              </div>
-              <div>
-                <span>Best fit</span>
-                <strong>Java, SQL, and product-minded web work</strong>
-              </div>
-              <div>
-                <span>Working style</span>
-                <strong>Iterate fast, keep logic simple, ship clean</strong>
-              </div>
+            <div class="terminal-body" id="developer-summary">
+              <div class="terminal-line"><span class="prompt">om@portfolio:~$</span><span>cat developer.json</span></div>
+              <div class="terminal-line"><span class="bracket">{</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"name"</span><span class="bracket">:</span> <span class="string">"Om Kumar"</span><span class="bracket">,</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"role"</span><span class="bracket">:</span> <span class="string">"Java Backend Developer"</span><span class="bracket">,</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"education"</span><span class="bracket">:</span> <span class="string">"B.Tech Computer Science"</span><span class="bracket">,</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"cgpa"</span><span class="bracket">:</span> <span class="string">"9.09"</span><span class="bracket">,</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"internship"</span><span class="bracket">:</span> <span class="string">"Web Developer Intern"</span><span class="bracket">,</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"tech"</span><span class="bracket">:</span> <span class="bracket">[</span><span class="string">"Java"</span><span class="bracket">,</span> <span class="string">"Spring Boot"</span><span class="bracket">,</span> <span class="string">"SQL"</span><span class="bracket">],</span></div>
+              <div class="terminal-line"><span class="indent"></span><span class="key">"goal"</span><span class="bracket">:</span> <span class="string">"Backend Software Engineer"</span></div>
+              <div class="terminal-line"><span class="bracket">}</span></div>
+              <div class="terminal-line"><span class="prompt">om@portfolio:~$</span><span class="terminal-caret" aria-hidden="true"></span></div>
             </div>
-            <div class="hero-socials">
-              <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="mailto:omkumar201206@gmail.com">Email</a>
-            </div>
-          </div>
+          </article>
+
           <div class="hero-card-footer">
             <div>
-              <span>Current focus</span>
-              <strong>Backend systems and product polish</strong>
+              <span>Backend</span>
+              <strong>Authentication, sessions, business logic</strong>
             </div>
             <div>
-              <span>Preferred work</span>
-              <strong>Java, SQL, and clean interfaces</strong>
+              <span>Database</span>
+              <strong>JDBC workflows and Oracle SQL structure</strong>
+            </div>
+            <div>
+              <span>Frontend</span>
+              <strong>Responsive interfaces for real user flow</strong>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section class="section" id="about">
       <div class="container section-intro">
-        <p class="eyebrow">About</p>
-        <h2>Turning ideas into practical, production-ready software.</h2>
+        <p class="eyebrow">About Me</p>
+        <h2>Practical engineering focus to build reliable, scalable backend logic.</h2>
       </div>
 
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p>
-            My work is centered around backend-heavy web development with Java. I like projects where authentication, database design, and business logic matter just as much as the interface.
-          </p>
-          <p>
-            Through hands-on projects, I've worked with Servlets, JSP, JDBC, Oracle SQL, HTML, CSS, and JavaScript to build complete applications that support real user flows instead of isolated demos.
-          </p>
-          <p>
-            I’m focused on improving system design, shipping dependable features, and contributing to teams that value clean execution and ownership.
-          </p>
-        </div>
+      <div class="container about-cards-grid">
+        <article class="about-card reveal">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+          <p>Pursuing B.Tech in Computer Science and Engineering at SRM Institute of Science and Technology, maintaining a CGPA of 9.09/10. Focus on core CS theory, data structures, and database principles.</p>
+        </article>
+        <article class="about-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-bullseye"></i> Current Focus</h3>
+          <p>Practicing complex problem-solving in Java (Data Structures &amp; Algorithms) and learning Spring Boot framework basics.</p>
+        </article>
+        <article class="about-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-briefcase"></i> Career Goal</h3>
+          <p>Aspiring to join top tech companies as a Backend Software Engineer, writing clean, reliable, and optimizeable backend application logic.</p>
+        </article>
+        <article class="about-card reveal">
+          <h3><i class="fa-solid fa-gears"></i> Backend Mindset</h3>
+          <p>Strong orientation towards performance, proper indexing, thread safety, session tracking, and secure web flows.</p>
+        </article>
+        <article class="about-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-code"></i> Engineering Philosophy</h3>
+          <p>Believer in clean code, SOLID design principles, modularity, comprehensive testing, and database constraints. Code should be readable, self-documenting, and robust under load.</p>
+        </article>
+        <article class="about-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-network-wired"></i> Tech Interests</h3>
+          <p>Fascinated by distributed databases, microservice coordination, event-driven systems (Kafka/RabbitMQ), cloud deployments, Docker, and system scale optimizations.</p>
+        </article>
+      </div>
+    </section>
 
-        <div class="about-highlights">
-          <article class="highlight-card reveal">
-            <h3>Backend-first mindset</h3>
-            <p>I care about session handling, data flow, validation, and maintainable logic.</p>
-          </article>
-          <article class="highlight-card reveal reveal-delay-1">
-            <h3>End-to-end ownership</h3>
-            <p>I enjoy taking a feature from UI planning to database integration and testing.</p>
-          </article>
-          <article class="highlight-card reveal reveal-delay-2">
-            <h3>Product focus</h3>
-            <p>I actively build, iterate, and improve based on what each project needs to do for real users.</p>
-          </article>
+    <!-- EXPERIENCE SECTION -->
+    <section class="section section-alt" id="experience">
+      <div class="container section-intro">
+        <p class="eyebrow">Experience</p>
+        <h2>Professional history in web development.</h2>
+      </div>
+      <div class="container">
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-title">
+                  <h3>Web Developer Intern</h3>
+                </div>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li>Developed responsive web interfaces, ensuring cross-device compatibility.</li>
+                  <li>Worked on database operations, helping organize and secure user entries.</li>
+                  <li>Collaborated on front-end layouts to design reusable UI components.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- EDUCATION SECTION -->
+    <section class="section" id="education">
+      <div class="container section-intro">
+        <p class="eyebrow">Education</p>
+        <h2>Academic foundations in computer science and software principles.</h2>
+      </div>
+      <div class="container">
+        <div class="education-card reveal">
+          <div class="education-icon">
+            <i class="fa-solid fa-university"></i>
+          </div>
+          <div class="education-info">
+            <h3>B.Tech in Computer Science and Engineering</h3>
+            <div class="education-university">SRM Institute of Science and Technology</div>
+            <div class="education-meta">
+              <span><i class="fa-solid fa-star"></i> CGPA: <strong>9.09 / 10</strong></span>
+              <span><i class="fa-solid fa-calendar"></i> Expected Graduation: <strong>2028</strong></span>
+              <span><i class="fa-solid fa-location-dot"></i> Ghaziabad, Uttar Pradesh, India</span>
+            </div>
+            <div class="education-coursework">
+              <h4>Relevant Coursework</h4>
+              <div class="coursework-tags">
+                <span>Data Structures &amp; Algorithms</span>
+                <span>Database Management Systems (DBMS)</span>
+                <span>Web Development</span>
+                <span>Object-Oriented Programming (Java)</span>
+                <span>Software Engineering</span>
+                <span>Operating Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
     <section class="section section-alt" id="projects">
       <div class="container section-intro">
         <p class="eyebrow">Projects</p>
@@ -341,7 +428,9 @@
       </div>
 
       <div class="container projects-grid">
+        <!-- Online Examination Portal -->
         <article class="project-card featured-project reveal">
+          <img src="exam-portal-preview.svg" alt="Preview of the Online Examination Portal project" class="project-preview" />
           <div class="card-header">
             <div class="project-heading">
               <span class="project-icon" aria-hidden="true">
@@ -371,7 +460,7 @@
           <div class="project-detail-grid">
             <div>
               <h4>What it solves</h4>
-              <p>Digitizes exam management so admins can create and control assessments while users can take secure timed tests and instantly review results.</p>
+              <p>Digitizes exam management so admins can create assessments while students take secure timed tests and instantly review results.</p>
             </div>
             <div>
               <h4>What I built</h4>
@@ -380,7 +469,7 @@
           </div>
 
           <ul class="project-points">
-            <li>Implemented role-based access for admin and user modules</li>
+            <li>Implemented role-based access for admin and student modules</li>
             <li>Built secure login, registration, password updates, and session management</li>
             <li>Connected dynamic question loading and result processing with Oracle SQL</li>
             <li>Created timed exam behavior with automatic submission on timeout</li>
@@ -389,12 +478,14 @@
 
           <div class="project-links">
             <a href="online-examination-portal.html" class="btn-primary">Read Case Study</a>
-            <a href="https://github.com/omkumar0417?tab=repositories" class="btn-outline" target="_blank" rel="noopener noreferrer">View GitHub Repositories</a>
+            <a href="https://github.com/omkumar0417?tab=repositories" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository</a>
             <a href="#contact" class="btn-secondary">Request Walkthrough</a>
           </div>
         </article>
 
+        <!-- SRM Grade Calculator -->
         <article class="project-card reveal reveal-delay-1">
+          <img src="grade-calculator-preview.svg" alt="Preview of the SRM Grade Calculator project" class="project-preview" />
           <div class="card-header">
             <div class="project-heading">
               <span class="project-icon" aria-hidden="true">
@@ -428,85 +519,326 @@
           </ul>
 
           <div class="project-links">
-            <a href="srm-grade-calculator.html" class="btn-primary">Project Page</a>
-            <a href="https://srmgradecalculator.vercel.app" class="btn-outline" target="_blank" rel="noopener noreferrer">Live Demo</a>
-            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Source Code</a>
+            <a href="srm-grade-calculator.html" class="btn-primary">Read Case Study</a>
+            <a href="https://srmgradecalculator.vercel.app" class="btn-outline" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/omkumar0417/srmgradecalculator" class="btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source</a>
           </div>
         </article>
+
+
       </div>
     </section>
 
+    <!-- SKILLS SECTION -->
     <section class="section" id="skills">
       <div class="container section-intro">
         <p class="eyebrow">Skills</p>
-        <h2>Tools I use to build structured, database-backed web apps.</h2>
+        <h2>Technical domains and toolsets.</h2>
       </div>
 
-      <div class="container skill-groups">
-        <article class="skill-group reveal">
-          <h3>Backend</h3>
-          <p>Core Java, Servlets, JSP, JDBC, SQL / Oracle</p>
+      <div class="container skills-container">
+        <!-- Backend -->
+        <article class="skills-category-card reveal">
+          <h3><i class="fa-solid fa-code"></i> Backend</h3>
+          <div class="skills-badge-grid">
+            <div class="skill-badge-item"><i class="devicon-java-plain colored"></i> <span>Java</span></div>
+            <div class="skill-badge-item"><i class="fa-solid fa-gears"></i> <span>Servlets</span></div>
+            <div class="skill-badge-item"><i class="fa-solid fa-pager"></i> <span>JSP</span></div>
+            <div class="skill-badge-item"><i class="fa-solid fa-link"></i> <span>JDBC</span></div>
+            <div class="skill-badge-item"><i class="fa-solid fa-book"></i> <span>Learning Spring Boot</span></div>
+          </div>
         </article>
-        <article class="skill-group reveal reveal-delay-1">
-          <h3>Frontend</h3>
-          <p>HTML, CSS, JavaScript, responsive interfaces</p>
+        <!-- Database -->
+        <article class="skills-category-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-database"></i> Databases</h3>
+          <div class="skills-badge-grid">
+            <div class="skill-badge-item"><i class="devicon-oracle-original colored"></i> <span>Oracle SQL</span></div>
+            <div class="skill-badge-item"><i class="devicon-mysql-plain colored"></i> <span>MySQL</span></div>
+            <div class="skill-badge-item"><i class="devicon-mongodb-plain colored"></i> <span>MongoDB</span></div>
+          </div>
         </article>
-        <article class="skill-group reveal reveal-delay-2">
-          <h3>Workflow</h3>
-          <p>Git, GitHub, problem-solving, DSA in C</p>
-        </article>
-      </div>
-
-      <div class="container skills-icon-grid">
-        <div class="skill-icon reveal"><i class="fab fa-java" aria-hidden="true"></i><p>Core Java</p></div>
-        <div class="skill-icon reveal reveal-delay-1"><i class="fas fa-server" aria-hidden="true"></i><p>Servlets</p></div>
-        <div class="skill-icon reveal reveal-delay-2"><i class="fas fa-layer-group" aria-hidden="true"></i><p>JSP</p></div>
-        <div class="skill-icon reveal"><i class="fas fa-plug" aria-hidden="true"></i><p>JDBC</p></div>
-        <div class="skill-icon reveal reveal-delay-1"><i class="fas fa-database" aria-hidden="true"></i><p>SQL / Oracle</p></div>
-        <div class="skill-icon reveal reveal-delay-2"><i class="fas fa-code" aria-hidden="true"></i><p>DSA in C</p></div>
-        <div class="skill-icon reveal"><i class="fab fa-js" aria-hidden="true"></i><p>JavaScript</p></div>
-        <div class="skill-icon reveal reveal-delay-1"><i class="fab fa-html5" aria-hidden="true"></i><p>HTML &amp; CSS</p></div>
-        <div class="skill-icon reveal reveal-delay-2"><i class="fab fa-github" aria-hidden="true"></i><p>Git &amp; GitHub</p></div>
+        <!-- Frontend -->
+        <article class="skills-category-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-desktop"></i> Frontend</h3>
+          <div class="skills-badge-grid">
+            <div class="skill-badge-item"><i class="devicon-html5-plain colored"></i> <span>HTML5</span></div>
+            <div class="skill-badge-item"><i class="devicon-css3-plain colored"></i> <span>CSS3</span></div>
+            <div class="skill-badge-item"><i class="devicon-javascript-plain colored"></i> <span>JavaScript</span></div>
+          </div>
       </div>
     </section>
 
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="section section-alt" id="achievements">
+      <div class="container section-intro">
+        <p class="eyebrow">Achievements</p>
+        <h2>Verification of key developer metrics.</h2>
+      </div>
+      
+      <div class="container achievements-grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1000px; margin: 0 auto;">
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i class="fa-solid fa-star"></i></div>
+          <div class="achievement-val">9.09</div>
+          <div class="achievement-label">CGPA</div>
+          <p class="achievement-desc">Academic excellence in Computer Science and Engineering.</p>
+        </div>
+        <div class="achievement-card reveal reveal-delay-1">
+          <div class="achievement-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="achievement-val">1</div>
+          <div class="achievement-label">Internship</div>
+          <p class="achievement-desc">Hands-on work experience in responsive web development.</p>
+        </div>
+        <div class="achievement-card reveal reveal-delay-2">
+          <div class="achievement-icon"><i class="fa-solid fa-folder-open"></i></div>
+          <div class="achievement-val">2+</div>
+          <div class="achievement-label">Projects</div>
+          <p class="achievement-desc">Fully functioning database-backed web applications.</p>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="achievement-val">100+</div>
+          <div class="achievement-label">LeetCode</div>
+          <p class="achievement-desc">Solved standard algorithms and data structure problems in Java.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section" id="certifications">
+      <div class="container section-intro">
+        <p class="eyebrow">Certifications</p>
+        <h2>Verified industry credentials and specializations.</h2>
+      </div>
+
+      <div class="container certs-grid" style="display: flex; justify-content: center;">
+        <div class="cert-card reveal" style="max-width: 480px; width: 100%;">
+          <div class="cert-header">
+            <div class="cert-logo"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+            <span class="cert-status">Verified</span>
+          </div>
+          <div class="cert-body">
+            <h3>Mastering Data Structures &amp; Algorithms using C and C++</h3>
+            <div class="cert-issuer">Udemy (Instructor: Abdul Bari)</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
+              <strong>Length:</strong> 76 total hours <br />
+              <strong>Credential ID:</strong> UC-bc741ca1-5436-4aed-b59e-50b314f7a13f
+            </div>
+            <a href="https://ude.my/UC-bc741ca1-5436-4aed-b59e-50b314f7a13f" target="_blank" rel="noopener noreferrer" class="cert-link">Verify Certificate <i class="fa-solid fa-external-link" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="section section-alt" id="timeline">
+      <div class="container section-intro">
+        <p class="eyebrow">Roadmap</p>
+        <h2>Technical growth path and timeline milestones.</h2>
+      </div>
+      <div class="container roadmap">
+        <div class="roadmap-step reveal">
+          <span class="roadmap-dot"></span>
+          <div class="roadmap-content">
+            <div class="roadmap-year">2024</div>
+            <h3>Started Java</h3>
+            <p>Mastered basic programming, OOP design principles, and exception systems in Java.</p>
+          </div>
+        </div>
+        <div class="roadmap-step reveal reveal-delay-1">
+          <span class="roadmap-dot"></span>
+          <div class="roadmap-content">
+            <div class="roadmap-year">2025</div>
+            <h3>Servlets &amp; JSP</h3>
+            <p>Built secure HTTP request handlers, filters, and dynamic JSP content templates.</p>
+          </div>
+        </div>
+        <div class="roadmap-step reveal reveal-delay-2">
+          <span class="roadmap-dot"></span>
+          <div class="roadmap-content">
+            <div class="roadmap-year">2025</div>
+            <h3>JDBC &amp; Databases</h3>
+            <p>Designed schemas, stored records in Oracle SQL, and wrote efficient transaction routines using JDBC.</p>
+          </div>
+        </div>
+        <div class="roadmap-step reveal">
+          <span class="roadmap-dot"></span>
+          <div class="roadmap-content">
+            <div class="roadmap-year">2025</div>
+            <h3>Internship</h3>
+            <p>Completed a Web Developer Internship, gaining hands-on coding experience.</p>
+          </div>
+        </div>
+        <div class="roadmap-step reveal reveal-delay-1">
+          <span class="roadmap-dot"></span>
+          <div class="roadmap-content">
+            <div class="roadmap-year">2026</div>
+            <h3>Spring Boot</h3>
+            <p>Deepening knowledge in IOC container, dependency injection, JPA mappings, and REST API development.</p>
+          </div>
+        </div>
+        <div class="roadmap-step reveal reveal-delay-2">
+          <span class="roadmap-dot"></span>
+          <div class="roadmap-content">
+            <div class="roadmap-year">2026</div>
+            <h3>Backend Development</h3>
+            <p>Focusing on enterprise frameworks, unit testing, JWT tokens, microservices coordination, and service routing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB SHOWCASE -->
+    <section class="section section-alt" id="github">
+      <div class="container section-intro">
+        <p class="eyebrow">GitHub Showcase</p>
+        <h2>Real-time developer profile and repositories.</h2>
+      </div>
+      <div class="container github-dashboard">
+        <!-- Profile Panel -->
+        <div class="github-panel reveal">
+          <div class="github-profile-header">
+            <img id="gh-avatar" src="1732099542326.jpeg" alt="Om Kumar's GitHub Avatar" class="github-avatar" />
+            <div class="github-profile-meta">
+              <h3 id="gh-name">Om Kumar</h3>
+              <a href="https://github.com/omkumar0417" target="_blank" class="github-username">@omkumar0417</a>
+            </div>
+          </div>
+          <p id="gh-bio" class="github-bio">Aspiring Java Backend Developer | Building reliable database-backed web applications.</p>
+          <div class="github-stats-summary">
+            <div class="gh-stat-box">
+              <span id="gh-repos-count" class="gh-stat-number">23</span>
+              <span class="gh-stat-label">Public Repos</span>
+            </div>
+            <div class="gh-stat-box">
+              <span class="gh-stat-number">180+</span>
+              <span class="gh-stat-label">Commits</span>
+            </div>
+          </div>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%;"><i class="fa-brands fa-github"></i> Visit GitHub Profile</a>
+          </div>
+        </div>
+        
+        <!-- Pinned / Active Repos -->
+        <div class="github-panel reveal reveal-delay-1">
+          <h3 style="border-bottom: 1px solid var(--line); padding-bottom: 0.5rem;"><i class="fa-solid fa-code"></i> Active Repositories</h3>
+          <div class="github-repos-grid" id="github-repos-list">
+            <!-- SRM Grade Calculator -->
+            <div class="gh-repo-card">
+              <div class="gh-repo-header">
+                <i class="fa-regular fa-bookmark"></i>
+                <a href="https://github.com/omkumar0417/srmgradecalculator" target="_blank">srmgradecalculator</a>
+              </div>
+              <p class="gh-repo-desc">Responsive grade calculator student utility built with vanilla HTML, CSS, and JavaScript.</p>
+              <div class="gh-repo-footer">
+                <span class="gh-repo-lang"><i class="fa-solid fa-circle" style="color: #f1e05a;"></i> JavaScript</span>
+              </div>
+            </div>
+            <!-- Online Examination Portal -->
+            <div class="gh-repo-card">
+              <div class="gh-repo-header">
+                <i class="fa-regular fa-bookmark"></i>
+                <a href="https://github.com/omkumar0417?tab=repositories" target="_blank">online-examination-portal</a>
+              </div>
+              <p class="gh-repo-desc">Java Web application utilizing Servlets, JSP, JDBC, and Oracle SQL Database backends.</p>
+              <div class="gh-repo-footer">
+                <span class="gh-repo-lang"><i class="fa-solid fa-circle" style="color: #b07219;"></i> Java</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION (RECRUITER QUICK FACTS) -->
     <section class="section" id="faq">
       <div class="container section-intro">
-        <p class="eyebrow">FAQ</p>
-        <h2>Quick answers for recruiters and collaborators.</h2>
+        <p class="eyebrow">Recruiter Facts</p>
+        <h2>Recruiter Quick Facts: Essential details for hiring managers.</h2>
       </div>
-
-      <div class="container faq-grid">
-        <article class="faq-card reveal">
-          <h3>What roles am I currently looking for?</h3>
-          <p>I am open to Java developer, backend developer, and full-stack developer roles where I can work on APIs, SQL, business logic, and product-focused web experiences.</p>
+      <div class="container recruiter-facts-grid">
+        <article class="fact-card reveal">
+          <h3><i class="fa-solid fa-circle-info"></i> Current Role</h3>
+          <p>Computer Science student and Backend Developer actively looking for software engineering internship and entry-level positions.</p>
+          <span class="fact-badge active">Open To Work</span>
         </article>
-        <article class="faq-card reveal reveal-delay-1">
-          <h3>Which technologies do I work with most?</h3>
-          <p>My main stack includes Java, Servlets, JSP, JDBC, Oracle SQL, HTML, CSS, JavaScript, Git, and GitHub for building database-backed web applications.</p>
+        <article class="fact-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-briefcase"></i> Internship</h3>
+          <p>Completed a Web Developer internship, building responsive pages and working with relational databases.</p>
+          <span class="fact-badge">Completed</span>
         </article>
-        <article class="faq-card reveal reveal-delay-2">
-          <h3>What projects should you look at first?</h3>
-          <p>Start with the Online Examination Portal for backend depth and the SRM Grade Calculator for responsive frontend logic and quick product usability.</p>
+        <article class="fact-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-location-dot"></i> Location</h3>
+          <p>Based in Ghaziabad, Uttar Pradesh, India. Open to relocation, hybrid working arrangements, as well as fully remote roles worldwide.</p>
+          <span class="fact-badge">Relocation Ok</span>
+        </article>
+        <article class="fact-card reveal">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Graduation</h3>
+          <p>Expecting graduation in mid-2028 from SRM Institute of Science and Technology with a Bachelor of Technology in CSE.</p>
+          <span class="fact-badge">Graduating 2028</span>
+        </article>
+        <article class="fact-card reveal reveal-delay-1">
+          <h3><i class="fa-solid fa-magnifying-glass"></i> Preferred Roles</h3>
+          <p>Seeking positions as a Backend Engineer, Software Engineer Intern, Java Developer, or Junior Backend Developer.</p>
+          <span class="fact-badge">Software Engineer</span>
+        </article>
+        <article class="fact-card reveal reveal-delay-2">
+          <h3><i class="fa-solid fa-terminal"></i> Backend Focus</h3>
+          <p>Java programming, relational schemas (Oracle SQL/MySQL), Spring Boot APIs, transactional integrity, and MVC session security.</p>
+          <span class="fact-badge">Core Backend</span>
         </article>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section class="section section-alt" id="contact">
       <div class="container section-intro">
         <p class="eyebrow">Contact</p>
-        <h2>Let’s connect about roles, projects, or collaboration.</h2>
+        <h2>Let's discuss backend opportunities, projects, or collaborations.</h2>
       </div>
 
       <div class="container contact-grid">
         <div class="contact-copy reveal">
-          <p class="contact-tag">Available for backend and full-stack roles, project collaborations, and walkthroughs.</p>
+          <p class="contact-tag">Available for backend and full-stack roles, collaborations, and code reviews.</p>
           <p>
-            If you'd like to discuss my projects, request a walkthrough, or talk about an opportunity, send a message here or reach out directly through LinkedIn or email.
+            If you want to review my projects in detail, discuss code structure, or talk about a job opportunity, reach out directly or send a message.
           </p>
-          <div class="contact-direct">
-            <a href="mailto:omkumar201206@gmail.com">omkumar201206@gmail.com</a>
-            <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">linkedin.com/in/omkumar0417</a>
+          <div class="contact-details-list">
+            <div class="contact-detail-card">
+              <i class="fa-solid fa-envelope"></i>
+              <div class="contact-detail-info">
+                <label>Direct Email</label>
+                <a href="mailto:omkumar0417@gmail.com">omkumar0417@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fa-brands fa-linkedin"></i>
+              <div class="contact-detail-info">
+                <label>LinkedIn</label>
+                <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer">linkedin.com/in/omkumar0417</a>
+              </div>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fa-brands fa-github"></i>
+              <div class="contact-detail-info">
+                <label>GitHub</label>
+                <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer">github.com/omkumar0417</a>
+              </div>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="contact-detail-info">
+                <label>Location</label>
+                <span>Ghaziabad, Uttar Pradesh, India (Open to Relocation)</span>
+              </div>
+            </div>
+            <div class="contact-detail-card">
+              <i class="fa-solid fa-calendar-check"></i>
+              <div class="contact-detail-info">
+                <label>Availability &amp; Response</label>
+                <span>Immediate / Typically replies within 24 hours</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -521,7 +853,7 @@
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity" required></textarea>
 
-            <button type="submit" id="contact-submit">Send Message</button>
+            <button type="submit" id="contact-submit" class="btn-primary">Send Message</button>
             <p id="form-status" class="form-status" aria-live="polite"></p>
           </form>
         </div>
@@ -530,21 +862,59 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="current-year"></span> Om Kumar. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:omkumar201206@gmail.com" aria-label="Send an email to Om Kumar">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
+      <div class="container footer-grid">
+        <div class="footer-brand reveal">
+          <h4>Om Kumar</h4>
+          <p>Java Backend Developer building scalable web applications with Java, Spring Boot, and SQL databases. Aiming to write clean, secure, and maintainable enterprise logic.</p>
+          <div class="social-icons">
+            <a href="https://github.com/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's GitHub profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/omkumar0417" target="_blank" rel="noopener noreferrer" aria-label="Visit Om Kumar's LinkedIn profile">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:omkumar0417@gmail.com" aria-label="Send an email to Om Kumar">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-nav-links reveal reveal-delay-1">
+          <div class="footer-nav-col">
+            <h5>Navigation</h5>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h5>Technical</h5>
+            <ul>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#achievements">Achievements</a></li>
+              <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#github">GitHub</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h5>Get In Touch</h5>
+            <ul>
+              <li><a href="#faq">Quick Facts</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="OmKumarResume.pdf" download>Download Resume</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="container footer-bottom">
+        <p>&copy; <span id="current-year"></span> Om Kumar. All rights reserved.</p>
+        <div class="footer-version-info">
+          <span>Portfolio Version: <strong>2.0.0</strong></span>
+          <span>Last Updated: <strong>July 2026</strong></span>
+        </div>
+      </div>
+    </footer>
 
   <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
 
