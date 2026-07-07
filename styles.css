@@ -2654,18 +2654,17 @@ body:not(.dark-mode) .contact-form textarea {
 }
 
 .ide-console-body {
-  height: 260px;
   background: #090d13;
-  padding: 0.95rem;
+  padding: 0.95rem 1.15rem;
   font-size: 0.74rem;
-  line-height: 1.55;
-  overflow-y: auto;
+  line-height: 1.5;
+  overflow: hidden;
 }
 
 .springboot-banner {
   color: #23c552;
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: clamp(0.48rem, 2.2vw, 0.64rem);
   line-height: 1.25;
   margin: 0.5rem 0;
   white-space: pre;
