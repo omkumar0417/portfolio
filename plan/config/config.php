@@ -27,12 +27,12 @@ define('DB_PASS', '87@omkumar@OM');
 define('DB_CHARSET', 'utf8mb4');
 
 // SMTP configuration for PHPMailer
-define('SMTP_HOST', 'smtp.mailtrap.io'); // Replace with Hostinger SMTP host (e.g., smtp.hostinger.com)
+define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587); // 465 or 587
-define('SMTP_USER', 'your_username');
-define('SMTP_PASS', 'your_password');
+define('SMTP_USER', 'focusforgemind@gmail.com');
+define('SMTP_PASS', 'rhqqqgavooscneaa');
 define('SMTP_SECURE', 'tls'); // 'ssl' or 'tls'
-define('SMTP_FROM_EMAIL', 'no-reply@aetherlife.com');
+define('SMTP_FROM_EMAIL', 'focusforgemind@gmail.com');
 define('SMTP_FROM_NAME', 'AetherLife Team');
 
 // Default Theme settings
