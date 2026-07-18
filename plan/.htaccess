@@ -10,7 +10,7 @@ RewriteRule ^ %1 [L,R=301]
 RedirectMatch 403 ^/config/.*$
 RedirectMatch 403 ^/controllers/.*$
 RedirectMatch 403 ^/models/.*$
-RedirectMatch 403 ^/database/.*$
+RedirectMatch 403 ^/database/migrations/.*$
 RedirectMatch 403 ^/cron/.*$
 RedirectMatch 403 ^/vendor/.*$
 

@@ -13,7 +13,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Global Application Constants
 define('APP_NAME', 'AetherLife Planner');
-define('APP_URL', 'https://plan.omkumar.in'); // Adjust this for production deployment on Hostinger
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || ($_SERVER['SERVER_PORT'] ?? 80) == 443) ? "https://" : "http://";
+$domainName = $_SERVER['HTTP_HOST'] ?? 'plan.omkumar0417.in';
+define('APP_URL', $protocol . $domainName);
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5 MB limits
 
