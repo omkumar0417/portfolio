@@ -453,3 +453,35 @@ body {
         padding-bottom: 70px; /* Space for sticky bar */
     }
 }
+
+/* ==========================================================================
+   Text Visibility Overrides
+   ========================================================================== */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+.text-secondary {
+    color: var(--text-muted) !important;
+}
+.note-summary-text {
+    color: var(--text-muted) !important;
+}
+.form-label, label {
+    color: var(--text-muted) !important;
+}
+p.small, span.small, div.small {
+    color: var(--text-muted);
+}
+.text-white-50 {
+    color: var(--text-muted) !important;
+}
+#link-task-select option, 
+#prof-timezone option, 
+#prof-lang option,
+#accent-picker option,
+#radius-picker option,
+#sidebar-picker option {
+    background-color: var(--bg-card) !important;
+    color: #fff !important;
+}
+

@@ -24,7 +24,7 @@ if ($radiusVal === 4) {
 $compactClass = ($compactVal === 1) ? 'compact-mode' : '';
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="<?= e($theme) ?>" class="accent-<?= e($accent) ?> <?= e($radiusClass) ?>">
+<html lang="en" data-theme="<?= e($theme) ?>" data-bs-theme="<?= e($theme) ?>" class="accent-<?= e($accent) ?> <?= e($radiusClass) ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

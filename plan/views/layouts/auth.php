@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../config/security.php';
 require_once __DIR__ . '/../../config/helpers.php';
 ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" class="accent-indigo">
+<html lang="en" data-theme="dark" data-bs-theme="dark" class="accent-indigo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
