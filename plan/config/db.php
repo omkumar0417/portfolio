@@ -17,7 +17,6 @@ class DB {
                     "mysql:host=%s;dbname=%s;charset=%s",
                     DB_HOST,
                     DB_NAME,
-                    DB_USER,
                     DB_CHARSET
                 );
 
