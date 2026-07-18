@@ -1,0 +1,455 @@
+/**
+ * AetherLife Premium Design System & Stylesheet
+ */
+
+/* ==========================================================================
+   CSS Variables & Color System (HSL Tailored Accents)
+   ========================================================================== */
+:root {
+    /* Accent Base Hues */
+    --accent-hue-indigo: 239;
+    --accent-hue-emerald: 160;
+    --accent-hue-purple: 270;
+    --accent-hue-orange: 24;
+    --accent-hue-red: 343;
+
+    /* Default accent is Indigo (239) */
+    --accent-hue: var(--accent-hue-indigo);
+    
+    /* Core Layout Dimensions */
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 70px;
+    --navbar-height: 70px;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+/* Light / Dark Mode Tokens */
+[data-theme="dark"] {
+    --bg-main: #090d16;
+    --bg-sidebar: rgba(15, 23, 42, 0.6);
+    --bg-card: rgba(30, 41, 59, 0.45);
+    --bg-navbar: rgba(15, 23, 42, 0.65);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-color-glow: rgba(99, 102, 241, 0.25);
+    
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-inverse: #0f172a;
+    
+    --glass-bg: rgba(15, 23, 42, 0.45);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --glow-color: hsla(var(--accent-hue), 90%, 65%, 0.3);
+}
+
+[data-theme="light"] {
+    --bg-main: #f8fafc;
+    --bg-sidebar: rgba(255, 255, 255, 0.75);
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-navbar: rgba(255, 255, 255, 0.8);
+    --border-color: rgba(15, 23, 42, 0.08);
+    --border-color-glow: rgba(99, 102, 241, 0.15);
+    
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+    --text-inverse: #ffffff;
+    
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --glow-color: hsla(var(--accent-hue), 80%, 45%, 0.15);
+}
+
+/* Dynamic Accent Injections */
+.accent-indigo { --accent-hue: var(--accent-hue-indigo); }
+.accent-emerald { --accent-hue: var(--accent-hue-emerald); }
+.accent-purple { --accent-hue: var(--accent-hue-purple); }
+.accent-orange { --accent-hue: var(--accent-hue-orange); }
+.accent-red    { --accent-hue: var(--accent-hue-red); }
+
+/* Accent Color Variations */
+:root {
+    --clr-accent: hsl(var(--accent-hue), 85%, 60%);
+    --clr-accent-hover: hsl(var(--accent-hue), 85%, 50%);
+    --clr-accent-glow: hsla(var(--accent-hue), 85%, 60%, 0.2);
+    --clr-accent-light: hsla(var(--accent-hue), 85%, 60%, 0.1);
+}
+
+/* Custom border-radius modifiers */
+.radius-sharp { --border-radius: 4px; }
+.radius-standard { --border-radius: 12px; }
+.radius-pillowy { --border-radius: 24px; }
+
+/* Compact mode layout styles */
+body.compact-mode {
+    font-size: 0.9rem;
+}
+body.compact-mode .card {
+    padding: 0.75rem !important;
+}
+body.compact-mode .btn,
+body.compact-mode input,
+body.compact-mode select {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Base Elements Setup & Glassmorphism Utilities
+   ========================================================================== */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Glassmorphism Panel base */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.25s, box-shadow 0.25s, border-color var(--transition-speed);
+}
+
+.glass-panel:hover {
+    border-color: var(--border-color-glow);
+    box-shadow: var(--glass-shadow), 0 0 15px var(--glow-color);
+}
+
+/* Card custom layouts */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: var(--glass-shadow);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed), transform 0.2s;
+    backdrop-filter: blur(8px);
+}
+
+.card:hover {
+    border-color: var(--border-color-glow);
+    box-shadow: var(--glass-shadow), 0 5px 15px var(--clr-accent-glow);
+}
+
+/* ==========================================================================
+   Layout Structure: Sidebar, Navbar, Mobile Nav
+   ========================================================================== */
+#app-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar Styling */
+#sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    transition: width var(--transition-speed);
+    backdrop-filter: blur(16px);
+}
+
+#sidebar .logo-area {
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#sidebar .logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--clr-accent), #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#sidebar .menu-links {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0.75rem;
+}
+
+#sidebar .menu-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+#sidebar .menu-links a i {
+    width: 24px;
+    font-size: 1.1rem;
+    margin-right: 12px;
+}
+
+#sidebar .menu-links a.active,
+#sidebar .menu-links a:hover {
+    color: var(--text-primary);
+    background: var(--clr-accent-light);
+    border-left: 4px solid var(--clr-accent);
+}
+
+/* Main Content Area */
+#main-viewport {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left var(--transition-speed);
+}
+
+/* Navbar Top Panel */
+#top-navbar {
+    height: var(--navbar-height);
+    background: var(--bg-navbar);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+}
+
+/* Autocomplete Global Search Results Overlay */
+.search-wrapper {
+    position: relative;
+    width: 320px;
+}
+
+.search-wrapper input {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.search-wrapper i.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-autocomplete-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--glass-shadow);
+    z-index: 1010;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 5px;
+}
+
+.search-autocomplete-box a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem;
+}
+
+.search-autocomplete-box a:hover {
+    background: var(--clr-accent-light);
+}
+
+/* Sticky Bottom Mobile Bar */
+#mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--bg-navbar);
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+    backdrop-filter: blur(16px);
+}
+
+#mobile-bottom-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+
+#mobile-bottom-nav a.active {
+    color: var(--clr-accent);
+}
+
+#mobile-bottom-nav a i {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   Micro-animations & Interactive Elements
+   ========================================================================== */
+.btn-accent {
+    background-color: var(--clr-accent);
+    color: var(--text-inverse) !important;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px var(--clr-accent-glow);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn-accent:hover {
+    background-color: var(--clr-accent-hover);
+    box-shadow: 0 6px 16px var(--clr-accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn-accent:active {
+    transform: translateY(0);
+}
+
+/* Custom Checkbox Toggle */
+.habit-check-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px dashed var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.habit-check-btn.checked {
+    border-style: solid;
+    transform: scale(1.1);
+    animation: bubbleCheck 0.35s ease-out;
+}
+
+@keyframes bubbleCheck {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1.1); }
+}
+
+/* Circular Progress Ring */
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.35s;
+    transform-origin: 50% 50%;
+}
+
+/* Loading Skeletons */
+.skeleton {
+    background: linear-gradient(90deg, var(--bg-card) 25%, var(--border-color) 50%, var(--bg-card) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ==========================================================================
+   GitHub Contribution Heatmap Grid
+   ========================================================================== */
+.github-heatmap {
+    display: grid;
+    grid-flow: column;
+    grid-template-rows: repeat(7, 10px);
+    grid-auto-columns: 10px;
+    gap: 3px;
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+.heatmap-day {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: var(--border-color);
+}
+
+.heatmap-day.level-1 { background-color: #0e4429; }
+.heatmap-day.level-2 { background-color: #006d32; }
+.heatmap-day.level-3 { background-color: #26a641; }
+.heatmap-day.level-4 { background-color: #39d353; }
+
+/* ==========================================================================
+   Responsive Screen Media Queries
+   ========================================================================== */
+@media (max-width: 991px) {
+    #sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+    
+    #main-viewport {
+        margin-left: 0;
+    }
+    
+    #sidebar.mobile-open {
+        width: var(--sidebar-width);
+    }
+    
+    #mobile-bottom-nav {
+        display: block;
+    }
+    
+    body {
+        padding-bottom: 70px; /* Space for sticky bar */
+    }
+}
