@@ -29,9 +29,7 @@ try {
     );
 
     if (empty($emails)) {
-        if ($is_cli) {
-            echo "Email queue is empty. No actions required.\n";
-        }
+        echo "Email queue is empty. No actions required.\n";
         exit(0);
     }
 
