@@ -161,6 +161,7 @@ try {
             [$userId, $userEmail, "Your AetherLife Daily Summary - " . date('d M Y'), $emailBody]
         );
         $queuedCount++;
+        echo "Queued email for {$userEmail} using timezone {$userTimezone}.\n";
     }
 
     echo "Successfully generated and queued {$queuedCount} daily summary emails.\n";
