@@ -1,0 +1,28 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect Trailing Slashes If Not A Directory
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+# Protect configuration and MVC folders from direct HTTP access
+RedirectMatch 403 ^/config/.*$
+RedirectMatch 403 ^/controllers/.*$
+RedirectMatch 403 ^/models/.*$
+RedirectMatch 403 ^/database/migrations/.*$
+RedirectMatch 403 ^/vendor/.*$
+
+# Handle Front Controller rewriting
+# If the requested filename is not a directory and not a file, rewrite to index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L,QSA]
+
+# Security Headers (Best practice)
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

@@ -1,0 +1,14 @@
+# Local configuration overrides (containing database & SMTP passwords)
+/config/config.local.php
+
+# User uploads (ignore uploaded files, but keep the security rules file)
+/uploads/*
+!/uploads/.htaccess
+
+# Compiled logs
+*.log
+
+# System files & IDE directories
+.DS_Store
+.idea/
+.vscode/
