@@ -37,12 +37,3 @@ declare(strict_types=1);
         <a href="<?= e(APP_URL) ?>/signup" class="text-decoration-none text-primary fw-bold">Sign Up</a>
     </p>
 </div>
-
-<!-- Quick Demo Account helper alert -->
-<div class="card glass-panel mt-3 p-3 text-center border-info">
-    <h6 class="text-info fw-bold mb-1"><i class="fa-solid fa-seedling me-1"></i> Demo Sandbox Available</h6>
-    <p class="text-muted small mb-0" style="font-size: 0.8rem;">
-        No setup needed! Log in with: <br>
-        <strong>demo@aetherlife.com</strong> / <strong>password123</strong>
-    </p>
-</div>

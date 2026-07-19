@@ -19,21 +19,26 @@ define('APP_URL', $protocol . $domainName);
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5 MB limits
 
+// Load local configuration overrides containing secret keys if present
+if (file_exists(__DIR__ . '/config.local.php')) {
+    require_once __DIR__ . '/config.local.php';
+}
+
 // Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'u690119069_omkumar');
-define('DB_USER', 'u690119069_plan');
-define('DB_PASS', '87@omkumar@OM');
-define('DB_CHARSET', 'utf8mb4');
+if (!defined('DB_HOST')) define('DB_HOST', 'localhost');
+if (!defined('DB_NAME')) define('DB_NAME', 'your_database_name');
+if (!defined('DB_USER')) define('DB_USER', 'your_database_user');
+if (!defined('DB_PASS')) define('DB_PASS', 'your_database_password');
+if (!defined('DB_CHARSET')) define('DB_CHARSET', 'utf8mb4');
 
 // SMTP configuration for PHPMailer
-define('SMTP_HOST', 'smtp.gmail.com');
-define('SMTP_PORT', 587); // 465 or 587
-define('SMTP_USER', 'focusforgemind@gmail.com');
-define('SMTP_PASS', 'rhqqqgavooscneaa');
-define('SMTP_SECURE', 'tls'); // 'ssl' or 'tls'
-define('SMTP_FROM_EMAIL', 'focusforgemind@gmail.com');
-define('SMTP_FROM_NAME', 'AetherLife Team');
+if (!defined('SMTP_HOST')) define('SMTP_HOST', 'smtp.gmail.com');
+if (!defined('SMTP_PORT')) define('SMTP_PORT', 587); // 465 or 587
+if (!defined('SMTP_USER')) define('SMTP_USER', 'your_smtp_email');
+if (!defined('SMTP_PASS')) define('SMTP_PASS', 'your_smtp_password');
+if (!defined('SMTP_SECURE')) define('SMTP_SECURE', 'tls'); // 'ssl' or 'tls'
+if (!defined('SMTP_FROM_EMAIL')) define('SMTP_FROM_EMAIL', 'your_smtp_email');
+if (!defined('SMTP_FROM_NAME')) define('SMTP_FROM_NAME', 'AetherLife Team');
 
 // Default Theme settings
 define('DEFAULT_THEME', 'dark');

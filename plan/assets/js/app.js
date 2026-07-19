@@ -3,6 +3,11 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Move all modals to body to prevent stacking context/z-index issues from parent containers (like those with AOS animation properties)
+    document.querySelectorAll('.modal').forEach(modal => {
+        document.body.appendChild(modal);
+    });
+
     // 1. Mobile Sidebar Toggler
     const sidebarToggle = document.getElementById("mobile-sidebar-toggle");
     const sidebar = document.getElementById("sidebar");
@@ -135,6 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Keep track of already notified IDs
+let notifiedNotificationIds = [];
+
 /**
  * Dynamic Notifications Poller
  */
@@ -164,8 +172,11 @@ function pollNotifications() {
                         `;
                         list.appendChild(item);
                         
-                        // Push native browser notifications if allowed
-                        triggerBrowserNotification(n.title, n.message);
+                        // Push native browser notifications if allowed and not notified yet
+                        if (!notifiedNotificationIds.includes(n.id)) {
+                            triggerBrowserNotification(n.title, n.message);
+                            notifiedNotificationIds.push(n.id);
+                        }
                     });
                 } else {
                     countBadge.classList.add("d-none");
