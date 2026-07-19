@@ -45,5 +45,8 @@ define('DEFAULT_THEME', 'dark');
 define('DEFAULT_ACCENT', 'indigo');
 define('DEFAULT_RADIUS', 12);
 
+// Cron security configuration
+if (!defined('CRON_SECRET')) define('CRON_SECRET', 'aether_cron_secret_123');
+
 // Timezone Setup
 date_default_timezone_set('UTC'); // Will load dynamic user timezone from session/db

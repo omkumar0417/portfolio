@@ -5,19 +5,19 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../config/helpers.php';
+
 // Restrict execution to CLI only (or a secure key for Hostinger URL triggers)
 $is_cli = (php_sapi_name() === 'cli');
 $key = $_GET['key'] ?? '';
-$configured_key = 'aether_cron_secret_123'; // Edit this in production
+$configured_key = defined('CRON_SECRET') ? CRON_SECRET : 'aether_cron_secret_123';
 
 if (!$is_cli && $key !== $configured_key) {
     http_response_code(403);
     die("Unauthorized access to Cron Runner.");
 }
-
-require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../config/db.php';
-require_once __DIR__ . '/../config/helpers.php';
 
 try {
     $db = DB::getConnection();
