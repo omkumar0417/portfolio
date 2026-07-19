@@ -84,12 +84,12 @@ try {
 
         // 2.6 Gather active goals targeting this month
         $monthlyGoals = DB::fetchAll(
-            "SELECT title, target_date FROM goals 
+            "SELECT title, deadline FROM goals 
              WHERE user_id = ? 
-               AND status = 'active' 
-               AND target_date >= CURDATE() 
-               AND target_date <= LAST_DAY(CURDATE())
-             ORDER BY target_date ASC",
+               AND status IN ('pending', 'in_progress') 
+               AND deadline >= CURDATE() 
+               AND deadline <= LAST_DAY(CURDATE())
+             ORDER BY deadline ASC",
             [$userId]
         );
 
@@ -164,7 +164,7 @@ try {
             if (!empty($monthlyGoals)) {
                 $monthlyLi .= "<div style='color:#a78bfa;font-weight:bold;margin-bottom:6px;font-size:13px;'>🎯 ACTIVE GOALS:</div>";
                 foreach ($monthlyGoals as $mg) {
-                    $targetDate = date('d M', strtotime($mg['target_date']));
+                    $targetDate = date('d M', strtotime($mg['deadline']));
                     $monthlyLi .= "<li style='margin-bottom:8px;color:#f8fafc;list-style-type:none;padding-left:10px;'>• <strong>{$mg['title']}</strong> by {$targetDate}</li>";
                 }
             }
