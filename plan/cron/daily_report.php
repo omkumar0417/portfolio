@@ -24,7 +24,7 @@ try {
 
     // Fetch all users who have notification email summaries enabled
     $users = DB::fetchAll(
-        "SELECT u.id, u.email, u.name 
+        "SELECT u.id, u.email, u.name, u.timezone 
          FROM users u
          INNER JOIN settings s ON u.id = s.user_id
          WHERE s.notification_email = 1 AND u.is_verified = 1"
@@ -35,6 +35,24 @@ try {
         $userId = (int)$user['id'];
         $userName = $user['name'];
         $userEmail = $user['email'];
+        $userTimezone = $user['timezone'] ?? 'UTC';
+
+        // Match PHP date helpers with user's local timezone
+        date_default_timezone_set($userTimezone);
+
+        // Calculate and set the MySQL session connection offset to match user's local timezone
+        try {
+            $tz = new DateTimeZone($userTimezone);
+            $transition = $tz->getTransitions(time(), time());
+            $offsetSeconds = $transition[0]['offset'] ?? 0;
+            $offsetPrefix = $offsetSeconds >= 0 ? '+' : '-';
+            $offsetHours = floor(abs($offsetSeconds) / 3600);
+            $offsetMins = floor((abs($offsetSeconds) % 3600) / 60);
+            $offsetString = sprintf("%s%02d:%02d", $offsetPrefix, $offsetHours, $offsetMins);
+            DB::query("SET time_zone = ?", [$offsetString]);
+        } catch (Exception $tzEx) {
+            DB::query("SET time_zone = '+00:00'");
+        }
 
         // 1. Gather Today's Agenda Tasks
         $todayTasks = DB::fetchAll(

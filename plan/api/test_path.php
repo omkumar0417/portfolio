@@ -1,9 +1,9 @@
 <?php
 /**
- * Test script to display the exact absolute server path of the application.
+ * Path test script deactivated for security.
  */
 
 declare(strict_types=1);
 
-echo "Absolute path: " . __FILE__ . "\n";
-echo "Document root: " . $_SERVER['DOCUMENT_ROOT'] . "\n";
+http_response_code(404);
+echo "Page not found.";
