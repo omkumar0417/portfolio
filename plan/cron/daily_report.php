@@ -70,6 +70,41 @@ try {
             [$userId]
         );
 
+        // 2.5 Gather Upcoming Week Tasks (next 7 days, excluding today)
+        $upcomingWeekTasks = DB::fetchAll(
+            "SELECT title, due_date, priority FROM tasks 
+             WHERE user_id = ? 
+               AND DATE(due_date) > CURDATE() 
+               AND DATE(due_date) <= DATE_ADD(CURDATE(), INTERVAL 7 DAY) 
+               AND status != 'completed' 
+               AND status != 'archived'
+             ORDER BY due_date ASC, priority DESC",
+            [$userId]
+        );
+
+        // 2.6 Gather active goals targeting this month
+        $monthlyGoals = DB::fetchAll(
+            "SELECT title, target_date FROM goals 
+             WHERE user_id = ? 
+               AND status = 'active' 
+               AND target_date >= CURDATE() 
+               AND target_date <= LAST_DAY(CURDATE())
+             ORDER BY target_date ASC",
+            [$userId]
+        );
+
+        // 2.7 Gather tasks due later this month (from day 8 to end of month)
+        $monthlyTasks = DB::fetchAll(
+            "SELECT title, due_date FROM tasks 
+             WHERE user_id = ? 
+               AND DATE(due_date) > DATE_ADD(CURDATE(), INTERVAL 7 DAY) 
+               AND DATE(due_date) <= LAST_DAY(CURDATE()) 
+               AND status != 'completed' 
+               AND status != 'archived'
+             ORDER BY due_date ASC",
+            [$userId]
+        );
+
         // 3. Gather Habits
         $habits = DB::fetchAll(
             "SELECT name, frequency FROM habits WHERE user_id = ?",
@@ -111,6 +146,40 @@ try {
             $overdueLi .= "</ul>";
         }
 
+        $upcomingWeekLi = '';
+        if (empty($upcomingWeekTasks)) {
+            $upcomingWeekLi = "<li style='color:#94a3b8;margin-bottom:8px;'>No upcoming tasks due in the next 7 days.</li>";
+        } else {
+            foreach ($upcomingWeekTasks as $ut) {
+                $dueDate = date('D, d M', strtotime($ut['due_date']));
+                $priorityBadge = $ut['priority'] === 'critical' ? "<span style='color:#ef4444;font-weight:bold;'>[CRITICAL]</span>" : "";
+                $upcomingWeekLi .= "<li style='margin-bottom:8px;color:#f8fafc;'>{$priorityBadge} <strong>{$ut['title']}</strong> (Due: {$dueDate})</li>";
+            }
+        }
+
+        $monthlyLi = '';
+        if (empty($monthlyGoals) && empty($monthlyTasks)) {
+            $monthlyLi = "<li style='color:#94a3b8;margin-bottom:8px;'>No goals or tasks set for the rest of this month.</li>";
+        } else {
+            if (!empty($monthlyGoals)) {
+                $monthlyLi .= "<div style='color:#a78bfa;font-weight:bold;margin-bottom:6px;font-size:13px;'>🎯 ACTIVE GOALS:</div>";
+                foreach ($monthlyGoals as $mg) {
+                    $targetDate = date('d M', strtotime($mg['target_date']));
+                    $monthlyLi .= "<li style='margin-bottom:8px;color:#f8fafc;list-style-type:none;padding-left:10px;'>• <strong>{$mg['title']}</strong> by {$targetDate}</li>";
+                }
+            }
+            if (!empty($monthlyTasks)) {
+                if (!empty($monthlyGoals)) {
+                    $monthlyLi .= "<div style='height:10px;'></div>";
+                }
+                $monthlyLi .= "<div style='color:#6366f1;font-weight:bold;margin-bottom:6px;font-size:13px;'>📋 LATER THIS MONTH:</div>";
+                foreach ($monthlyTasks as $mt) {
+                    $dueDate = date('d M', strtotime($mt['due_date']));
+                    $monthlyLi .= "<li style='margin-bottom:8px;color:#f8fafc;list-style-type:none;padding-left:10px;'>• {$mt['title']} (Due: {$dueDate})</li>";
+                }
+            }
+        }
+
         $habitsLi = '';
         if (empty($habits)) {
             $habitsLi = "<li style='color:#94a3b8;'>No habits setup yet.</li>";
@@ -136,6 +205,20 @@ try {
                     {$tasksLi}
                 </ul>
                 {$overdueLi}
+            </div>
+
+            <div style='background:rgba(255,255,255,0.02);border:1px solid #1e293b;padding:15px;border-radius:8px;margin-bottom:20px;'>
+                <h3 style='color:#8b5cf6;margin-top:0;margin-bottom:12px;'>📅 Upcoming Week (Next 7 Days)</h3>
+                <ul style='padding-left:20px;margin:0;'>
+                    {$upcomingWeekLi}
+                </ul>
+            </div>
+
+            <div style='background:rgba(255,255,255,0.02);border:1px solid #1e293b;padding:15px;border-radius:8px;margin-bottom:20px;'>
+                <h3 style='color:#a78bfa;margin-top:0;margin-bottom:12px;'>🔮 This Month's Outlook</h3>
+                <ul style='padding-left:0;margin:0;list-style:none;'>
+                    {$monthlyLi}
+                </ul>
             </div>
 
             <div style='background:rgba(255,255,255,0.02);border:1px solid #1e293b;padding:15px;border-radius:8px;margin-bottom:20px;'>
